@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header_type2">
+			<nav>
+				<ul>
+					<li class="active"><button type="button" class="active">나의 프로필</button></li>
+				</ul>
+			</nav>
+			<div>
+				<button type="button" class="btn_profile_change">나의 프로필 변경</button>
+				<button type="button" class="btn_profile_setting">나의 프로필 설정</button>
+			</div>
+		</header>
+		<div class="content has_gnb">
+			<nav class="page_nav">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide active"><button type="button" onclick="location.href='producer_profile1.html'">기본 정보</button></li>
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile2.html'">모집공고</button></li>
+					<!--<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile3.html'">아티스트</button></li>
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile4.html'">최신이슈</button></li>--> <!-- 1차개발에서 제외 -->
+				</ul>
+			</nav>
+			<div class="cont_pd reg_form">
+				<div class="detail_row mt25">
+					<strong class="tit min">이메일</strong>
+					<p class="desc">abcd123@naver.com</p>
+				</div>
+				<div class="detail_row column">
+					<strong class="tit min">홈페이지</strong>
+					<p class="desc"><input type="text" id="" class="inp_txt" placeholder="홈페이지 주소를 입력해 주세요."/></p>
+				</div>
+				<div class="mt25">
+					<div class="detail_row column">
+						<strong class="tit">기업소개</strong>
+						<dl class="desc_list">
+							<dt><input type="text" id="" class="inp_txt" placeholder="회사명 입력해 주세요."/></dt>
+							<dd>
+								<p class="txt_counter"><span id="" class="counter">0</span>/1,000</p>
+								<textarea placeholder="회사에 대한 소개 문구를 입력해 주세요." class="mt10 inp_txt" rows="6" maxlength="1000"></textarea>
+							</dd>
+						</dl>
+					</div>
+				</div>	
+				<div class="mt25">
+					<div class="detail_row column">
+						<strong class="tit">연혁</strong>
+						<dl class="desc_list">
+							<dt><input type="text" id="" class="inp_txt" placeholder="해당 년도를 입력해 주세요."/></dt>
+							<dd>
+								<p class="txt_counter"><span id="" class="counter">0</span>/1,000</p>
+								<textarea placeholder="수행하신 이력을 입력해 주세요." class="mt10 inp_txt" rows="6" maxlength="1000"></textarea>
+							</dd>
+						</dl>
+						<button type="button" class="btn_add active mt10"><span>연혁 추가</span></button>
+					</div>
+				</div>
+				<div class="mt25">
+					<div class="detail_row column">
+						<strong class="tit">오시는길</strong>
+						<p class="desc" onclick="javascript:openPop('pop_tuning_location')"><input type="text" id="addr" class="inp_txt" placeholder="회사 주소를 입력해 주세요." readonly /></p>
+					</div>
+				</div>
+				<button type="button" class="btn_basic active mt40" onclick="location.href='producer_profile1.html'">저장</button>
+			</div>
+		</div>
+		<nav class="gnb producer">
+			<ul>
+				<li><button type="button">Home</button></li>
+				<li><button type="button" onclick="location.href='project_list.html'">프로젝트</button></li>
+				<li><button type="button" onclick="location.href='artist_list.html'">아티스트</button></li>
+				<li><button type="button" onclick="location.href='producer_schedule_list.html'">일정</button></li>
+				<li class="active"><button type="button" onclick="location.href='producer_profile1.html'">프로필</button></li>
+			</ul>
+		</nav>
+
+		<!-- pop_tuning_location -->
+		<div id="pop_tuning_location" class="dim_layer">
+			<div class="dim"></div>
+			<div class="pop_wrap">
+				<div class="pop_handle" onclick="closePop('pop_tuning_location')"></div>
+				<div class="pop_cont">
+					<div class="sub_tit">주소 입력</div>
+					<div class="addr_form">
+						<div class="addr_search" id="addrSearch">
+							<!-- tuning-location-1 -->
+							<div class="search_box">
+								<div class="inp_field">
+									<input type="text" name="searchBar" id="searchBar" class="search_bar" placeholder="장소 이름이나 주소를 입력하세요."/>
+									<button type="button" class="btn_reset" onclick="clearAddress(this)">X</button>
+								</div>
+							</div>
+
+							<!-- tuning-location-2 -->
+							<div class="addr_list" id="addrList">
+								<!-- <div onclick="showAddrDetail(this)">
+									<span class="label">에프티엔티</span>
+									<div class="txt">서울 서초구 서초대로 40길 96</div>
+								</div> -->
+							</div>
+						</div>
+
+						<!-- tuning-location-3 -->
+						<div class="addr_detail" id="addrDetail" style="display:none;">
+							<div class="inp_field">
+								<input type="text" name="locationName" id="locationName" class="location_name" placeholder="장소 이름이나 주소를 입력하세요." oninput="handleAddrDetail(this)" />
+							</div>
+							<div class="inp_field">
+								<input type="text" name="locationAddress1" id="locationAddress1" class="location_address1" placeholder="주소를 입력해 주세요." oninput="handleAddrDetail(this)" />
+							</div>
+							<div class="inp_field">
+								<input type="text" name="locationAddress2" id="locationAddress2" class="location_address2" placeholder="세부 주소를 입력해 주세요." oninput="handleAddrDetail(this)" />
+							</div>
+
+							<div class="fix_bottom">
+								<button type="button" onclick="submitTuningLocation()" class="btn_line">주소입력완료</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// pop_tuning_location -->
+
+	</div><!-- //wrap -->
+	<script>
+
+	/*Swal.fire({
+	title: "PERFORM 모드로 전환합니다",
+	customClass: {
+		popup: 'pop_confirm' //confirm창에 pop_confirm 클래스 추가
+	},
+	html:"내 프로필을 등록하고<br>출연할 프로젝트의 모집 공고에 지원할 수 있습니다.",
+	reverseButtons : true,
+	showCancelButton: true,
+	showDenyButton: false,
+	cancelButtonText: "변경",
+	confirmButtonText: "취소"
+	});*/
+
+	// 퍼블 확인용 json
+	const testJson = [
+			{
+				"location_name": "에프티엔티",
+				"location_addr": "서울 서초구 서초대로 40길 96",
+			},
+			{
+				"location_name": "한샘리하우스 지움대리점",
+				"location_addr": "서울 서초구 서초대로 40길 96",
+			},
+			{
+				"location_name": "서울 서초구 41길 54",
+				"location_addr": "서초동 157-4",
+			}
+		];
+
+		// 퍼블 확인용 주소 렌더링
+		function renderLocation(locations, container){
+            let htmlContent = '';
+
+            for (let i = 0; i < locations.length; i++) {
+                htmlContent += `
+					<div onclick="showAddrDetail(this)">
+						<span class="label">${locations[i].location_name}</span>
+						<div class="txt">${locations[i].location_addr}</div>
+					</div>
+                `;
+            }
+            container.innerHTML = htmlContent;
+		}
+
+		const addrSearch = document.querySelector('#addrSearch');	// 장소 검색 box
+		const addrDetail = document.querySelector('#addrDetail');	// 장소 입력 box
+		const searchBar = document.querySelector('#searchBar'); // 검색 input
+		const addrList = document.querySelector('#addrList'); // 검색 List
+		const locationName = document.querySelector('#locationName');	// 장소 이름
+		const locationAddress1 = document.querySelector('#locationAddress1');	// 장소 메인 주소
+		const locationAddress2 = document.querySelector('#locationAddress2');	// 장소 세부 주소
+
+		function clearAddress(target){
+			const addrList =  document.querySelector('#addrList');
+			target.previousElementSibling.value = '';
+			target.previousElementSibling.focus();
+			target.style.display = 'none';
+
+			addrList.innerHTML = '';
+		}
+
+		// handler 검색바
+		searchBar.addEventListener('input', function(){
+			const btnReset = this.nextElementSibling;
+			// console.log(btnReset);
+
+			if(this.value === ''){
+				btnReset.style.display = 'none';
+				addrList.innerHTML = '';
+
+			}else{
+				btnReset.style.display = 'block';
+				renderLocation(testJson, addrList);
+			}
+		});
+
+		function showAddrDetail(target){
+			let locationNameValue = target.querySelector('.label').textContent;
+			let locationAddressValue = target.querySelector('.txt').textContent;
+
+			locationName.value = locationNameValue;
+			locationAddress1.value = locationAddressValue;
+			locationName.classList.add('active');
+			locationAddress1.classList.add('active');
+
+			addrSearch.style.display = 'none';
+			addrDetail.style.display = 'block';
+		}
+
+		function handleAddrDetail(target){
+			if(target.value === ''){
+				target.classList.remove('active');
+			}
+		}
+
+		function submitTuningLocation(){
+			closePop('pop_tuning_location');
+
+			//주소입력
+			const locationName = document.getElementById('locationName').value;
+			const locationAddress1 = document.getElementById('locationAddress1').value;
+			const locationAddress2 = document.getElementById('locationAddress2').value;
+			const addrInput = document.getElementById('addr');
+			addrInput.value = `${locationName} ${locationAddress1} ${locationAddress2}`;
+
+			// 팝업 초기화
+			addrSearch.style.display = 'block';
+			addrDetail.style.display = 'none';
+			addrList.innerHTML = '';
+			locationName.value = '';
+			locationAddress1.value = '';
+			locationAddress2.value = '';
+
+			searchBar.value = '';
+			searchBar.nextElementSibling.style.display = 'none';
+
+		}
+
+		//글자수 카운트
+		document.addEventListener("DOMContentLoaded", function() {
+			const textareas = document.querySelectorAll('textarea');
+			textareas.forEach((textarea, index) => {
+				textarea.addEventListener('input', function() {
+					//const counter = document.getElementById(`counter${index + 1}`);
+					const counter = textarea.parentNode.querySelector('.counter');
+					const length = textarea.value.length;
+					counter.textContent = length;
+				});
+			});
+		});
+
+		//연혁추가
+		document.addEventListener('DOMContentLoaded', () => {
+			const btnAdd = document.querySelector('.btn_add');
+			btnAdd.addEventListener('click', () => {
+				const newDescList = document.createElement('dl');
+				newDescList.className = 'desc_list';
+				newDescList.innerHTML = `
+					<dt><input type="text" id="" class="inp_txt" placeholder="해당 년도를 입력해 주세요."/></dt>
+					<dd>
+						<p class="txt_counter"><span id="" class="counter">0</span>/1,000</p>
+						<textarea placeholder="수행하신 이력을 입력해 주세요." class="mt10 inp_txt" rows="6" maxlength="1000"></textarea>
+					</dd>
+				`;
+				btnAdd.parentNode.insertBefore(newDescList, btnAdd);
+
+				const newTextarea = newDescList.querySelector('textarea');
+				newTextarea.addEventListener('input', function() {
+					const counter = newTextarea.parentNode.querySelector('.counter');
+					const length = newTextarea.value.length;
+					counter.textContent = length;
+				});
+			});
+		});
+	</script>
+</body>
+</html>

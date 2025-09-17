@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header_type2">
+			<nav>
+				<ul>
+					<li class="active"><button type="button" class="active">나의 프로필</button></li>
+				</ul>
+			</nav>
+			<div>
+				<button type="button" class="btn_profile_change">나의 프로필 변경</button>
+				<button type="button" class="btn_profile_setting">나의 프로필 설정</button>
+			</div>
+		</header>
+		<div class="content has_gnb">
+			<nav class="page_nav">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile1.html'">기본 정보</button></li>
+					<li class="swiper-slide active"><button type="button" onclick="location.href='producer_profile2.html'">모집공고</button></li>
+					<!--<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile3.html'">아티스트</button></li>
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile4.html'">최신이슈</button></li>--> <!-- 1차개발에서 제외 -->
+				</ul>
+			</nav>
+			<div class="cont_pd">
+				<div class="flex justify_end">
+					<div class="drop_box">
+						<button type="button" class="selected">전체 46건</button>
+						<ul>
+							<li><button type="button">마감일순</button></li>
+							<li><button type="button">업데이트순</button></li>
+						</ul>
+					</div>
+				</div>
+				<ul class="card_list straight_type">
+					<!-- -->
+					<li class="item">
+						<strong class="txt_num ft_color_default">D-4</strong>
+						<p class="subject">비공개 드라마 오디션</p>
+						<ul class="sub_dot_list">
+							<li>umderwaman</li>
+							<li>드라마</li>
+						</ul>
+					</li>
+					<!--// -->
+					<li class="item">
+						<strong class="txt_num ft_color_default">상시채용</strong>
+						<p class="subject">비공개 드라마 오디션</p>
+						<ul class="sub_dot_list">
+							<li>umderwaman</li>
+							<li>드라마</li>
+						</ul>
+					</li>
+					<li class="item end"><!-- 마감 end 클래스 -->
+						<strong class="txt_num ft_color_default">마감 (~2022.10.01)</strong>
+						<p class="subject">비공개 드라마 오디션</p>
+						<ul class="sub_dot_list">
+							<li>umderwaman</li>
+							<li>드라마</li>
+						</ul>
+					</li>
+					<li class="item">
+						<strong class="txt_num ft_color_default">상시채용</strong>
+						<p class="subject">비공개 드라마 오디션</p>
+						<ul class="sub_dot_list">
+							<li>umderwaman</li>
+							<li>드라마</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<nav class="gnb producer">
+			<ul>
+				<li><button type="button">Home</button></li>
+				<li><button type="button" onclick="location.href='project_list.html'">프로젝트</button></li>
+				<li><button type="button" onclick="location.href='artist_list.html'">아티스트</button></li>
+				<li><button type="button" onclick="location.href='producer_schedule_list.html'">일정</button></li>
+				<li class="active"><button type="button" onclick="location.href='producer_profile1.html'">프로필</button></li>
+			</ul>
+		</nav>
+	</div><!-- //wrap -->
+	<script>
+	
+	</script>
+</body>
+</html>

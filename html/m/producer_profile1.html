@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header_type2">
+			<nav>
+				<ul>
+					<li class="active"><button type="button" class="active">나의 프로필</button></li>
+				</ul>
+			</nav>
+			<div>
+				<button type="button" class="btn_profile_change">나의 프로필 변경</button>
+				<button type="button" class="btn_profile_setting">나의 프로필 설정</button>
+			</div>
+		</header>
+		<div class="content has_gnb">
+			<nav class="page_nav">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide active"><button type="button" onclick="location.href='producer_profile1.html'">기본 정보</button></li>
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile2.html'">모집공고</button></li>
+					<!--<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile3.html'">아티스트</button></li>
+					<li class="swiper-slide"><button type="button" onclick="location.href='producer_profile4.html'">최신이슈</button></li>--> <!-- 1차개발에서 제외 -->
+				</ul>
+			</nav>
+			<div class="cont_pd">
+				<div class="flex justify_end"><button type="button" class="btn_modify" onclick="location.href='producer_profile1_form.html'">프로필 수정</button></div>
+				<ul class="proile_info_list">
+					<li>
+						<div class="detail_row">
+							<strong class="tit min">이메일</strong>
+							<p class="desc">abcd123@naver.com</p>
+						</div>
+						<div class="detail_row">
+							<strong class="tit min">홈페이지</strong>
+							<p class="desc"><button type="button" onclick="window.open('https://www.naver.com')">www.naver.com</button></p>
+						</div>
+					</li>
+					<li>
+						<div class="detail_row column">
+							<strong class="tit">기업소개</strong>
+							<dl class="desc_list">
+								<dt>올 캐스팅</dt>
+								<dd>기업을 소개하는 문구입니다. 기업을 소개하는 문구입니다. 기업을 소개하는 문구입니다.</dd>
+							</dl>
+						</div>
+					</li>	
+					<li>
+						<div class="detail_row column">
+							<strong class="tit">연혁</strong>
+							<dl class="desc_list">
+								<dt>2022</dt>
+								<dd>연혁 문구입니다.<br>연혁 문구입니다.<br>연혁 문구입니다.<br></dd>
+							</dl>
+							<dl class="desc_list">
+								<dt>2024</dt>
+								<dd>연혁 문구입니다.<br>연혁 문구입니다.<br>연혁 문구입니다.<br></dd>
+							</dl>
+							<!--<dl class="desc_list dot_type">
+								<dt>2022</dt>
+								<dd>연혁 문구입니다.</dd>
+								<dd>연혁 문구입니다.</dd>
+								<dd>연혁 문구입니다.</dd>
+							</dl>
+							<dl class="desc_list dot_type">
+								<dt>2024</dt>
+								<dd>연혁 문구입니다.</dd>
+								<dd>연혁 문구입니다.</dd>
+								<dd>연혁 문구입니다.</dd>
+							</dl>-->
+						</div>
+					</li>
+					<li>
+						<div class="detail_row column">
+							<strong class="tit">오시는길</strong>
+							<p class="desc">서울시 서초구 123-45 </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<nav class="gnb producer">
+			<ul>
+				<li><button type="button">Home</button></li>
+				<li><button type="button" onclick="location.href='project_list.html'">프로젝트</button></li>
+				<li><button type="button" onclick="location.href='artist_list.html'">아티스트</button></li>
+				<li><button type="button" onclick="location.href='producer_schedule_list.html'">일정</button></li>
+				<li class="active"><button type="button" onclick="location.href='producer_profile1.html'">프로필</button></li>
+			</ul>
+		</nav>
+	</div><!-- //wrap -->
+	<script>
+
+	/*Swal.fire({
+	title: "PERFORM 모드로 전환합니다",
+	customClass: {
+		popup: 'pop_confirm' //confirm창에 pop_confirm 클래스 추가
+	},
+	html:"내 프로필을 등록하고<br>출연할 프로젝트의 모집 공고에 지원할 수 있습니다.",
+	reverseButtons : true,
+	showCancelButton: true,
+	showDenyButton: false,
+	cancelButtonText: "변경",
+	confirmButtonText: "취소"
+	});*/
+	</script>
+</body>
+</html>
