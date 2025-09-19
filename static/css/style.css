@@ -103,6 +103,7 @@ input:focus{outline:0 none}
 .login .card .section{padding:20px 30px 30px 30px;background:#fff;border-radius:4px;/*box-shadow:0 6px 18px rgba(0,0,0,.06);*/}
 .login .card .section + .section{margin-top:20px;}
 .login .card .section.is_error{border:1px solid var(--color-point-red)}
+.login .card .error_msg{margin:0 0 20px}
 
 .error_msg{display:flex;align-items:center;justify-content:flex-end;gap:4px;padding:10px 0 0;color:var(--color-point-red);font-size:12px;line-height:16px;}
 .error_msg:before{content:"";display:inline-block;width:16px;height:16px;background:url('../images/ico/ico_info.svg') no-repeat 50% 50%;vertical-align:middle;}
@@ -129,6 +130,25 @@ input:focus{outline:0 none}
 
 .agree{margin:50px 0 0;text-align:center;font-size:12px;color:#222}
 .agree span{color:#111;text-decoration:underline;cursor:pointer}
+
+
+.sub_dot_list{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.sub_dot_list li{line-height:18px;/*color:#666;font-size:12px;*/font-size:16px;color:#141414;background:#fff;border-radius:12px;}
+.sub_dot_list li + li{position:relative;padding-left:10px;}
+.sub_dot_list li + li:before{content:'·';position:absolute;left:4px;top:50%;transform:translateY(-50%);font-size:12px;color:#666;}
+.detail_row{display:flex}
+.detail_row + .detail_row{margin-top:5px;}
+.detail_row .tit{flex-shrink:0;margin-right:8px;font-size:15px;color:#999;line-height:1.4;font-weight:400}
+.detail_row.min .tit{min-width:60px;font-size:14px}
+.detail_row.column .tit{margin-bottom:8px}
+.detail_row .desc{font-size:15px;color:#222;line-height:1.4}
+.detail_row .desc button{vertical-align:top}
+.detail_row .desc_list + .desc_list{margin-top:8px}
+.detail_row .desc_list dt{margin-bottom:8px;font-weight:700;}
+.detail_row .desc_list.dot_type dd{position:relative;padding-left:14px;}
+.detail_row .desc_list.dot_type dd:before{content:'·';position:absolute;left:4px;top:4px;font-size:12px;color:#666;}
+
+
 /*
 .error{display:flex;min-height:calc(100vh - 160px);padding-top:140px;align-items:flex-start;justify-content:center}
 .error .inner{max-width:720px;margin:0 auto;padding:0 20px;text-align:center}
@@ -141,3 +161,9 @@ input:focus{outline:0 none}
 .btn_outline{background:#fff;border:1px solid #ddd;color:#222}
 .error_tip{margin-top:16px;font-size:12px;color:#888}
 */
+
+
+
+/**/
+/*.main header{background:transparent;border-bottom:0 none;}*/
+

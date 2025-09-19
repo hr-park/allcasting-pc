@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style_bk.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<nav class="gnb">
+						<a href="#" class="active">홈</a>
+						<a href="#">올캣 소개</a>
+					</nav>	
+				</div>
+				<button class="btn_start">시작하기</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="banner">
+				<div class="hero-content">
+					<p class="tit"><em>당신의 무대</em>가<br><em>지금 시작</em>됩니다.</p>
+					<p class="sub_txt">영화, 광고, 방송 오디션과 함께</p>
+					<div class="btn-group">
+						<button class="btn btn-primary">회원가입</button>
+						<button class="btn btn-secondary">로그인</button>
+					</div>
+				</div>
+			</div>
+			<div class="inner">
+				<section>
+					<h2 class="section-title">지금 진행중인 캐스팅 공고 <span class="num">32개</span></h2>
+					<div class="tabs">
+						<button class="tab-btn active" data-tab="all">모든 캐스팅 공고</button>
+						<button class="tab-btn" data-tab="movie">영화</button>
+						<button class="tab-btn" data-tab="ad">광고</button>
+						<button class="tab-btn" data-tab="broadcast">방송</button>
+						<button class="tab-btn" data-tab="audition">오디션</button>
+						<button class="tab-btn" data-tab="student">학생 작품</button>
+					</div>
+<style>
+.main .banner { position:relative; width:100%; height:620px; background:url('../static/images/visual.png') no-repeat center center/cover; display:flex; justify-content:center; align-items:center; text-align:left; }
+.main .hero-content { width:990px;margin:0 auto; }
+.main .hero-content .tit { font-size:56px; line-height:72px; color:#fff;}
+.main .hero-content .tit span { display:block; color:#00aaff; }
+.main .hero-content .sub_txt { margin:24px 0 40px;font-size:20px;color:#fff; }
+.main .btn-group { display:flex; gap:24px; }
+.main .btn {width:180px;height:48px;border-radius:99px; font-size:16px; border:none; cursor:pointer; }
+.main .btn-primary { background:#ED3964; color:#fff; }
+.main .btn-secondary { background:#fff; color:#ED3964; }
+
+.main section{padding:40px 0}
+.section-title {margin-bottom:20px; font-size:24px;line-height:32px; font-weight:700; margin-bottom:20px; }
+.section-title .num {font-weight:400;color:#ED3964;}
+.section-title .num:before{content:'';display:inline-block;width:1px;height:12px;background:#ddd;margin:0 10px;vertical-align:middle;}
+.tabs { display:flex; gap:16px; margin-bottom:20px; }
+.tab-btn {min-width:120px; height:48px;line-height:46px;padding:0 30px; border:1px solid #E7E7E7; border-radius:44px; background:#fff; cursor:pointer; font-size:16px;color:#222}
+.tab-btn.active { background:#222; color:#fff; border-color:#666; }
+.card_list { display:flex;gap:24px;flex-wrap:wrap }
+.item {width:calc(33.33% - 16px); background:#fff; border:1px solid #eee; border-radius:12px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.05) }
+.item img { width:100%; height:160px; object-fit:cover; }
+.card-body { padding:20px;}
+.subject { font-size:20px;line-height:32px; font-weight:700; margin-bottom:2px; }
+.card-meta { font-size:13px; color:#666; margin-bottom:4px; }
+.card-footer { margin-top:auto; font-size:13px; color:#999; }
+.hidden { display:none; }
+</style>					
+					<div class="card_list">
+						<div class="item" data-category="ad">
+							<img src="../static/images/thumb1.png" alt="">
+							<div class="card-body">
+								<div class="subject">[광고] 판타지 컨셉의 광고 영상</div>
+								<ul class="sub_dot_list">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row">
+									<strong class="tit">단역</strong>
+									<p class="desc">남성, 45세, 고루한 아버지 역남성</p>
+								</div>
+							</div>
+						</div>
+						<div class="item" data-category="movie">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="card-body">
+								<div class="subject">[영화] 판타지 컨셉의 광고 영상</div>
+								<ul class="sub_dot_list">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row">
+									<strong class="tit">단역</strong>
+									<p class="desc">남성, 45세, 고루한 아버지 역남성</p>
+								</div>
+							</div>
+						</div>
+						<div class="item" data-category="broadcast">
+							<img src="../static/images/thumb3.png" alt="">
+							<div class="card-body">
+								<div class="subject">[방송] 판타지 컨셉의 광고 영상</div>
+								<ul class="sub_dot_list">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row">
+									<strong class="tit">단역</strong>
+									<p class="desc">남성, 45세, 고루한 아버지 역남성</p>
+								</div>
+							</div>
+						</div>
+						<div class="item" data-category="student">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="card-body">
+								<div class="subject">[학생작품] 판타지 컨셉의 광고 영상</div>
+								<ul class="sub_dot_list">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row">
+									<strong class="tit">단역</strong>
+									<p class="desc">남성, 45세, 고루한 아버지 역남성</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<a href="#" class="ft_pill">아티스트를 찾는다면?</a>
+						<a href="#" class="ft_pill">프로젝트를 찾는다면?</a>
+						<a href="#" class="ft_sns insta">instagram</a>
+						<a href="#" class="ft_sns youtube">youtube</a>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row links"><a href="#">이용약관</a> &middot; <a href="#">개인정보처리방침</a></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const cards = document.querySelectorAll('.card');
+
+tabs.forEach(tab => {
+	tab.addEventListener('click', () => {
+		tabs.forEach(t => t.classList.remove('active'));
+		tab.classList.add('active');
+		const category = tab.dataset.tab;
+		cards.forEach(card => {
+			if (category === 'all' || card.dataset.category === category) {
+				card.classList.remove('hidden');
+			} else {
+				card.classList.add('hidden');
+			}
+		});
+	});
+});
+</script>
+
+
+</body>
+</html>
