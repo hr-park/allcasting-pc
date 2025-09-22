@@ -20,7 +20,7 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<a href="#" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a>
+					<h1><a href="#" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
 					<nav class="gnb">
 						<a href="#" class="active">홈</a>
 						<a href="#">올캣 소개</a>
@@ -55,11 +55,14 @@
 						<button class="tab-btn" data-tab="audition">오디션</button>
 						<button class="tab-btn" data-tab="student">학생 작품</button>
 					</div>
-					<div class="card_list">
+					<div class="casting_list">
 						<div class="item" data-category="ad">
 							<a href="#">
 								<img src="../static/images/thumb1.png" alt="">
-								<div class="card-body">
+								<div class="item_body">
+									<!--<div class="detail-mouse-hover">
+										<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
+									</div>-->
 									<div class="top_status">
 										<div class="flex_center gap5">
 											<strong class="d_day">D-2</strong>
@@ -94,7 +97,7 @@
 						<div class="item" data-category="movie">
 							<a href="#">
 								<img src="../static/images/thumb2.png" alt="">
-								<div class="card-body">
+								<div class="item_body">
 									<div class="subject">[영화] 판타지 컨셉의 광고 영상</div>
 									<ul class="sub_dot_list">
 										<li>CJ Entertainment</li>
@@ -115,7 +118,7 @@
 						<div class="item" data-category="broadcast">
 							<a href="#">
 								<img src="../static/images/thumb3.png" alt="">
-							<div class="card-body">
+							<div class="item_body">
 								<div class="top_status">
 									<strong>D-7</strong>
 									<div class="tag-list">
@@ -143,7 +146,7 @@
 						<div class="item" data-category="student">
 							<a href="#">
 								<img src="../static/images/thumb2.png" alt="">
-							<div class="card-body">
+							<div class="item_body">
 								<div class="top_status">
 									<strong>D-10</strong>
 									<div class="tag-list">
@@ -169,55 +172,26 @@
 							</a>
 						</div>
 					</div>
-				</section>
-				<!-- Banner Slider Section -->
-				<section class="banner-slider">
-					<div class="inner">
-						<div class="swiper banner-swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>새로운 캐스팅 기회를 놓치지 마세요!</h3>
-											<p>매일 새로운 영화, 광고, 방송 오디션 정보를 확인하세요.</p>
-											<button class="btn btn-primary">지금 시작하기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb1.png" alt="배너 이미지 1">
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>프로듀서와 아티스트를 연결하는 플랫폼</h3>
-											<p>올캣에서 당신의 꿈을 실현해보세요.</p>
-											<button class="btn btn-primary">더 알아보기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb2.png" alt="배너 이미지 2">
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>검증된 프로젝트만을 제공합니다</h3>
-											<p>올캣인증을 받은 안전한 캐스팅 공고를 만나보세요.</p>
-											<button class="btn btn-primary">인증 프로젝트 보기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb3.png" alt="배너 이미지 3">
-										</div>
-									</div>
+					<div class="swiper banner-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<img src="../static/images/banner/main_guest_slide_small.png" alt="배너 이미지 1">
 								</div>
 							</div>
-							<!-- Navigation buttons -->
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<!-- Pagination -->
-							<div class="swiper-pagination"></div>
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<img src="../static/images/banner/main_guest_slide_small.png" alt="배너 이미지 1">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<img src="../static/images/banner/main_guest_slide_small.png" alt="배너 이미지 1">
+								</div>
+							</div>
 						</div>
+						<!-- Pagination -->
+						<div class="swiper-pagination"></div>
 					</div>
 				</section>
 				<section>
@@ -305,65 +279,40 @@
 							</a>
 						</li>
 					</ul>
-				</section>
-				<!-- Banner Slider Section -->
-				<section class="banner-slider">
-					<div class="inner">
-						<div class="swiper banner-swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>새로운 캐스팅 기회를 놓치지 마세요!</h3>
-											<p>매일 새로운 영화, 광고, 방송 오디션 정보를 확인하세요.</p>
-											<button class="btn btn-primary">지금 시작하기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb1.png" alt="배너 이미지 1">
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>프로듀서와 아티스트를 연결하는 플랫폼</h3>
-											<p>올캣에서 당신의 꿈을 실현해보세요.</p>
-											<button class="btn btn-primary">더 알아보기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb2.png" alt="배너 이미지 2">
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="banner-item">
-										<div class="banner-content">
-											<h3>검증된 프로젝트만을 제공합니다</h3>
-											<p>올캣인증을 받은 안전한 캐스팅 공고를 만나보세요.</p>
-											<button class="btn btn-primary">인증 프로젝트 보기</button>
-										</div>
-										<div class="banner-image">
-											<img src="../static/images/thumb3.png" alt="배너 이미지 3">
-										</div>
-									</div>
+					<div class="swiper banner-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<a href="#">
+										<img src="../static/images/banner/main_guest_casting_slide.png" alt="배너 이미지 1">
+									</a>
 								</div>
 							</div>
-							<!-- Navigation buttons -->
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<!-- Pagination -->
-							<div class="swiper-pagination"></div>
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<a href="#">
+										<img src="../static/images/banner/main_guest_casting_slide.png" alt="배너 이미지 1">
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner-image">
+									<a href="#">
+										<img src="../static/images/banner/main_guest_casting_slide.png" alt="배너 이미지 1">
+									</a>
+								</div>
+							</div>
 						</div>
+						<!-- Pagination -->
+						<div class="swiper-pagination"></div>
 					</div>
 				</section>
 			</div>
 		</main>
 
-		
-
 		<footer class="footer">
 			<div class="inner">
-				<div class="top_status">
+				<div class="top">
 					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
 					<div class="btns">
 						<a href="#" class="ft_pill">아티스트를 찾는다면?</a>
@@ -410,37 +359,6 @@ tabs.forEach(tab => {
 				profile.classList.add('hidden');
 			}
 		});
-	});
-});
-
-// Banner Swiper 초기화 (여러 개 지원)
-const bannerSwipers = document.querySelectorAll('.banner-swiper');
-bannerSwipers.forEach((swiperElement, index) => {
-	const swiperInstance = new Swiper(swiperElement, {
-		loop: true,
-		autop_statuslay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},
-		navigation: {
-			nextEl: swiperElement.querySelector('.swiper-button-next'),
-			prevEl: swiperElement.querySelector('.swiper-button-prev'),
-		},
-		pagination: {
-			el: swiperElement.querySelector('.swiper-pagination'),
-			clickable: true,
-		},
-		effect: 'slide',
-		speed: 600,
-		spaceBetween: 0,
-		breakpoints: {
-			768: {
-				slidesPerView: 1,
-			},
-			1024: {
-				slidesPerView: 1,
-			}
-		}
 	});
 });
 </script>

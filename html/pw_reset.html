@@ -24,41 +24,34 @@
 					<nav class="gnb">
 						<a href="#" class="active">홈</a>
 						<a href="#">올캣 소개</a>
+						<a href="#">내 일정</a>
+						<a href="#">관심 공고</a>
 					</nav>	
 				</div>
-				<button class="btn_start">시작하기</button>
+				<div class="header_actions">
+					<a href="#" class="btn btn_search">검색</a>
+					<a href="#" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="#" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
 			</div>
 		</header>
 
 		<main class="auth-page">
 			<div class="inner">
 				<section class="hero">
-					<h2>ALLCASTING에 오신것을 환영합니다.</h2>
-					<div class="logo_ph"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<h2>계정 설정</h2>
 				</section>
 
-				<div class="card">
-					<div class="section is_error">
-						<div class="step_title_wrap step1">
-							<p class="step_title"><strong>Step 01.</strong><span>회원 유형 선택</span></p>
-							<p class="step_desc">회원님의 활동 정보에 따라서 맞춤 정보를 제공합니다.</p>
-						</div>
-						<div class="role_list">
-							<span class="inp_radio">
-								<input type="radio" id="perform" name="user_type" value="perform">
-								<label for="perform">프로젝트를 찾는 <em>배우</em></label>
-							</span>
-							<span class="inp_radio">
-								<input type="radio" id="cast" name="user_type" value="">
-								<label for="cast">배우를 찾는 <em>제작자/캐스팅 디렉터</em></label>
-							</span>
-						</div>
-					</div>
-					<p class="error_msg">회원 유형을 선택하셔야합니다.</p>
+				<div class="card pw_reset">
 					<div class="section">
 						<div class="step_title_wrap step2">
-							<p class="step_title"><strong>Step 02.</strong><span>회원가입/로그인 방법 선택</span></p>
-							<p class="step_desc">원하시는 회원가입/로그인 방법을 선택하세요.</p>
+							<p class="step_title"><span>비밀번호 변경</span></p>
+							<p class="step_desc">비밀번호 변경을 위해 현재 비밀번호와 새로운 비밀번호를 입력하세요. </p>
 						</div>
 						<div class="oauth_list">
 							<button type="button" class="btn_kakao">카카오로 시작하기</button>

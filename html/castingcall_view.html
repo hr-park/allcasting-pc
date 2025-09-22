@@ -20,7 +20,7 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<a href="#" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a>
+					<h1><a href="#" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
 					<nav class="gnb">
 						<a href="#" class="active">홈</a>
 						<a href="#">올캣 소개</a>
@@ -52,8 +52,10 @@
 								<div class="flex_center gap5">
 									<span class="d_day">D-2</span>
 									<div class="tag-list">
-										<span class="tag tag-verified">올캣인증</span>
 										<span class="tag tag-recommend">올캣추천</span>
+										<span class="tag tag-urgent">마감임박</span>
+										<span class="tag tag-verified">올캣인증</span>
+										<span class="tag tag-new">NEW</span>
 									</div>
 								</div>
 								<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
@@ -90,130 +92,122 @@
 								</div>
 
 								<div class="casting-actions">
-									<button class="btn-action btn-report">
-										<span class="btn-icon">⚠️</span>
-										신고하기
-									</button>
-									<button class="btn-action btn-share">
-										<span class="btn-icon">📤</span>
-										공유하기
-									</button>
+									<button class="btn-action btn-report">신고하기</button>
+									<button class="btn-action btn-share">공유하기</button>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-
-				<!-- Certification Banner -->
-				<section class="certification-banner">
-					<div class="certification-content">
-						<div class="certification-left">
-							<div class="certification-icon">
-								<div class="check-icon">✓</div>
-							</div>
-							<div class="certification-text">
-								<h3>올캣인증 캐스팅 공고</h3>
-								<p>올캣이 인증하는 캐스팅 공고입니다.</p>
-							</div>
-						</div>
-						<div class="certification-right">
-							<div class="cat-icon">🐱</div>
+					<!-- Certification Banner -->
+					<div class="certification-banner">
+						<span class="label2">올캣인증</span>
+						<div class="certification-text">
+							<p class="tit">올캣인증 캐스팅 공고</p>
+							<p class="desc">올캣이 인증하는 캐스팅 공고입니다.</p>
 						</div>
 					</div>
-				</section>
-
-				<div class="work_desc">
-					<div class="detail_col">
+					<div class="work_desc">
 						<strong class="tit">작품 설명</strong>
-						<p class="desc">작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다. 작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다.</p>
+						<p class="desc">
+							작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다. 작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다.
+							<br>
+							작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다. 작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다.
+							<br><br>
+							작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다. 작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다.
+						</p>
 					</div>
-				</div>
-
-				<div class="section-title">
-					<h3>모집분야 <span class="cnt">3건</span></h3>
-				</div>
-
-				<!-- Casting Cards List -->
-				<div class="casting-cards-list">
-					<!-- Card 1: Model - Available -->
-					<div class="casting-card available">
-						<div class="card-header">
-							<span class="category">모델</span>
-							<span class="status">지원가능</span>
-						</div>
-						<div class="card-body">
-							<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
-							<p class="card-description">조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.</p>
-							<p class="hashtags">
-								<span>#누드모델</span>
-								<span>#수영</span>
-								<span>#모델</span>
-							</p>
-							<div class="detail_row">
-								<strong class="tit">출연료</strong>
-								<p class="desc">20~30만원</p>
-							</div>
-							<button class="btn-apply">지원하기</button>
-						</div>
+				</section>
+				<section class="recruit-field">
+					<div class="section-title">
+						<h3>모집분야 <span class="cnt">3건</span></h3>
 					</div>
+					<!-- Casting Cards List -->
+					<ul class="casting-cards-list">
+						<!-- Card 1: Model - Available -->
+						<li class="casting-card available">
+							<div class="card-header">
+								<span class="category">모델</span>
+								<span class="status">지원가능</span>
+							</div>
+							<div class="item_body">
+								<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
+								<p class="card-description">조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.</p>
+								<div class="sub_desc">
+									<p class="hashtags">
+										<span>#누드모델</span>
+										<span>#수영</span>
+										<span>#모델</span>
+									</p>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">20~30만원</p>
+									</div>
+								</div>
+								<button class="btn-apply">지원하기</button>
+							</div>
+						</li>
 
-					<!-- Card 2: Actor - Available -->
-					<div class="casting-card available">
-						<div class="card-header">
-							<span class="category">배우</span>
-							<span class="status">지원가능</span>
-						</div>
-						<div class="card-body">
-							<h3 class="card-title">여성, 50~60세, 1명, 친정 엄마 역할 배우</h3>
-							<p class="card-description">친정엄마 역할로 따뜻하고 푸근한 느낌의 배우를 찾습니다.</p>
-							<div class="hashtags">
-								<span>#누드모델</span>
-								<span>#수영</span>
-								<span>#모델</span>
+						<!-- Card 2: Actor - Available -->
+						<li class="casting-card available">
+							<div class="card-header">
+								<span class="category">배우</span>
+								<span class="status">지원가능</span>
 							</div>
-							<div class="fee">출연료 20~30만원</div>
-						</div>
-						<div class="card-footer">
-							<button class="btn-apply">지원하기</button>
-						</div>
-					</div>
+							<div class="item_body">
+								<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
+								<p class="card-description">조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.</p>
+								<div class="sub_desc">
+									<p class="hashtags">
+										<span>#누드모델</span>
+										<span>#수영</span>
+										<span>#모델</span>
+									</p>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">20~30만원</p>
+									</div>
+								</div>
+								<button class="btn-apply">지원하기</button>
+							</div>
+						</li>
 
-					<!-- Card 3: Model - Closed -->
-					<div class="casting-card closed">
-						<div class="card-header">
-							<span class="category">모델</span>
-							<span class="status">지원마감</span>
-						</div>
-						<div class="card-body">
-							<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
-							<p class="card-description">조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.</p>
-							<div class="hashtags">
-								<span>#누드모델</span>
-								<span>#수영</span>
-								<span>#모델</span>
+						<!-- Card 3: Model - Closed -->
+						<li class="casting-card closed">
+							<div class="card-header">
+								<span class="category">모델</span>
+								<span class="status">지원마감</span>
 							</div>
-							<div class="detail_row">
-								<strong class="tit">매체</strong>
-								<p class="desc">영화, 장편, 학생 작품</p>
+							<div class="item_body">
+								<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
+								<p class="card-description">조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.조각상 콘셉트로 전신에 바디페인팅을 한 뒤 촬영합니다. 최소한의 속옷을 착용하고 작업합니다. 키 175cm 이상의 피트니스 모델 체형이 좋습니다.</p>
+								<div class="sub_desc">
+									<p class="hashtags">
+										<span>#누드모델</span>
+										<span>#수영</span>
+										<span>#모델</span>
+									</p>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">20~30만원</p>
+									</div>
+								</div>
+								<button class="btn-closed">지원 마감</button>
 							</div>
-						</div>
-						<div class="card-footer">
-							<button class="btn-closed">지원 마감</button>
-						</div>
-					</div>
-				</div>
+						</li>
+					</ul>
+				</section>
 			</div>
-			<section class="bg_white">
+			<section class="bg_white section_last">
 				<div class="inner">
 				<div class="section-title">
 					<h3>해당 공고와 비슷한 캐스팅 공고 <span class="cnt">3건</span></h3>
 					<a href="#" class="link">더 많은 캐스팅 공고 보기</a>
 				</div>
-				<div class="card_list">
+				<div class="casting_list">
 					<div class="item" data-category="ad">
 						<a href="#">
 							<img src="../static/images/thumb1.png" alt="">
-							<div class="card-body">
+							<div class="item_body">
 								<div class="top_status">
 									<div class="flex_center gap5">
 										<strong class="d_day">D-2</strong>
