@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1><a href="#" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<!-- Caster GNB -->
+					<nav class="gnb">
+						<a href="#" class="active">홈</a>
+						<a href="javascript://">내 프로젝트</a>
+						<a href="javascript://">심사 관리</a>
+						<a href="javascript://">오디션 일정</a>
+						<a href="javascript://">관심 아티스트</a>
+					</nav>
+					<!--// Caster GNB -->
+				</div>
+				<div class="header_actions">
+					<a href="search.html" class="btn btn_search">검색</a>
+					<a href="#" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="#" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="main-layout">
+				<div class="main-content">
+					<div class="banner perform" style="background:url('../static/images/visual.png') no-repeat center center/cover;">
+						<div class="hero-content">
+							<p class="tit"><em>최고의 아티스트를</em><br>가장 먼저 발견 하는 곳</p>
+							<p class="sub_txt">올캣에서 검증된 아티스트를 발굴하세요.</p>
+						</div>
+					</div>
+					<section class="bg_white pick">
+						<div class="inner">
+							<div class="section_title">
+								<h2>🎯 오늘의 PICK</h2>
+								<a href="#" class="link">더 많은 추천 아티스트 보기</a>
+							</div>
+							<div class="tabs">
+								<button class="tab-btn active" data-tab="all">모든 아티스트</button>
+								<button class="tab-btn" data-tab="">여성</button>
+								<button class="tab-btn" data-tab="">남성</button>
+								<button class="tab-btn" data-tab="">기타</button>
+							</div>
+							<ul class="profile_list">
+								<li class="profile_item" data-category="male">
+									<a href="javascript://">
+										<div class="profile_img">
+											<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										</div>
+										<div class="profile_info">
+											<div class="profile_header">
+												<div class="top_status">
+													<div class="flex_center gap5">
+														<h3 class="name">김시현1</h3>
+														<span class="tag tag-verified">올캣인증</span>
+													</div>
+													<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												</div>
+												<ul class="sub_dot_list">
+													<li>25세</li>
+													<li>여성</li>
+													<li>국내 전체</li>
+												</ul>
+											</div>
+											<p class="profile_details">165cm / 46kg / 경력 33건</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Sidebar -->
+						<aside class="sidebar">
+							<div class="sidebar-banner">
+								<a href="javascript://"><img src="../static/images/banner/banner_side1.png" alt="배너"></a>
+							</div>
+							<div class="sidebar-banner">
+								<a href="javascript://"><img src="../static/images/banner/banner_side2.png" alt="배너"></a>
+							</div>
+						</aside>
+					</section>
+					<section class="">
+						<div class="inner">
+							<div class="section_title">
+								<h2>🔮 신규 아티스트</h2>
+								<a href="#" class="link">더 많은 신규 아티스트 보기</a>
+							</div>
+							<div class="tabs">
+								<button class="tab-btn active" data-tab="all">모든 아티스트</button>
+								<button class="tab-btn" data-tab="">여성</button>
+								<button class="tab-btn" data-tab="">남성</button>
+								<button class="tab-btn" data-tab="">기타</button>
+							</div>
+							<ul class="profile_list_row">
+								<li class="profile_item" data-category="male">
+									<a href="javascript://">
+										<div class="profile_img">
+											<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+										</div>
+										<div class="profile_info">
+											<div class="profile_header">
+												<div class="top_status">
+													<div class="flex_center gap5">
+														<h3 class="name">김시현1</h3>
+														<span class="tag tag-verified">올캣인증</span>
+													</div>
+													<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												</div>
+												<ul class="sub_dot_list">
+													<li>25세</li>
+													<li>여성</li>
+													<li>국내 전체</li>
+												</ul>
+											</div>
+											<p class="profile_details">165cm / 46kg / 경력 33건</p>
+											<div class="tags">
+												<span>#코믹 연기</span>
+												<span>#승마</span>
+												<span>#액션 연기</span>
+												<span class="more">+ 그 외 4</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="profile_item" data-category="male">
+									<a href="javascript://">
+										<div class="profile_img">
+											<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+										</div>
+										<div class="profile_info">
+											<div class="profile_header">
+												<div class="top_status">
+													<div class="flex_center gap5">
+														<h3 class="name">김시현1</h3>
+														<span class="tag tag-verified">올캣인증</span>
+													</div>
+													<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												</div>
+												<ul class="sub_dot_list">
+													<li>25세</li>
+													<li>여성</li>
+													<li>국내 전체</li>
+												</ul>
+											</div>
+											<p class="profile_details">165cm / 46kg / 경력 33건</p>
+											<div class="tags">
+												<span>#코믹 연기</span>
+												<span>#승마</span>
+												<span>#액션 연기</span>
+												<span class="more">+ 그 외 4</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="profile_item" data-category="male">
+									<a href="javascript://">
+										<div class="profile_img">
+											<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+										</div>
+										<div class="profile_info">
+											<div class="profile_header">
+												<div class="top_status">
+													<div class="flex_center gap5">
+														<h3 class="name">김시현1</h3>
+														<span class="tag tag-verified">올캣인증</span>
+													</div>
+													<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												</div>
+												<ul class="sub_dot_list">
+													<li>25세</li>
+													<li>여성</li>
+													<li>국내 전체</li>
+												</ul>
+											</div>
+											<p class="profile_details">165cm / 46kg / 경력 33건</p>
+											<div class="tags">
+												<span>#코믹 연기</span>
+												<span>#승마</span>
+												<span>#액션 연기</span>
+												<span class="more">+ 그 외 4</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section class="bg_white">
+						<div class="inner">
+							<div class="section_title">
+								<h2>🔥 인기 아티스트</h2>
+								<a href="#" class="link">더 많은 추천 아티스트 보기</a>
+							</div>
+							<p class="section_title_desc">경력이 20건이상이고 현재 활발한 활동중인 아티스트 입니다.</p>
+							<div class="tabs">
+								<button class="tab-btn active" data-tab="all">모든 아티스트</button>
+								<button class="tab-btn" data-tab="">여성</button>
+								<button class="tab-btn" data-tab="">남성</button>
+								<button class="tab-btn" data-tab="">기타</button>
+							</div>
+							<ul class="profile_list">
+								<li class="profile_item" data-category="male">
+									<a href="javascript://">
+										<div class="profile_img">
+											<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										</div>
+										<div class="profile_info">
+											<div class="profile_header">
+												<div class="top_status">
+													<div class="flex_center gap5">
+														<h3 class="name">김시현1</h3>
+														<span class="tag tag-verified">올캣인증</span>
+													</div>
+													<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												</div>
+												<ul class="sub_dot_list">
+													<li>25세</li>
+													<li>여성</li>
+													<li>국내 전체</li>
+												</ul>
+											</div>
+											<p class="profile_details">165cm / 46kg / 경력 33건 <span class="tag tag-famous">인기</span></p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<a href="#" class="ft_pill">아티스트를 찾는다면?</a>
+						<a href="#" class="ft_pill">프로젝트를 찾는다면?</a>
+						<a href="#" class="ft_sns insta">instagram</a>
+						<a href="#" class="ft_sns youtube">youtube</a>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row links"><a href="javascript://">이용약관</a> &middot; <a href="javascript://">개인정보처리방침</a></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const cards = document.querySelectorAll('.item');
+const profileItems = document.querySelectorAll('.profile_item');
+
+tabs.forEach(tab => {
+	tab.addEventListener('click', () => {
+		tabs.forEach(t => t.classList.remove('active'));
+		tab.classList.add('active');
+		const category = tab.dataset.tab;
+		
+		// 캐스팅 공고 필터링
+		cards.forEach(card => {
+			if (category === 'all' || card.dataset.category === category) {
+				card.classList.remove('hidden');
+			} else {
+				card.classList.add('hidden');
+			}
+		});
+		
+		// 아티스트 프로필 필터링
+		profileItems.forEach(profile => {
+			if (category === 'all_artist' || profile.dataset.category === category) {
+				profile.classList.remove('hidden');
+			} else {
+				profile.classList.add('hidden');
+			}
+		});
+	});
+});
+</script>
+
+
+</body>
+</html>
