@@ -115,6 +115,14 @@ function deleteItem(){
     }
 }
 
+function closeNotice(button) {
+    const notice = button.closest(".msg_notice_hover");
+    const noticeTxt = button.closest(".msg_notice_hover p");
+    if (notice) {
+        noticeTxt.style.display = "none";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Banner Swiper
     const bannerSwipers = document.querySelectorAll('.banner-swiper');
