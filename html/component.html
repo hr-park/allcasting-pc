@@ -31,8 +31,9 @@
 				<h1>section_title</h1>
 				<div class="section_title">
 					<h2>지금 진행중인 캐스팅 공고 <span class="cnt">32개</span></h2>
-					<a href="#" class="link">더 많은 캐스팅 공고 보기</a>
+					<a href="javascript:void(0)" class="link">더 많은 캐스팅 공고 보기</a>
 				</div>
+				<p class="section_title_desc">section_title_desc :: 서브 타이틀</p>
 			</section>
 			<section>
 				<h1>tabs</h1>
@@ -50,7 +51,7 @@
 				<ul class="casting_list">
 					<li class="item" data-category="ad">
 						<a href="javascript://">
-							<img src="../static/images/thumb1.png" alt="">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
 							<div class="item_body">
 								<div class="detail-mouse-hover">
 									<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
@@ -59,10 +60,10 @@
 									<div class="flex_center gap5">
 										<strong class="d_day">D-2</strong>
 										<div class="tag-list">
-											<span class="tag tag-recommend">올캣추천</span>
-											<span class="tag tag-urgent">마감임박</span>
-											<span class="tag tag-verified">올캣인증</span>
-											<span class="tag tag-new">NEW</span>
+											<span class="tag tag_recommend">올캣추천</span>
+											<span class="tag tag_urgent">마감임박</span>
+											<span class="tag tag_verified">올캣인증</span>
+											<span class="tag tag_new">NEW</span>
 										</div>
 									</div>
 									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
@@ -93,10 +94,10 @@
 				<!-- Casting Cards List -->
 				<ul class="casting-cards-list">
 					<!-- Card 1: Model - Available -->
-					<li class="casting-card available">
+					<li class="casting-card">
 						<div class="card-header">
 							<span class="category">모델</span>
-							<span class="status">지원가능</span>
+							<span class="status available">지원가능</span>
 						</div>
 						<div class="item_body">
 							<h3 class="card-title">남성, 25~30세, 2명, 바디페인팅 모델</h3>
@@ -112,7 +113,7 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button class="btn-apply">지원하기</button>
+							<button class="btn_apply">지원하기</button>
 						</div>
 					</li>
 				</ul>
@@ -147,14 +148,14 @@
 					<li class="profile_item" data-category="male">
 						<a href="javascript://">
 							<div class="profile_img">
-								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+								<!--<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->-->
 							</div>
 							<div class="profile_info">
 								<div class="profile_header">
 									<div class="top_status">
 										<div class="flex_center gap5">
 											<h3 class="name">김시현1</h3>
-											<span class="tag tag-verified">올캣인증</span>
+											<span class="tag tag_verified">올캣인증</span>
 										</div>
 										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 									</div>
@@ -176,14 +177,14 @@
 					<li class="profile_item" data-category="male">
 						<a href="javascript://">
 							<div class="profile_img">
-								<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
 							</div>
 							<div class="profile_info">
 								<div class="profile_header">
 									<div class="top_status">
 										<div class="flex_center gap5">
 											<h3 class="name">김시현1</h3>
-											<span class="tag tag-verified">올캣인증</span>
+											<span class="tag tag_verified">올캣인증</span>
 										</div>
 										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 									</div>
@@ -206,14 +207,14 @@
 					<li class="profile_item" data-category="male">
 						<a href="javascript://">
 							<div class="profile_img">
-								<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
 							</div>
 							<div class="profile_info">
 								<div class="profile_header">
 									<div class="top_status">
 										<div class="flex_center gap5">
 											<h3 class="name">김시현1</h3>
-											<span class="tag tag-verified">올캣인증</span>
+											<span class="tag tag_verified">올캣인증</span>
 										</div>
 										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 									</div>
@@ -238,12 +239,13 @@
 			<section>
 				<h1>tag-list</h1>
 				<div class="tag-list">
-					<span class="tag tag-recommend">올캣추천</span>
-					<span class="tag tag-urgent">마감임박</span>
-					<span class="tag tag-verified">올캣인증</span>
-					<span class="tag tag-new">NEW</span>
+					<span class="tag tag_recommend">올캣추천</span>
+					<span class="tag tag_urgent">마감임박</span>
+					<span class="tag tag_verified">올캣인증</span>
+					<span class="tag tag_new">NEW</span>
 					<span class="tag tag-history">캐스팅 이력</span>
 					<span class="tag tag-famous">인기</span>
+					<span class="tag tag_closed">마감완료</span>
 				</div>
 			</section>
 			<section>
@@ -305,6 +307,40 @@
 						<div class="detail_col">
 							<strong class="tit">작품 설명</strong>
 							<p class="desc">작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다. 작품 설명을 입력하는 칸입니다. 글자수 1,000자 내외로 입력 가능합니다.</p>
+						</div>
+					</div>
+					<div>
+						<h2>status_wrapper</h2>
+						<div class="flex_center gap5">
+							<div class="status_wrapper">
+								<div class="count">5,514명 지원</div>
+								<span class="status status_ongoing">공고 진행중</span>
+								<!--<span class="status status_closed">공고 마감</span>-->
+							</div>
+							<div class="status_wrapper">
+								<div class="count">5,514명 지원</div>
+								<!--<span class="status status_ongoing">공고 진행중</span>-->
+								<span class="status status_closed">공고 마감</span>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h2>custom_select</h2>
+						<div class="flex_center gap5">
+							<div class="custom_select">
+								<select>
+									<option value="">역할 선택</option>
+									<option value="">배우</option>
+									<option value="">모델</option>
+								</select>
+							</div>
+							<div class="custom_select min">
+								<select>
+									<option value="">역할 선택</option>
+									<option value="">배우</option>
+									<option value="">모델</option>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>

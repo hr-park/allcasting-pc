@@ -107,6 +107,14 @@ function chkNumber(target, num){
     : target.value.replace(/[^0-9]/g, '');
 };
 
+//deleteItem
+function deleteItem(){
+    if(confirm("정말 삭제하시겠습니까?")){
+        // 실제 삭제 처리 로직
+        alert("삭제되었습니다.");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Banner Swiper
     const bannerSwipers = document.querySelectorAll('.banner-swiper');
