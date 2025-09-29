@@ -30,10 +30,18 @@
 			<section>
 				<h1>section_title</h1>
 				<div class="section_title">
-					<h2>지금 진행중인 캐스팅 공고 <span class="cnt">32개</span></h2>
+					<h2>section_title <span class="cnt">32개</span></h2>
 					<a href="javascript:void(0)" class="link">더 많은 캐스팅 공고 보기</a>
 				</div>
 				<p class="section_title_desc">section_title_desc :: 서브 타이틀</p>
+				<div class="section_title">
+					<h2>section_title</h2>
+					<div class="desc_group">
+						<p class="desc">description</p>
+						<button type="button" class="btn_round primary_line">Btn1</button>
+						<button type="button" class="btn_round primary">Btn2</button>
+					</div>
+				</div>
 			</section>
 			<section>
 				<h1>tabs</h1>
@@ -58,7 +66,7 @@
 								</div>
 								<div class="top_status">
 									<div class="flex_center gap5">
-										<strong class="d_day">D-2</strong>
+										<strong class="d_day soon">D-2</strong>
 										<div class="tag-list">
 											<span class="tag tag_recommend">올캣추천</span>
 											<span class="tag tag_urgent">마감임박</span>
@@ -90,11 +98,11 @@
 				</ul>
 			</section>
 			<section>
-				<h1>casting-cards-list</h1>
+				<h1>casting_cards_list</h1>
 				<!-- Casting Cards List -->
-				<ul class="casting-cards-list">
+				<ul class="casting_cards_list">
 					<!-- Card 1: Model - Available -->
-					<li class="casting-card">
+					<li class="casting_card">
 						<div class="card-header">
 							<span class="category">모델</span>
 							<span class="status available">지원가능</span>
@@ -113,7 +121,7 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button class="btn_apply">지원하기</button>
+							<button type="button" class="btn_round primary">지원하기</button>
 						</div>
 					</li>
 				</ul>
@@ -148,7 +156,7 @@
 					<li class="profile_item" data-category="male">
 						<a href="javascript://">
 							<div class="profile_img">
-								<!--<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->-->
+								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
 							</div>
 							<div class="profile_info">
 								<div class="profile_header">
@@ -345,8 +353,40 @@
 					</div>
 				</div>
 			</section>
+			<section>
+				<h1>Popup</h1>
+				<button type="button" class="btn_round primary" onclick="openPopup('pop-profile-confirm')">openPopup</button>
+			</section>
+
+			<section>
+				<h1>btn_round</h1>
+				<button type="button" class="btn_round secondary">btn_round secondary</button>
+                <button type="button" class="btn_round primary">btn_round primary</button>
+				<button type="button" class="btn_round primary_line">btn_round primary_line</button>
+				<button type="button" class="btn_round closed">btn_round closed</button>
+			</section>
 		</div>
 	</div>
+
+	<div id="pop-profile-confirm" class="popup-overlay">
+        <div class="popup popup-confirm">
+            <div class="popup-header">
+                <h3 class="popup-title">{popup-title}</h3>
+                <button type="button" class="btn-close" onclick="closePopup('pop-profile-confirm')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup-content">
+                <div class="popup-message">
+                    <p>{popup-message}</p>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button type="button" class="btn_round secondary" onclick="closePopup('pop-profile-confirm')">btn_round secondary</button>
+                <button type="button" class="btn_round primary" onclick="">btn_round primary</button>
+            </div>
+        </div>
+    </div>
 
 <script>
 const tabs = document.querySelectorAll('.tab-btn');

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1><a href="javascript:void(0)" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<!-- Caster GNB -->
+					<nav class="gnb">
+						<a href="javascript:void(0)">홈</a>
+						<a href="my_project_list.html">내 프로젝트</a>
+						<a href="review_mng_list.html" class="active">심사 관리</a>
+						<a href="javascript://">오디션 일정</a>
+						<a href="my_artist_list.html">관심 아티스트</a>
+					</nav>
+					<!--// Caster GNB -->
+				</div>
+				<div class="header_actions">
+					<a href="search.html" class="btn btn_search">검색</a>
+					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="javascript:void(0)" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main class="bg_white">
+			<div class="inner">
+				<div class="section_title">
+					<h2>심사 하기</h2>
+					<div class="desc_group">
+						<p class="desc">지원 마감 후, 심사 시작 버튼 클릭후에 심사를 시작할 수 있습니다.</p>
+						<button type="button" class="btn_round primary_line">지원 마감</button>
+						<button type="button" class="btn_round primary">심사 확정</button>
+					</div>
+				</div>
+				<p class="section_title_desc">나의 심사 내역을 모두 확인 할 수 있습니다.</p>
+				<div class="project_grid">
+					<div class="project_left">
+						<div class="project">
+							<div class="top_status">
+								<div class="flex_center gap5">
+									<strong class="d_day soon">D-2</strong>
+									<div class="tag-list">
+										<span class="tag tag_recommend">올캣추천</span>
+										<span class="tag tag_urgent">마감임박</span>
+										<span class="tag tag_verified">올캣인증</span>
+										<span class="tag tag_new">NEW</span>
+									</div>
+								</div>
+							</div>
+							<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+							<div class="detail_row">
+								<strong class="tit">모집분야</strong>
+								<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+							</div>
+						</div>
+					</div>
+					<div class="project_right">
+						<div class="project_summary">
+							<div class="summary_item">
+								<span class="label">리스트업</span>
+								<span class="value">2,345명</span>
+							</div>
+							<div class="summary_item">
+								<span class="label">오디션 제안</span>
+								<span class="value">
+									<span class="tag tag_new">NEW</span>
+									<span class="cnt">123</span>
+								</span>
+							</div>
+							<div class="summary_item">
+								<span class="label">캐스팅</span>
+								<span class="value">1</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<style>
+					.review_view_grid{display:flex;gap:55px;}
+					.review_view_grid .review_view_left{flex:1;}
+					.review_view_grid .review_view_right{width:204px;flex-shrink:0;}
+					
+					/* 프로젝트 그리드 스타일 */
+					.project_grid{display:flex;gap:24px;margin-bottom:40px;}
+					.project_grid .project_left{flex:1;}
+					.project_grid .project_right{width:280px;flex-shrink:0;}
+					.project_grid .project{background:#fff;border:1px solid #E7E7E7;border-radius:8px;padding:20px;}
+					.project_grid .project .subject{margin:8px 0;font-size:24px;color:#222;line-height:1.34;font-weight:700;}	
+
+					/* 프로젝트 요약 스타일 */
+					.project_summary{background:#F9F9F9;border-radius:4px;padding:12px 20px;}
+					.project_summary .summary_item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;}
+					.project_summary .summary_item .label{font-size:16px;color:#666;}
+					.project_summary .summary_item .value{display:flex;align-items:center;gap:8px;font-size:16px;color:#222;font-weight:700;}
+					.project_summary .summary_item .value .cnt{color:#222;}
+
+					.review_view_grid .profile_list{gap:10px}
+					.review_view_grid .profile_list .profile_item .profile_info{padding:8px 10px 16px 10px}
+					.review_view_grid .profile_item{width:calc(20% - 8px)}
+
+					.review_view_grid .profile_item .profile_details{margin-top:0}
+					.review_view_grid .profile_item .top_status{margin-bottom:8px}
+					
+					/* 리뷰 섹션 스타일 */
+					.review_view_right { display: flex; flex-direction: column; gap: 20px; }
+					.review_section { background: #F9F9F9; border-radius: 4px; padding: 20px; }
+					.review_section .tit { margin-bottom:20px;font-size:24px; font-weight: 700; color: #000}
+					.review_section .tit .cnt {font-weight:400;font-size:24px;color: var(--color-point-red);}
+					.review_section .tit .cnt:before{content:'';display:inline-block;width:1px;height:12px;background:#ddd;margin:0 10px;vertical-align:middle;}
+					.review_section .drop_zone {display: flex; flex-direction: column; gap: 8px;text-align: center; transition: all 0.2s ease;  }
+					/*.review_section .drop_zone:hover { border-color: var(--color-point-red); background-color: rgba(237, 57, 100, 0.05); }*/
+					.review_section .drop_text {font-size: 16px; color: #666;line-height: 1.5;}
+					.review_section .drop_text:not(.casting_message){padding-top:130px;background:url('/static/images/ico/ico_dragdrop.svg') no-repeat 50% 25px}
+					.drop_zone.drag-over { border-color: var(--color-point-red); background-color: rgba(237, 57, 100, 0.1); }
+
+									
+					.review_section.casting { background: #222;}
+					.review_section.casting .tit { color: #fff; }
+					.review_section.casting .drop_zone { border-color: #444; }
+					.review_section.casting .drop_text { color: #fff;}
+					.review_section.casting .drop_text:not(.casting_message){background:url('/static/images/ico/ico_dragdrop_wh.svg') no-repeat 50% 25px }
+					.review_section.casting .drop_zone.drag-over { border-color: #fff; background-color: rgba(255, 255, 255, 0.2); }
+
+					
+					
+					/* 드롭된 프로필 스타일 */
+					.dropped_profile { position: relative; display: flex; align-items: center; padding:8px;background-color:#fff;}
+					.dropped_profile .profile_name{font-size:20px}
+					.dropped_profile_img {overflow: hidden; width:36px; height: 36px;margin-right:8px; border-radius: 50%;  flex-shrink: 0; }
+					.dropped_profile_img .profile_img {position: relative; width: 100%; height: 100%;  }
+					.dropped_profile_img img{width: 100%; height: 100%; object-fit: cover;}
+					.dropped_profile .remove_btn { width: 24px; height: 24px; margin-left:auto;border: none;  cursor: pointer;text-indent:-9999px;background:url('/static/images/btn/btn_x.svg') no-repeat 50% 50% / 22px auto }
+					
+					/* 드래그 방지 */
+					.profile_item img { user-select: none; -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; }
+					.profile_item .btn_bookmark { user-select: none; -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; }
+					
+					/* 캐스팅 메시지 스타일 */
+					.casting_message { padding-top: 20px; font-size: 14px; color: #fff; line-height: 1.5; margin: 0; }
+				</style>
+				<section class="review_view_grid">
+					<div class="review_view_left">
+						<div class="section_title">
+							<h2>심사 대상<span class="cnt">2,345명</span></h2>
+							<div class="custom_select min">
+								<select>
+									<option value="">최근 지원 순</option>
+								</select>
+							</div>
+						</div>
+						<p class="section_title_desc">심사를 진행해야하는 지원자입니다.</p>
+						<ul class="profile_list">
+							<li class="profile_item">
+								<div class="profile_img">
+									<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+									<button type="button" class="btn_bookmark active" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<div class="profile_info">
+									<div class="profile_header">
+										<div class="top_status">
+											<div class="flex_center gap5">
+												<h3 class="name">김시현</h3>
+												<span class="tag tag_verified">올캣인증</span>
+											</div>
+										</div>
+										<ul class="sub_dot_list min">
+											<li>25세</li>
+											<li>여성</li>
+											<li>국내 전체</li>
+										</ul>
+									</div>
+									<p class="profile_details">165cm / 46kg / 경력 33건 <span class="tag tag-famous">인기</span></p>
+									<div class="star-rating">
+										<span class="star filled">★</span>
+										<span class="star filled">★</span>
+										<span class="star filled">★</span>
+										<span class="star filled">★</span>
+										<span class="star half">★</span>
+									  </div>
+								</div>
+							</li>
+						</ul>
+						<button type="button" class="btn_more_list">더보기</button>
+					</div>
+					<div class="review_view_right">
+						<!-- 리스트업 섹션 -->
+						<div class="review_section" data-category="listup">
+							<p class="tit">리스트업<span class="cnt">0</span></p>
+							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
+							</div>
+						</div>
+
+						<!-- 오디션제안 섹션 -->
+						<div class="review_section" data-category="audition">
+							<p class="tit">오디션제안<span class="cnt">0</span></p>
+							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
+							</div>
+						</div>
+
+						<!-- 캐스팅 섹션 -->
+						<div class="review_section casting" data-category="casting">
+							<p class="tit">캐스팅<span class="cnt">0</span></p>
+							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+			</div>	
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<a href="javascript:void(0)" class="ft_pill">아티스트를 찾는다면?</a>
+						<a href="javascript:void(0)" class="ft_pill">프로젝트를 찾는다면?</a>
+						<a href="javascript:void(0)" class="ft_sns insta">instagram</a>
+						<a href="javascript:void(0)" class="ft_sns youtube">youtube</a>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row links"><a href="javascript://">이용약관</a> &middot; <a href="javascript://">개인정보처리방침</a></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+	// 퍼블 페이지 확인용
+	const urlParams = new URL(location.href).searchParams;
+	const state = urlParams.get('status');
+	if (state === 'none') {
+		//document.querySelector('.list_none').style.display = 'block';
+		//document.querySelector('.bg_cont_gray').style.display = 'none';
+	}
+	
+	// profile_list 10개 반복 생성
+	const profileList = document.querySelector('.profile_list');
+	const names = ['김시현', '이민수', '박지영', '최수진', '정현우', '한소영', '윤태호', '강미래', '조성민', '임하늘'];
+	const ages = ['25세', '28세', '23세', '30세', '26세', '24세', '29세', '27세', '31세', '22세'];
+	const genders = ['여성', '남성', '여성', '여성', '남성', '여성', '남성', '여성', '남성', '여성'];
+	const regions = ['국내 전체', '서울', '경기', '부산', '대구', '인천', '광주', '대전', '울산', '세종'];
+	const heights = ['165cm', '180cm', '160cm', '168cm', '175cm', '162cm', '182cm', '170cm', '178cm', '158cm'];
+	const weights = ['46kg', '75kg', '48kg', '52kg', '70kg', '50kg', '78kg', '55kg', '72kg', '45kg'];
+	const experiences = ['33건', '45건', '28건', '52건', '38건', '31건', '48건', '35건', '41건', '25건'];
+
+	for (let i = 0; i < 10; i++) {
+		const li = document.createElement('li');
+		li.className = 'profile_item';
+		li.innerHTML = `
+			<div class="profile_img">
+				<img src="../static/images/profile_sample2.jpg"  alt="${names[i]}">
+				<button type="button" class="btn_bookmark active" onclick="toggleActiveClass(this)">bookmark</button>
+			</div>
+			<div class="profile_info">
+				<div class="profile_header">
+					<div class="top_status">
+						<div class="flex_center gap5">
+							<p class="name">${names[i]}</p>
+							<span class="tag tag_verified">올캣인증</span>
+						</div>
+					</div>
+					<ul class="sub_dot_list min">
+						<li>${ages[i]}</li>
+						<li>${genders[i]}</li>
+						<li>${regions[i]}</li>
+					</ul>
+				</div>
+				<p class="profile_details">${heights[i]} / ${weights[i]} / 경력 ${experiences[i]} <span class="tag tag-famous">인기</span></p>
+				<div class="star-rating">
+					<span class="star filled">★</span>
+					<span class="star filled">★</span>
+					<span class="star filled">★</span>
+					<span class="star filled">★</span>
+					<span class="star half">★</span>
+				</div>
+			</div>
+		`;
+
+		profileList.appendChild(li);
+	}
+	
+	// 동적으로 생성된 프로필 아이템들에 드래그 이벤트 설정
+	setupDragAndDrop();
+
+	// 드래그 앤 드롭 기능
+	function allowDrop(ev) {
+		ev.preventDefault();
+		ev.currentTarget.classList.add('drag-over');
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+		ev.target.classList.add('dragging');
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		ev.currentTarget.classList.remove('drag-over');
+		
+		const data = ev.dataTransfer.getData("text");
+		const draggedElement = document.getElementById(data);
+		
+		if (draggedElement) {
+			// 드래그된 요소에서 dragging 클래스 제거
+			draggedElement.classList.remove('dragging');
+			
+			// 카운트 업데이트
+			const section = ev.currentTarget.closest('.review_section');
+			const countElement = section.querySelector('.cnt');
+			const currentCount = parseInt(countElement.textContent);
+			countElement.textContent = currentCount + 1;
+			
+			// 드롭 존에 프로필 정보 표시
+			const profileName = draggedElement.querySelector('.name').textContent;
+			const profileImg = draggedElement.querySelector('.profile_img');
+			
+			// 기존 드롭된 프로필이 있는지 확인
+			const existingProfiles = ev.currentTarget.querySelectorAll('.dropped_profile');
+			
+			// 캐스팅 섹션인지 확인
+			const isCastingSection = section.classList.contains('casting');
+			
+			if (existingProfiles.length === 0) {
+				// 첫 번째 프로필인 경우
+				if (isCastingSection) {
+					// 캐스팅 섹션: 프로필과 안내 텍스트 함께 표시
+					ev.currentTarget.innerHTML = `
+						<div class="dropped_profile">
+							<div class="dropped_profile_img">
+								${profileImg.innerHTML}
+							</div>
+							<p class="profile_name">${profileName}</p>
+							<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+						</div>
+					`;
+					// 캐스팅 메시지를 가장 끝에 추가
+					const castingMessage = document.createElement('p');
+					castingMessage.className = 'drop_text casting_message';
+					castingMessage.innerHTML = '심사 확정 후,<br>캐스팅 콜이 가능합니다.';
+					ev.currentTarget.appendChild(castingMessage);
+				} else {
+					// 일반 섹션: 프로필만 표시
+					ev.currentTarget.innerHTML = `
+						<div class="dropped_profile">
+							<div class="dropped_profile_img">
+								${profileImg.innerHTML}
+							</div>
+							<p class="profile_name">${profileName}</p>
+							<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+						</div>
+					`;
+				}
+			} else {
+				// 기존 프로필이 있는 경우 새 프로필 추가
+				const newProfile = document.createElement('div');
+				newProfile.className = 'dropped_profile';
+				newProfile.innerHTML = `
+					<div class="dropped_profile_img">
+						${profileImg.innerHTML}
+					</div>
+					<p class="profile_name">${profileName}</p>
+					<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+				`;
+				
+				if (isCastingSection) {
+					// 캐스팅 섹션: 캐스팅 메시지 앞에 프로필 추가
+					const castingMessage = ev.currentTarget.querySelector('.casting_message');
+					if (castingMessage) {
+						ev.currentTarget.insertBefore(newProfile, castingMessage);
+					} else {
+						ev.currentTarget.appendChild(newProfile);
+					}
+				} else {
+					// 일반 섹션: 맨 끝에 추가
+					ev.currentTarget.appendChild(newProfile);
+				}
+			}
+			
+			// 원본 프로필에서 제거
+			//draggedElement.remove();
+		}
+	}
+
+	function removeProfile(btn) {
+		const profileToRemove = btn.closest('.dropped_profile');
+		const dropZone = profileToRemove.closest('.drop_zone');
+		const section = dropZone.closest('.review_section');
+		const countElement = section.querySelector('.cnt');
+		const currentCount = parseInt(countElement.textContent);
+		countElement.textContent = currentCount - 1;
+		
+		// 프로필 제거
+		profileToRemove.remove();
+		
+		// 드롭 존에 프로필이 없으면 기본 텍스트 표시
+		const remainingProfiles = dropZone.querySelectorAll('.dropped_profile');
+		if (remainingProfiles.length === 0) {
+			const isCastingSection = section.classList.contains('casting');
+			if (isCastingSection) {
+				dropZone.innerHTML = '<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>';
+			} else {
+				dropZone.innerHTML = '<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>';
+			}
+		}
+	}
+
+	// 드래그 이벤트 리스너 추가
+	function setupDragAndDrop() {
+		const profileItems = document.querySelectorAll('.profile_item');
+		profileItems.forEach((item, index) => {
+			item.id = 'profile-' + index;
+			item.draggable = true;
+			item.addEventListener('dragstart', drag);
+			
+			// 이미지와 버튼 요소들의 드래그 방지
+			const img = item.querySelector('img');
+			const btn = item.querySelector('.btn_bookmark');
+			
+			if (img) {
+				img.draggable = false;
+				img.addEventListener('dragstart', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+				});
+			}
+			
+			if (btn) {
+				btn.draggable = false;
+				btn.addEventListener('dragstart', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+				});
+			}
+		});
+		
+		// 드래그 오버 이벤트에서 drag-over 클래스 제거
+		const dropZones = document.querySelectorAll('.drop_zone');
+		dropZones.forEach(zone => {
+			zone.addEventListener('dragleave', function(e) {
+				if (!zone.contains(e.relatedTarget)) {
+					zone.classList.remove('drag-over');
+				}
+			});
+		});
+	}
+
+	// DOM 로드 후 드래그 앤 드롭 설정
+	document.addEventListener('DOMContentLoaded', setupDragAndDrop);
+	</script>
+</body>
+</html>

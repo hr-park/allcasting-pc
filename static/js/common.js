@@ -146,3 +146,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// 팝업 열기
+function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            popup.classList.add('active');
+        }, 10);
+    }
+}
+
+// 팝업 닫기
+function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 300);
+    }
+}
+
+// ESC 키로 팝업 닫기
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const activePopup = document.querySelector('.popup-overlay.active');
+        if (activePopup) {
+            closePopup(activePopup.id);
+        }
+    }
+});
+
+// 배경 클릭으로 팝업 닫기
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('popup-overlay')) {
+        closePopup(e.target.id);
+    }
+});

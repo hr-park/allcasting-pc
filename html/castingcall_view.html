@@ -30,7 +30,7 @@
 			</div>
 		</header>
 
-		<main class="casting-detail">
+		<main class="casting_detail">
 			<div class="inner">
 				<!-- Breadcrumb -->
 				<nav class="breadcrumb">
@@ -39,15 +39,15 @@
 				</nav>
 
 				<!-- Casting Detail Content -->
-				<section class="casting-content">
-					<div class="casting-layout">
+				<section class="casting_content">
+					<div class="casting_layout">
 						<!-- Left Side - Image -->
-						<div class="casting-image">
+						<div class="casting_image">
 							<img src="../static/images/thumb1.png" alt="영화 포스터">
 						</div>
 
 						<!-- Right Side - Details -->
-						<div class="casting-details">
+						<div class="casting_details">
 							<div class="top_status">
 								<div class="flex_center gap5">
 									<span class="d_day">D-2</span>
@@ -60,7 +60,7 @@
 								</div>
 								<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 							</div>
-							<div class="casting-info">
+							<div class="casting_info">
 								<h1 class="title">[영화] 전쟁을 소재로 한 가족영화</h1>
 								<ul class="sub_dot_list">
 									<li>CJ Entertainment</li>
@@ -99,9 +99,9 @@
 						</div>
 					</div>
 					<!-- Certification Banner -->
-					<div class="certification-banner">
+					<div class="certification_banner">
 						<span class="label2">올캣인증</span>
-						<div class="certification-text">
+						<div class="certification_text">
 							<p class="tit">올캣인증 캐스팅 공고</p>
 							<p class="desc">올캣이 인증하는 캐스팅 공고입니다.</p>
 						</div>
@@ -117,14 +117,14 @@
 						</p>
 					</div>
 				</section>
-				<section class="recruit-field">
+				<section class="recruit_field">
 					<div class="section_title">
 						<h3>모집분야 <span class="cnt">3건</span></h3>
 					</div>
 					<!-- Casting Cards List -->
-					<ul class="casting-cards-list">
+					<ul class="casting_cards_list">
 						<!-- Card 1: Model - Available -->
-						<li class="casting-card">
+						<li class="casting_card">
 							<div class="card-header">
 								<span class="category">모델</span>
 								<span class="status available">지원가능</span>
@@ -143,12 +143,12 @@
 										<p class="desc">20~30만원</p>
 									</div>
 								</div>
-								<button class="btn_apply">지원하기</button>
+								<button type="button" class="btn_round primary">지원하기</button>
 							</div>
 						</li>
 
 						<!-- Card 2: Actor - Available -->
-						<li class="casting-card">
+						<li class="casting_card">
 							<div class="card-header">
 								<span class="category">배우</span>
 								<span class="status available">지원가능</span>
@@ -167,12 +167,12 @@
 										<p class="desc">20~30만원</p>
 									</div>
 								</div>
-								<button class="btn_apply">지원하기</button>
+								<button type="button" class="btn_round primary">지원하기</button>
 							</div>
 						</li>
 
 						<!-- Card 3: Model - Closed -->
-						<li class="casting-card">
+						<li class="casting_card">
 							<div class="card-header">
 								<span class="category">모델</span>
 								<span class="status closed">지원마감</span>
@@ -191,7 +191,7 @@
 										<p class="desc">20~30만원</p>
 									</div>
 								</div>
-								<button class="btn-closed">지원 마감</button>
+								<button class="btn_round closed">지원 마감</button>
 							</div>
 						</li>
 					</ul>
@@ -210,7 +210,7 @@
 							<div class="item_body">
 								<div class="top_status">
 									<div class="flex_center gap5">
-										<strong class="d_day">D-2</strong>
+										<strong class="d_day soon">D-2</strong>
 										<div class="tag-list">
 											<span class="tag tag_recommend">올캣추천</span>
 											<span class="tag tag_urgent">마감임박</span>
@@ -292,7 +292,7 @@ document.querySelector('.btn_share').addEventListener('click', function() {
 });
 
 // 캐스팅 카드 지원하기 기능
-document.querySelectorAll('.btn_apply').forEach(button => {
+document.querySelectorAll('.btn_round primary').forEach(button => {
 	button.addEventListener('click', function() {
 		alert('지원하기 기능이 구현되었습니다.');
 	});
