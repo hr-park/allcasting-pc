@@ -46,19 +46,13 @@
 					<h2>배우용 프로필 1</h2>
 				</div>
 
-				<div class="project_grid">
-					<div class="project_left">
+				<div class="view_top_grid">
+					<div class="left">
 						<div class="profile_view_container">
 							<div class="profile_main_info">
 								<div class="profile_left">
 									<div class="profile_basic_info">
-										<h1 class="profile_name">
-											김시현
-											<span class="verification_badge">
-												<i class="ico_check"></i>
-												올캣인증
-											</span>
-										</h1>
+										<p class="profile_name">김시현<span class="tag tag_verified">올캣인증</span></p>
 										<ul class="sub_dot_list">
 											<li>25세</li>
 											<li>여성</li>
@@ -70,55 +64,46 @@
 							</div>
 							
 							<div class="profile_management">
-								<div class="profile_title">
-									<h2>배우용 프로필 1</h2>
-								</div>
-								<div class="profile_tags">
-									<span class="tag tag_representative">대표</span>
-									<span class="tag tag_public" data-tooltip="전체 공개된 프로필로 일반 사용자나 비회원도 볼 수 있습니다.">
-										전체공개
-										<i class="ico_tooltip"></i>
-									</span>
+								<div>
+									<p class="profile_title">
+										배우용 프로필 1
+										<span class="badge badge_primary">대표</span>
+										<span class="badge badge_public">전체공개</span>
+									</p>
+									<div class="profile_stats">
+										<div class="stat_item">
+											<span class="stat_label">지원 공고:</span>
+											<span class="stat_value highlight">12건</span>
+										</div>
+										<div class="stat_item">
+											<span class="stat_label">최근 업데이트:</span>
+											<span class="stat_value">2025년 6월 30일</span>
+										</div>
+									</div>
 								</div>
 								<div class="profile_actions">
-									<button type="button" class="btn btn_edit">
-										<i class="ico_edit"></i>
-										수정하기
-									</button>
-									<button type="button" class="btn btn_share">
-										<i class="ico_share"></i>
-										공유하기
-									</button>
-								</div>
-								<div class="profile_stats">
-									<div class="stat_item">
-										<span class="stat_label">지원 공고:</span>
-										<span class="stat_value highlight">12건</span>
-									</div>
-									<div class="stat_item">
-										<span class="stat_label">최근 업데이트:</span>
-										<span class="stat_value">2025년 6월 30일</span>
-									</div>
+									<button class="btn_action btn_edit">수정하기</button>
+									<button class="btn_action btn_share">공유하기</button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="project_right">
+					<div class="right">
 						<div class="project_summary">
 							<div class="summary_item">
-								<span class="label">리스트업</span>
+								<span class="label">전체 방문자</span>
 								<span class="value">2,345명</span>
 							</div>
 							<div class="summary_item">
-								<span class="label">오디션 제안</span>
+								<span class="label">즐겨찾기 한 사람</span>
 								<span class="value">
 									<span class="tag tag_new">NEW</span>
 									<span class="cnt">123</span>
 								</span>
 							</div>
 							<div class="summary_item">
-								<span class="label">캐스팅</span>
-								<span class="value">1</span>
+								<span class="label">리스트업 / 캐스팅</span>
+								<span class="value">111/15</span>
 							</div>
 						</div>
 					</div>
@@ -126,23 +111,222 @@
 
 				
 				<style>
-					.profile_view_container{display:flex;gap:40px;background:#fff;border:1px solid #E7E7E7;border-radius:8px;padding:30px;margin-bottom:40px;}
-					.profile_main_info{flex:1;}
+					.profile_view_container{display:flex;gap:20px;background:#fff;border:1px solid #E7E7E7;border-radius:8px;padding:30px;}
+					.profile_main_info{width:300px;}
 					.profile_left{display:flex;gap:20px;align-items:flex-start;}
-					.profile_basic_info{flex:1;}
+					.profile_basic_info{}
 					.profile_name{font-size:28px;font-weight:700;color:#222;margin:0 0 8px 0;display:flex;align-items:center;gap:12px;}
 					.verification_badge{display:inline-flex;align-items:center;gap:4px;background:#007AFF;color:#fff;font-size:14px;font-weight:500;padding:4px 8px;border-radius:4px;}
-					.profile_details,.profile_physical{font-size:16px;color:#666;margin:4px 0;line-height:1.4;}
-					.profile_management{flex:1;display:flex;flex-direction:column;gap:16px;}
-					.profile_title h2{font-size:24px;font-weight:700;color:#222;margin:0;}
-					.profile_tags{display:flex;gap:8px;align-items:center;}
-					.tag{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:4px;font-size:14px;font-weight:500;position:relative;}
-					.tag_representative{background:#FFD700;color:#000;}
-					.tag_public{background:#000;color:#fff;}
-					.profile_actions{display:flex;gap:12px;}
-					.profile_stats{display:flex;flex-direction:column;gap:8px;}
+					/*.profile_details,.profile_physical{font-size:16px;color:#666;margin:4px 0;line-height:1.4;}*/
+					.profile_management{flex:1;display:flex;justify-content:space-between;gap:16px;border-left:1px solid #E7E7E7;padding-left:20px;}
+					.profile_title{font-size:24px;font-weight:700;color:#222;margin:0;}
 					
+					.profile_actions{display:flex;flex-direction:column;width:110px;gap:12px;}
+					.profile_stats{display:flex;flex-direction:column;gap:8px;}
+
+					.profile_box{padding:20px;border:1px solid #E7E7E7;border-radius:4px;}
+					.profile_box > .tit{padding-bottom:16px;border-bottom:1px solid #E7E7E7;font-weight:700;margin:0 0 12px;font-size:24px;}
+
+
+					.profile_view{display:flex;gap:24px}
+					.profile_view > .left{flex:1;display:flex;flex-direction:column;gap:20px;}
+					.profile_view > .right{flex:1;display:flex;flex-direction:column;gap:20px;}
+					.profile_view .photo_img img{width:100%;height:100%;object-fit:cover;}
+					.profile_view .photo_list{display:flex;flex-wrap:wrap;}
+					.profile_view .photo_list li{width:25%}
+					.profile_view .photo_list li .photo_img{overflow:hidden;width:100%;aspect-ratio:1;}
+					.profile_view .photo_list li .photo_img img{width:100%;height:100%;object-fit:cover;}
+					.profile_view .video_box{padding:24px 0;border-bottom:1px solid #E7E7E7;}
+					.profile_view .video_box .section_title{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;}
+					.profile_view .video_box .section_title h2{font-size:24px;font-weight:700;color:#222;margin:0;}
+					.profile_view .video_box .section_title .link{font-size:14px;color:#666;text-decoration:underline;}
+					.profile_view .video_list{display:flex;flex-wrap:wrap;gap:16px;}
+					.profile_view .video_list li{width:calc(50% - 8px);}
+					.profile_view .video_list li .video_img{overflow:hidden;position:relative;width:100%;aspect-ratio:16/9;}
+					.profile_view .video_list li .video_img img{width:100%;height:100%;object-fit:cover;}
+					.profile_view .video_overlay{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-start;padding:8px;}
+					.profile_view .badge_representative{background:#FFD700;color:#000;font-size:12px;font-weight:700;padding:2px 6px;}
+					.profile_view .video_duration{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,0.7);color:#fff;font-size:12px;font-weight:500;padding:2px 6px;}
+					.profile_view .video_info{margin-top:8px;}
+					.profile_view .video_title{font-size:14px;color:#222;line-height:1.4;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+					
+					/* 경력/작품 리스트 공통 스타일 */
+					.career_list{list-style:none;padding:0;margin:0;}
+					.career_item{display:flex;gap:20px;padding:16px 0;}
+					.career_year{font-size:18px;font-weight:700;color:#222;min-width:80px;flex-shrink:0;}
+					.career_content{flex:1;display:flex;flex-direction:column;gap:8px;}
+					.career_work{display:flex;align-items:center;gap:8px;}
+					.work_title{font-size:16px;color:#222;line-height:1.4;}
+					
+					.cnt{color:#ED3964;font-weight:400;font-size:18px;}
+					.cnt:before{content:'';display:inline-block;width:1px;height:12px;background:#ddd;margin:0 8px;vertical-align:middle;}
+
 				</style>
+
+				<div class="profile_view">
+					<div class="left">
+						<div class="photo_img">
+							<img src="../static/images/profile_sample2.jpg" alt="프로필">
+						</div>
+						<div class="photo_box">
+							<div class="section_title">
+								<h2>사진 <span class="cnt">48개</span></h2>
+								<a href="javascript:void(0)" class="link">모든 사진 보기</a>
+							</div>
+							<ul class="photo_list"> 
+								<li>
+									<div class="photo_img">
+										<img src="../static/images/profile_sample.jpg" alt="프로필">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="video_box">
+							<div class="section_title">
+								<h2>영상 <span class="cnt">5개</span></h2>
+								<a href="javascript:void(0)" class="link">모든 영상 보기</a>
+							</div>
+							<ul class="video_list">
+								<li>
+									<div class="video_img">
+										<img src="../static/images/video_sample1.jpg" alt="tvN 드라마 유미의 세포들">
+										<div class="video_overlay">
+											<span class="badge badge_primary">대표</span>
+											<span class="video_duration">00:15</span>
+										</div>
+									</div>
+									<div class="video_info">
+										<p class="video_title">tvN 드라마 '유미의 세포들' 조연, 불량 tvN 드라마 '유미의 세포들' 조연</p>
+									</div>
+								</li>
+								<li>
+									<div class="video_img">
+										<img src="../static/images/video_sample2.jpg" alt="JTBC 드라마 어쩌다 18">
+										<div class="video_overlay">
+											<span class="video_duration">00:31</span>
+										</div>
+									</div>
+									<div class="video_info">
+										<p class="video_title">JTBC 드라마 '어쩌다 18' 주연</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="right">
+						<!-- 기본 정보 -->
+						<div class="profile_box">
+							<p class="tit">기본 정보</p>
+							<div class="detail_row">
+								<strong class="tit">이름</strong>
+								<p class="desc">이유비</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">연령대</strong>
+								<p class="desc">25~35세</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">성별</strong>
+								<p class="desc">여성</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">키</strong>
+								<p class="desc">165cm</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">몸무게</strong>
+								<p class="desc">45kg</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">최종학력</strong>
+								<p class="desc">이화여자대학교 음악학부 성악전공</p>
+							</div>
+							<div class="detail_row">
+								<strong class="tit">특기</strong>
+								<p class="desc">#성악 #코믹연기</p>
+							</div>
+						</div>
+						<!-- 대표 작품 -->
+						<div class="profile_box">
+							<p class="tit">대표 작품</p>
+							<ul class="career_list">
+								<li class="career_item">
+									<div class="career_year">2021년</div>
+									<div class="career_content">
+										<div class="career_work">
+											<span class="badge badge_primary">대표</span>
+											<span class="work_title">단편영화 '평량냉면' 조연</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">제16회 아시아 모델 어워즈 연기자부문 인기상 수상</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 경력 -->
+						<div class="profile_box">
+							<p class="tit">경력 <span class="cnt">12개</span></p>
+							<ul class="career_list">
+								<li class="career_item">
+									<div class="career_year">2025</div>
+									<div class="career_content">
+										<div class="career_work">
+											<span class="work_title">LG전자 AI세탁기 광고 모델 '엄마역'</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">tvN 드라마 '유미의 세포들' 조연, 불량학생 역</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">SBS드라마 '펜트하우스 시즌3' 조연, 편의점 알바생역</span>
+										</div>
+									</div>
+								</li>
+								<li class="career_item">
+									<div class="career_year">2024</div>
+									<div class="career_content">
+										<div class="career_work">
+											<span class="work_title">LG전자 AI세탁기 광고 모델 '엄마역'</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">tvN 드라마 '유미의 세포들' 조연, 불량학생 역</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">SBS드라마 '펜트하우스 시즌3' 조연, 편의점 알바생역</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">tvN 드라마 '유미의 세포들' 조연, 불량학생 역</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">SBS드라마 '펜트하우스 시즌3' 조연, 편의점 알바생역</span>
+										</div>
+									</div>
+								</li>
+								<li class="career_item">
+									<div class="career_year">2023</div>
+									<div class="career_content">
+										<div class="career_work">
+											<span class="work_title">JTBC 드라마 '어쩌다 18' 주연</span>
+										</div>
+									</div>
+								</li>
+								<li class="career_item">
+									<div class="career_year">2021년</div>
+									<div class="career_content">
+										<div class="career_work">
+											<span class="badge badge_primary">대표</span>
+											<span class="work_title">단편영화 '평량냉면' 조연</span>
+										</div>
+										<div class="career_work">
+											<span class="work_title">제16회 아시아 모델 어워즈 연기자부문 인기상 수상</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</main>
 
@@ -166,5 +350,27 @@
 			</div>
 		</footer>
 	</div>
+	
+	<script>
+		// photo_list에 12개의 li 요소 생성
+		document.addEventListener('DOMContentLoaded', function() {
+			const photoList = document.querySelector('.photo_list');
+			if (photoList) {
+				// 기존 li 요소 제거
+				photoList.innerHTML = '';
+				
+				// 12개의 li 요소 생성
+				for (let i = 0; i < 12; i++) {
+					const li = document.createElement('li');
+					li.innerHTML = `
+						<div class="photo_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</div>
+					`;
+					photoList.appendChild(li);
+				}
+			}
+		});
+	</script>
 </body>
 </html>
