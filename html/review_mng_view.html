@@ -14,6 +14,7 @@
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../static/js/common.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
 <body>
 	<div class="wrap">
@@ -49,8 +50,8 @@
 					<h2>심사 하기</h2>
 					<div class="desc_group">
 						<p class="desc">지원 마감 후, 심사 시작 버튼 클릭후에 심사를 시작할 수 있습니다.</p>
-						<button type="button" class="btn_round primary_line">지원 마감</button>
-						<button type="button" class="btn_round primary">심사 확정</button>
+						<button type="button" class="btn_common primary_line">지원 마감</button>
+						<button type="button" class="btn_common primary">심사 확정</button>
 					</div>
 				</div>
 				<p class="section_title_desc">나의 심사 내역을 모두 확인 할 수 있습니다.</p>
@@ -60,7 +61,7 @@
 							<div class="top_status">
 								<div class="flex_center gap5">
 									<strong class="d_day soon">D-2</strong>
-									<div class="tag-list">
+									<div class="tag_list">
 										<span class="tag tag_recommend">올캣추천</span>
 										<span class="tag tag_urgent">마감임박</span>
 										<span class="tag tag_verified">올캣인증</span>
@@ -95,69 +96,6 @@
 						</div>
 					</div>
 				</div>
-				<style>
-					.review_view_grid{display:flex;gap:55px;}
-					.review_view_grid .review_view_left{flex:1;}
-					.review_view_grid .review_view_right{width:204px;flex-shrink:0;}
-					
-					/* 프로젝트 그리드 스타일 */
-					.project_grid{display:flex;gap:24px;margin-bottom:40px;}
-					.project_grid .project_left{flex:1;}
-					.project_grid .project_right{width:280px;flex-shrink:0;}
-					.project_grid .project{background:#fff;border:1px solid #E7E7E7;border-radius:8px;padding:20px;}
-					.project_grid .project .subject{margin:8px 0;font-size:24px;color:#222;line-height:1.34;font-weight:700;}	
-
-					/* 프로젝트 요약 스타일 */
-					.project_summary{background:#F9F9F9;border-radius:4px;padding:12px 20px;}
-					.project_summary .summary_item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;}
-					.project_summary .summary_item .label{font-size:16px;color:#666;}
-					.project_summary .summary_item .value{display:flex;align-items:center;gap:8px;font-size:16px;color:#222;font-weight:700;}
-					.project_summary .summary_item .value .cnt{color:#222;}
-
-					.review_view_grid .profile_list{gap:10px}
-					.review_view_grid .profile_list .profile_item .profile_info{padding:8px 10px 16px 10px}
-					.review_view_grid .profile_item{width:calc(20% - 8px)}
-
-					.review_view_grid .profile_item .profile_details{margin-top:0}
-					.review_view_grid .profile_item .top_status{margin-bottom:8px}
-					
-					/* 리뷰 섹션 스타일 */
-					.review_view_right { display: flex; flex-direction: column; gap: 20px; }
-					.review_section { background: #F9F9F9; border-radius: 4px; padding: 20px; }
-					.review_section .tit { margin-bottom:20px;font-size:24px; font-weight: 700; color: #000}
-					.review_section .tit .cnt {font-weight:400;font-size:24px;color: var(--color-point-red);}
-					.review_section .tit .cnt:before{content:'';display:inline-block;width:1px;height:12px;background:#ddd;margin:0 10px;vertical-align:middle;}
-					.review_section .drop_zone {display: flex; flex-direction: column; gap: 8px;text-align: center; transition: all 0.2s ease;  }
-					/*.review_section .drop_zone:hover { border-color: var(--color-point-red); background-color: rgba(237, 57, 100, 0.05); }*/
-					.review_section .drop_text {font-size: 16px; color: #666;line-height: 1.5;}
-					.review_section .drop_text:not(.casting_message){padding-top:130px;background:url('/static/images/ico/ico_dragdrop.svg') no-repeat 50% 25px}
-					.drop_zone.drag-over { border-color: var(--color-point-red); background-color: rgba(237, 57, 100, 0.1); }
-
-									
-					.review_section.casting { background: #222;}
-					.review_section.casting .tit { color: #fff; }
-					.review_section.casting .drop_zone { border-color: #444; }
-					.review_section.casting .drop_text { color: #fff;}
-					.review_section.casting .drop_text:not(.casting_message){background:url('/static/images/ico/ico_dragdrop_wh.svg') no-repeat 50% 25px }
-					.review_section.casting .drop_zone.drag-over { border-color: #fff; background-color: rgba(255, 255, 255, 0.2); }
-
-					
-					
-					/* 드롭된 프로필 스타일 */
-					.dropped_profile { position: relative; display: flex; align-items: center; padding:8px;background-color:#fff;}
-					.dropped_profile .profile_name{font-size:20px}
-					.dropped_profile_img {overflow: hidden; width:36px; height: 36px;margin-right:8px; border-radius: 50%;  flex-shrink: 0; }
-					.dropped_profile_img .profile_img {position: relative; width: 100%; height: 100%;  }
-					.dropped_profile_img img{width: 100%; height: 100%; object-fit: cover;}
-					.dropped_profile .remove_btn { width: 24px; height: 24px; margin-left:auto;border: none;  cursor: pointer;text-indent:-9999px;background:url('/static/images/btn/btn_x.svg') no-repeat 50% 50% / 22px auto }
-					
-					/* 드래그 방지 */
-					.profile_item img { user-select: none; -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; }
-					.profile_item .btn_bookmark { user-select: none; -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; }
-					
-					/* 캐스팅 메시지 스타일 */
-					.casting_message { padding-top: 20px; font-size: 14px; color: #fff; line-height: 1.5; margin: 0; }
-				</style>
 				<section class="review_view_grid">
 					<div class="review_view_left">
 						<div class="section_title">
@@ -189,7 +127,7 @@
 											<li>국내 전체</li>
 										</ul>
 									</div>
-									<p class="profile_details">165cm / 46kg / 경력 33건 <span class="tag tag-famous">인기</span></p>
+									<p class="profile_details">165cm / 46kg / 경력 33건 <span class="tag tag_famous">인기</span></p>
 									<div class="star-rating">
 										<span class="star filled">★</span>
 										<span class="star filled">★</span>
@@ -206,7 +144,7 @@
 						<!-- 리스트업 섹션 -->
 						<div class="review_section" data-category="listup">
 							<p class="tit">리스트업<span class="cnt">0</span></p>
-							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+							<div class="drop_zone">
 								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
 							</div>
 						</div>
@@ -214,7 +152,7 @@
 						<!-- 오디션제안 섹션 -->
 						<div class="review_section" data-category="audition">
 							<p class="tit">오디션제안<span class="cnt">0</span></p>
-							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+							<div class="drop_zone">
 								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
 							</div>
 						</div>
@@ -222,13 +160,12 @@
 						<!-- 캐스팅 섹션 -->
 						<div class="review_section casting" data-category="casting">
 							<p class="tit">캐스팅<span class="cnt">0</span></p>
-							<div class="drop_zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+							<div class="drop_zone">
 								<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
 							</div>
 						</div>
 					</div>
 				</section>
-				
 			</div>	
 		</main>
 
@@ -293,7 +230,7 @@
 						<li>${regions[i]}</li>
 					</ul>
 				</div>
-				<p class="profile_details">${heights[i]} / ${weights[i]} / 경력 ${experiences[i]} <span class="tag tag-famous">인기</span></p>
+				<p class="profile_details">${heights[i]} / ${weights[i]} / 경력 ${experiences[i]} <span class="tag tag_famous">인기</span></p>
 				<div class="star-rating">
 					<span class="star filled">★</span>
 					<span class="star filled">★</span>
@@ -307,106 +244,259 @@
 		profileList.appendChild(li);
 	}
 	
-	// 동적으로 생성된 프로필 아이템들에 드래그 이벤트 설정
-	setupDragAndDrop();
-
-	// 드래그 앤 드롭 기능
-	function allowDrop(ev) {
-		ev.preventDefault();
-		ev.currentTarget.classList.add('drag-over');
-	}
-
-	function drag(ev) {
-		ev.dataTransfer.setData("text", ev.target.id);
-		ev.target.classList.add('dragging');
-	}
-
-	function drop(ev) {
-		ev.preventDefault();
-		ev.currentTarget.classList.remove('drag-over');
-		
-		const data = ev.dataTransfer.getData("text");
-		const draggedElement = document.getElementById(data);
-		
-		if (draggedElement) {
-			// 드래그된 요소에서 dragging 클래스 제거
-			draggedElement.classList.remove('dragging');
+	// 드래그 중인 요소 정보를 저장할 전역 변수
+	let draggedElementInfo = null;
+	
+	// 미리보기 표시 함수
+	function showPreview(dropZone, elementInfo) {
+		try {
+			// 기존 미리보기 제거
+			hidePreview(dropZone);
 			
-			// 카운트 업데이트
-			const section = ev.currentTarget.closest('.review_section');
-			const countElement = section.querySelector('.cnt');
-			const currentCount = parseInt(countElement.textContent);
-			countElement.textContent = currentCount + 1;
+			// 이미 미리보기가 있으면 중복 생성하지 않음
+			if (dropZone.querySelector('.drag-preview')) {
+				return;
+			}
 			
-			// 드롭 존에 프로필 정보 표시
-			const profileName = draggedElement.querySelector('.name').textContent;
-			const profileImg = draggedElement.querySelector('.profile_img');
+			// 같은 이름의 프로필이 이미 있는지 확인
+			const existingProfiles = dropZone.querySelectorAll('.dropped_profile:not(.drag-preview)');
+			let isDuplicate = false;
+			existingProfiles.forEach(profile => {
+				const existingName = profile.querySelector('.profile_name').textContent;
+				if (existingName === elementInfo.name) {
+					isDuplicate = true;
+				}
+			});
 			
-			// 기존 드롭된 프로필이 있는지 확인
-			const existingProfiles = ev.currentTarget.querySelectorAll('.dropped_profile');
+			// 중복된 프로필이면 미리보기 표시하지 않음
+			if (isDuplicate) {
+				return;
+			}
 			
-			// 캐스팅 섹션인지 확인
-			const isCastingSection = section.classList.contains('casting');
+			const section = dropZone.closest('.review_section');
+			const isCastingSection = section && section.classList.contains('casting');
 			
+			// 새로운 미리보기 생성
+			const preview = document.createElement('div');
+			preview.className = 'dropped_profile drag-preview';
+			preview.innerHTML = `
+				<div class="dropped_profile_img">
+					${elementInfo.img || ''}
+				</div>
+				<p class="profile_name">${elementInfo.name || ''}</p>
+				<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+			`;
+			
+			// 드롭 존이 비어있으면 미리보기 추가
 			if (existingProfiles.length === 0) {
-				// 첫 번째 프로필인 경우
 				if (isCastingSection) {
-					// 캐스팅 섹션: 프로필과 안내 텍스트 함께 표시
-					ev.currentTarget.innerHTML = `
-						<div class="dropped_profile">
-							<div class="dropped_profile_img">
-								${profileImg.innerHTML}
-							</div>
-							<p class="profile_name">${profileName}</p>
-							<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
-						</div>
-					`;
-					// 캐스팅 메시지를 가장 끝에 추가
+					// 캐스팅 섹션: 미리보기와 메시지 함께 표시
+					dropZone.innerHTML = '';
+					dropZone.appendChild(preview);
 					const castingMessage = document.createElement('p');
 					castingMessage.className = 'drop_text casting_message';
 					castingMessage.innerHTML = '심사 확정 후,<br>캐스팅 콜이 가능합니다.';
-					ev.currentTarget.appendChild(castingMessage);
+					dropZone.appendChild(castingMessage);
 				} else {
-					// 일반 섹션: 프로필만 표시
-					ev.currentTarget.innerHTML = `
-						<div class="dropped_profile">
+					// 일반 섹션: 미리보기만 표시
+					dropZone.innerHTML = '';
+					dropZone.appendChild(preview);
+				}
+			} else {
+				// 기존 프로필이 있으면 미리보기를 맨 끝에 추가
+				dropZone.appendChild(preview);
+			}
+		} catch (error) {
+			console.log('미리보기 표시 함수 오류:', error);
+		}
+	}
+	
+	// 미리보기 숨김 함수
+	function hidePreview(dropZone) {
+		try {
+			const existingPreview = dropZone.querySelector('.drag-preview');
+			if (existingPreview) {
+				existingPreview.remove();
+			}
+		} catch (error) {
+			console.log('미리보기 숨김 함수 오류:', error);
+		}
+	}
+	
+	// SortableJS를 사용한 드래그 앤 드롭 설정
+	setupSortableDragAndDrop();
+
+	// SortableJS 드래그 앤 드롭 기능
+	function setupSortableDragAndDrop() {
+		// 프로필 리스트를 Sortable로 설정
+		const profileList = document.querySelector('.profile_list');
+		if (profileList) {
+			new Sortable(profileList, {
+				group: {
+					name: 'profiles',
+					pull: 'clone',
+					put: false
+				},
+				sort: false,
+				animation: 150,
+				ghostClass: 'sortable-ghost',
+				chosenClass: 'sortable-chosen',
+				dragClass: 'sortable-drag',
+				onStart: function(evt) {
+					evt.item.classList.add('dragging');
+					// 드래그 중인 요소 정보 저장
+					const profileName = evt.item.querySelector('.name').textContent;
+					const profileImg = evt.item.querySelector('.profile_img');
+					draggedElementInfo = {
+						name: profileName,
+						img: profileImg ? profileImg.innerHTML : ''
+					};
+				},
+				onEnd: function(evt) {
+					evt.item.classList.remove('dragging');
+					// 드래그 정보 초기화
+					draggedElementInfo = null;
+					
+					// 모든 미리보기 제거
+					const allPreviews = document.querySelectorAll('.drag-preview');
+					allPreviews.forEach(preview => preview.remove());
+					
+					// 드롭 존에 드롭된 경우 profile_item이 남아있다면 제거
+					if (evt.to && evt.to.classList.contains('drop_zone')) {
+						const profileItems = evt.to.querySelectorAll('.profile_item');
+						profileItems.forEach(item => {
+							// profile_item이 드롭 존에 남아있다면 제거
+							if (item.parentNode === evt.to) {
+								item.remove();
+							}
+						});
+					}
+				}
+			});
+		}
+
+		// 각 드롭 존을 Sortable로 설정
+		const dropZones = document.querySelectorAll('.drop_zone');
+		dropZones.forEach((zone, index) => {
+			new Sortable(zone, {
+				group: {
+					name: 'profiles',
+					pull: false,
+					put: true
+				},
+				animation: 150,
+				ghostClass: 'sortable-ghost',
+				chosenClass: 'sortable-chosen',
+				dragClass: 'sortable-drag',
+				onMove: function(evt) {
+					// 드래그 중에 드롭 존에 들어왔을 때 미리보기 표시
+					try {
+						if (evt.to && evt.to.classList.contains('drop_zone') && draggedElementInfo) {
+							showPreview(evt.to, draggedElementInfo);
+						}
+					} catch (error) {
+						console.log('미리보기 표시 중 오류:', error);
+					}
+				},
+				onEnd: function(evt) {
+					// 드래그가 끝나면 모든 미리보기 제거
+					const allPreviews = document.querySelectorAll('.drag-preview');
+					allPreviews.forEach(preview => preview.remove());
+				},
+				onAdd: function(evt) {
+					const draggedElement = evt.item;
+					const section = evt.to.closest('.review_section');
+					
+					// 드롭된 프로필 정보 가져오기
+					const profileName = draggedElement.querySelector('.name').textContent;
+					const profileImg = draggedElement.querySelector('.profile_img');
+					
+					// 기존 미리보기 제거
+					hidePreview(evt.to);
+					
+					// 기존 드롭된 프로필이 있는지 확인 (미리보기 제외)
+					const existingProfiles = evt.to.querySelectorAll('.dropped_profile:not(.drag-preview)');
+					
+					// 같은 이름의 프로필이 이미 있는지 확인
+					let isDuplicate = false;
+					existingProfiles.forEach(profile => {
+						const existingName = profile.querySelector('.profile_name').textContent;
+						if (existingName === profileName) {
+							isDuplicate = true;
+						}
+					});
+					
+					// 중복된 프로필이면 드롭 취소
+					if (isDuplicate) {
+						evt.item.remove();
+						alert('이미 추가된 프로필입니다.');
+						return;
+					}
+					
+					// 카운트 업데이트
+					const countElement = section.querySelector('.cnt');
+					const currentCount = parseInt(countElement.textContent);
+					countElement.textContent = currentCount + 1;
+					
+					// 캐스팅 섹션인지 확인
+					const isCastingSection = section.classList.contains('casting');
+					
+					// 드롭된 요소를 즉시 제거하고 새로운 dropped_profile로 교체
+					evt.item.remove();
+					
+					if (existingProfiles.length === 0) {
+						if (isCastingSection) {
+							// 캐스팅 섹션: 프로필과 안내 텍스트 함께 표시
+							evt.to.innerHTML = `
+								<div class="dropped_profile">
+									<div class="dropped_profile_img">
+										${profileImg.innerHTML}
+									</div>
+									<p class="profile_name">${profileName}</p>
+									<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+								</div>
+								<p class="drop_text casting_message">심사 확정 후,<br>캐스팅 콜이 가능합니다.</p>
+							`;
+						} else {
+							// 일반 섹션: 프로필만 표시
+							evt.to.innerHTML = `
+								<div class="dropped_profile">
+									<div class="dropped_profile_img">
+										${profileImg.innerHTML}
+									</div>
+									<p class="profile_name">${profileName}</p>
+									<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+								</div>
+							`;
+						}
+					} else {
+						// 기존 프로필이 있는 경우 새 프로필 추가
+						const newProfile = document.createElement('div');
+						newProfile.className = 'dropped_profile';
+						newProfile.innerHTML = `
 							<div class="dropped_profile_img">
 								${profileImg.innerHTML}
 							</div>
 							<p class="profile_name">${profileName}</p>
 							<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
-						</div>
-					`;
-				}
-			} else {
-				// 기존 프로필이 있는 경우 새 프로필 추가
-				const newProfile = document.createElement('div');
-				newProfile.className = 'dropped_profile';
-				newProfile.innerHTML = `
-					<div class="dropped_profile_img">
-						${profileImg.innerHTML}
-					</div>
-					<p class="profile_name">${profileName}</p>
-					<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
-				`;
-				
-				if (isCastingSection) {
-					// 캐스팅 섹션: 캐스팅 메시지 앞에 프로필 추가
-					const castingMessage = ev.currentTarget.querySelector('.casting_message');
-					if (castingMessage) {
-						ev.currentTarget.insertBefore(newProfile, castingMessage);
-					} else {
-						ev.currentTarget.appendChild(newProfile);
+						`;
+						
+						if (isCastingSection) {
+							// 캐스팅 섹션: 캐스팅 메시지 앞에 프로필 추가
+							const castingMessage = evt.to.querySelector('.casting_message');
+							if (castingMessage) {
+								evt.to.insertBefore(newProfile, castingMessage);
+							} else {
+								evt.to.appendChild(newProfile);
+							}
+						} else {
+							// 일반 섹션: 맨 끝에 추가
+							evt.to.appendChild(newProfile);
+						}
 					}
-				} else {
-					// 일반 섹션: 맨 끝에 추가
-					ev.currentTarget.appendChild(newProfile);
 				}
-			}
-			
-			// 원본 프로필에서 제거
-			//draggedElement.remove();
-		}
+			});
+		});
 	}
 
 	function removeProfile(btn) {
@@ -432,48 +522,8 @@
 		}
 	}
 
-	// 드래그 이벤트 리스너 추가
-	function setupDragAndDrop() {
-		const profileItems = document.querySelectorAll('.profile_item');
-		profileItems.forEach((item, index) => {
-			item.id = 'profile-' + index;
-			item.draggable = true;
-			item.addEventListener('dragstart', drag);
-			
-			// 이미지와 버튼 요소들의 드래그 방지
-			const img = item.querySelector('img');
-			const btn = item.querySelector('.btn_bookmark');
-			
-			if (img) {
-				img.draggable = false;
-				img.addEventListener('dragstart', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-				});
-			}
-			
-			if (btn) {
-				btn.draggable = false;
-				btn.addEventListener('dragstart', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-				});
-			}
-		});
-		
-		// 드래그 오버 이벤트에서 drag-over 클래스 제거
-		const dropZones = document.querySelectorAll('.drop_zone');
-		dropZones.forEach(zone => {
-			zone.addEventListener('dragleave', function(e) {
-				if (!zone.contains(e.relatedTarget)) {
-					zone.classList.remove('drag-over');
-				}
-			});
-		});
-	}
-
-	// DOM 로드 후 드래그 앤 드롭 설정
-	document.addEventListener('DOMContentLoaded', setupDragAndDrop);
+	// DOM 로드 후 SortableJS 드래그 앤 드롭 설정
+	document.addEventListener('DOMContentLoaded', setupSortableDragAndDrop);
 	</script>
 </body>
 </html>

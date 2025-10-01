@@ -38,8 +38,8 @@
 					<h2>section_title</h2>
 					<div class="desc_group">
 						<p class="desc">description</p>
-						<button type="button" class="btn_round primary_line">Btn1</button>
-						<button type="button" class="btn_round primary">Btn2</button>
+						<button type="button" class="btn_common primary_line">Btn1</button>
+						<button type="button" class="btn_common primary">Btn2</button>
 					</div>
 				</div>
 			</section>
@@ -55,8 +55,8 @@
 				</div>
 			</section>
 			<section>
-				<h1>casting_list</h1>
-				<ul class="casting_list">
+				<h1>casting_call_list</h1>
+				<ul class="casting_call_list">
 					<li class="item" data-category="ad">
 						<a href="javascript://">
 							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
@@ -67,7 +67,7 @@
 								<div class="top_status">
 									<div class="flex_center gap5">
 										<strong class="d_day soon">D-2</strong>
-										<div class="tag-list">
+										<div class="tag_list">
 											<span class="tag tag_recommend">올캣추천</span>
 											<span class="tag tag_urgent">마감임박</span>
 											<span class="tag tag_verified">올캣인증</span>
@@ -121,14 +121,14 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button type="button" class="btn_round primary">지원하기</button>
+							<button type="button" class="btn_common primary">지원하기</button>
 						</div>
 					</li>
 				</ul>
 			</section>
 			<section>
-				<h1>banner-swiper</h1>
-				<div class="swiper banner-swiper">
+				<h1>banner_swiper</h1>
+				<div class="swiper banner_swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="banner-image">
@@ -245,25 +245,25 @@
 				</ul>
 			</section>
 			<section>
-				<h1>tag-list</h1>
-				<div class="tag-list">
+				<h1>tag_list</h1>
+				<div class="tag_list">
 					<span class="tag tag_recommend">올캣추천</span>
 					<span class="tag tag_urgent">마감임박</span>
 					<span class="tag tag_verified">올캣인증</span>
 					<span class="tag tag_new">NEW</span>
 					<span class="tag tag-history">캐스팅 이력</span>
-					<span class="tag tag-famous">인기</span>
+					<span class="tag tag_famous">인기</span>
 					<span class="tag tag_closed">마감완료</span>
 				</div>
 			</section>
 			<section>
-				<h1>label-list</h1>
-				<div class="label-list">
-					<span class="label label_draft">작성중</span>
-					<span class="label label_public">전체공개</span>
-					<span class="label label_private">비공개</span>
-					<span class="label label_partial">일부공개</span>
-					<span class="label label_primary">대표</span>
+				<h1>badge_list</h1>
+				<div class="badge_list">
+					<span class="badge badge_draft">작성중</span>
+					<span class="badge badge_public">전체공개</span>
+					<span class="badge badge_private">비공개</span>
+					<span class="badge badge_partial">일부공개</span>
+					<span class="badge badge_primary">대표</span>
 				</div>
 			</section>
 			<section>
@@ -355,35 +355,35 @@
 			</section>
 			<section>
 				<h1>Popup</h1>
-				<button type="button" class="btn_round primary" onclick="openPopup('pop-profile-confirm')">openPopup</button>
+				<button type="button" class="btn_common primary" onclick="openPopup('pop_profile_confirm')">openPopup</button>
 			</section>
 
 			<section>
-				<h1>btn_round</h1>
-				<button type="button" class="btn_round secondary">btn_round secondary</button>
-                <button type="button" class="btn_round primary">btn_round primary</button>
-				<button type="button" class="btn_round primary_line">btn_round primary_line</button>
-				<button type="button" class="btn_round closed">btn_round closed</button>
+				<h1>btn_common</h1>
+				<button type="button" class="btn_common secondary">btn_common secondary</button>
+                <button type="button" class="btn_common primary">btn_common primary</button>
+				<button type="button" class="btn_common primary_line">btn_common primary_line</button>
+				<button type="button" class="btn_common closed">btn_common closed</button>
 			</section>
 		</div>
 	</div>
 
-	<div id="pop-profile-confirm" class="popup-overlay">
-        <div class="popup popup-confirm">
-            <div class="popup-header">
-                <h3 class="popup-title">{popup-title}</h3>
-                <button type="button" class="btn-close" onclick="closePopup('pop-profile-confirm')">
+	<div id="pop_profile_confirm" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">{popup_title}</h3>
+                <button type="button" class="btn-close" onclick="closePopup('pop_profile_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <div class="popup-message">
-                    <p>{popup-message}</p>
+            <div class="popup_content">
+                <div class="popup_msg">
+                    <p>{popup_msg}</p>
                 </div>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn_round secondary" onclick="closePopup('pop-profile-confirm')">btn_round secondary</button>
-                <button type="button" class="btn_round primary" onclick="">btn_round primary</button>
+            <div class="popup_footer">
+                <button type="button" class="btn_common secondary" onclick="closePopup('pop_profile_confirm')">btn_common secondary</button>
+                <button type="button" class="btn_common primary" onclick="">btn_common primary</button>
             </div>
         </div>
     </div>
@@ -420,7 +420,7 @@ tabs.forEach(tab => {
 });
 
 // Banner Swiper
-const bannerSwipers = document.querySelectorAll('.banner-swiper');
+const bannerSwipers = document.querySelectorAll('.banner_swiper');
 bannerSwipers.forEach((swiperElement, index) => {
 	const swiperInstance = new Swiper(swiperElement, {
 		effect: 'slide',

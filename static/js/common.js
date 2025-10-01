@@ -125,7 +125,7 @@ function closeNotice(button) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Banner Swiper
-    const bannerSwipers = document.querySelectorAll('.banner-swiper');
+    const bannerSwipers = document.querySelectorAll('.banner_swiper');
     if(bannerSwipers){
         bannerSwipers.forEach((swiperElement, index) => {
             const swiperInstance = new Swiper(swiperElement, {
@@ -176,7 +176,7 @@ function closePopup(popupId) {
 // ESC 키로 팝업 닫기
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-        const activePopup = document.querySelector('.popup-overlay.active');
+        const activePopup = document.querySelector('.popup_overlay.active');
         if (activePopup) {
             closePopup(activePopup.id);
         }
@@ -185,7 +185,7 @@ document.addEventListener('keydown', function(e) {
 
 // 배경 클릭으로 팝업 닫기
 document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('popup-overlay')) {
+    if (e.target.classList.contains('popup_overlay')) {
         closePopup(e.target.id);
     }
 });

@@ -17,71 +17,71 @@
             <h1>공통 팝업 컴포넌트</h1>
             
             <!-- 팝업 트리거 버튼들 -->
-            <div class="popup-demo-section">
+            <div class="popup_demo-section">
                 <h2>팝업 타입별 예시</h2>
                 <div class="demo-buttons">
-                    <button type="button" class="btn btn-primary" onclick="openPopup('popup-alert')">알림 팝업</button>
-                    <button type="button" class="btn btn-primary" onclick="openPopup('popup-confirm')">확인 팝업</button>
-                    <button type="button" class="btn btn-primary" onclick="openPopup('popup-form')">폼 팝업</button>
-                    <button type="button" class="btn btn-primary" onclick="openPopup('popup-image')">이미지 팝업</button>
-                    <button type="button" class="btn btn-primary" onclick="openPopup('popup-large')">대형 팝업</button>
+                    <button type="button" class="btn btn-primary" onclick="openPopup('popup_alert')">알림 팝업</button>
+                    <button type="button" class="btn btn-primary" onclick="openPopup('popup_confirm')">확인 팝업</button>
+                    <button type="button" class="btn btn-primary" onclick="openPopup('popup_form')">폼 팝업</button>
+                    <button type="button" class="btn btn-primary" onclick="openPopup('popup_image')">이미지 팝업</button>
+                    <button type="button" class="btn btn-primary" onclick="openPopup('popup_large')">대형 팝업</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 1. 알림 팝업 (Alert) -->
-    <div id="popup-alert" class="popup-overlay">
-        <div class="popup popup-alert">
-            <div class="popup-header">
-                <h3 class="popup-title">알림</h3>
-                <button type="button" class="btn-close" onclick="closePopup('popup-alert')">
+    <div id="popup_alert" class="popup_overlay">
+        <div class="popup popup_alert">
+            <div class="popup_header">
+                <h3 class="popup_title">알림</h3>
+                <button type="button" class="btn-close" onclick="closePopup('popup_alert')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <div class="popup-message">
+            <div class="popup_content">
+                <div class="popup_msg">
                     <p>정상적으로 처리되었습니다.</p>
                 </div>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn btn-primary" onclick="closePopup('popup-alert')">확인</button>
+            <div class="popup_footer">
+                <button type="button" class="btn btn-primary" onclick="closePopup('popup_alert')">확인</button>
             </div>
         </div>
     </div>
 
     <!-- 2. 확인 팝업 (Confirm) -->
-    <div id="popup-confirm" class="popup-overlay">
-        <div class="popup popup-confirm">
-            <div class="popup-header">
-                <h3 class="popup-title">확인</h3>
-                <button type="button" class="btn-close" onclick="closePopup('popup-confirm')">
+    <div id="popup_confirm" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">확인</h3>
+                <button type="button" class="btn-close" onclick="closePopup('popup_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <div class="popup-message">
+            <div class="popup_content">
+                <div class="popup_msg">
                     <p>정말로 삭제하시겠습니까?<br>삭제된 데이터는 복구할 수 없습니다.</p>
                 </div>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn btn-secondary" onclick="closePopup('popup-confirm')">취소</button>
-                <button type="button" class="btn btn-primary" onclick="confirmAction('popup-confirm')">삭제</button>
+            <div class="popup_footer">
+                <button type="button" class="btn btn-secondary" onclick="closePopup('popup_confirm')">취소</button>
+                <button type="button" class="btn btn-primary" onclick="confirmAction('popup_confirm')">삭제</button>
             </div>
         </div>
     </div>
 
     <!-- 3. 폼 팝업 (Form) -->
-    <div id="popup-form" class="popup-overlay">
-        <div class="popup popup-form">
-            <div class="popup-header">
-                <h3 class="popup-title">프로필 수정</h3>
-                <button type="button" class="btn-close" onclick="closePopup('popup-form')">
+    <div id="popup_form" class="popup_overlay">
+        <div class="popup popup_form">
+            <div class="popup_header">
+                <h3 class="popup_title">프로필 수정</h3>
+                <button type="button" class="btn-close" onclick="closePopup('popup_form')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <form class="popup-form-content">
+            <div class="popup_content">
+                <form class="popup_form-content">
                     <div class="form-group">
                         <label for="name">이름</label>
                         <input type="text" id="name" class="form-input" placeholder="이름을 입력하세요">
@@ -100,41 +100,41 @@
                     </div>
                 </form>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn btn-secondary" onclick="closePopup('popup-form')">취소</button>
-                <button type="button" class="btn btn-primary" onclick="submitForm('popup-form')">저장</button>
+            <div class="popup_footer">
+                <button type="button" class="btn btn-secondary" onclick="closePopup('popup_form')">취소</button>
+                <button type="button" class="btn btn-primary" onclick="submitForm('popup_form')">저장</button>
             </div>
         </div>
     </div>
 
     <!-- 4. 이미지 팝업 (Image) -->
-    <div id="popup-image" class="popup-overlay">
-        <div class="popup popup-image">
-            <div class="popup-header">
-                <h3 class="popup-title">이미지 보기</h3>
-                <button type="button" class="btn-close" onclick="closePopup('popup-image')">
+    <div id="popup_image" class="popup_overlay">
+        <div class="popup popup_image">
+            <div class="popup_header">
+                <h3 class="popup_title">이미지 보기</h3>
+                <button type="button" class="btn-close" onclick="closePopup('popup_image')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
+            <div class="popup_content">
                 <div class="image-container">
-                    <img src="../static/images/profile_sample.jpg" alt="프로필 이미지" class="popup-image-content">
+                    <img src="../static/images/profile_sample.jpg" alt="프로필 이미지" class="popup_image-content">
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 5. 대형 팝업 (Large) -->
-    <div id="popup-large" class="popup-overlay">
-        <div class="popup popup-large">
-            <div class="popup-header">
-                <h3 class="popup-title">상세 정보</h3>
-                <button type="button" class="btn-close" onclick="closePopup('popup-large')">
+    <div id="popup_large" class="popup_overlay">
+        <div class="popup popup_large">
+            <div class="popup_header">
+                <h3 class="popup_title">상세 정보</h3>
+                <button type="button" class="btn-close" onclick="closePopup('popup_large')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <div class="popup-large-content">
+            <div class="popup_content">
+                <div class="popup_large-content">
                     <div class="content-section">
                         <h4>기본 정보</h4>
                         <div class="detail_row_box">
@@ -167,16 +167,16 @@
                     </div>
                     <div class="content-section">
                         <h4>특기</h4>
-                        <div class="tag-list">
+                        <div class="tag_list">
                             <span class="tag tag_verified">올캣인증</span>
                             <span class="tag tag_recommend">올캣추천</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn btn-secondary" onclick="closePopup('popup-large')">닫기</button>
-                <button type="button" class="btn btn-primary" onclick="contactAction('popup-large')">연락하기</button>
+            <div class="popup_footer">
+                <button type="button" class="btn btn-secondary" onclick="closePopup('popup_large')">닫기</button>
+                <button type="button" class="btn btn-primary" onclick="contactAction('popup_large')">연락하기</button>
             </div>
         </div>
     </div>
@@ -234,7 +234,7 @@
         // ESC 키로 팝업 닫기
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                const activePopup = document.querySelector('.popup-overlay.active');
+                const activePopup = document.querySelector('.popup_overlay.active');
                 if (activePopup) {
                     closePopup(activePopup.id);
                 }
@@ -243,7 +243,7 @@
 
         // 배경 클릭으로 팝업 닫기
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('popup-overlay')) {
+            if (e.target.classList.contains('popup_overlay')) {
                 closePopup(e.target.id);
             }
         });

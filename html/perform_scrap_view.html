@@ -64,7 +64,7 @@
 							<div class="top_status">
 								<div class="flex_center gap5">
 									<span class="d_day">D-2</span>
-									<div class="tag-list">
+									<div class="tag_list">
 										<span class="tag tag_recommend">올캣추천</span>
 										<span class="tag tag_urgent">마감임박</span>
 										<span class="tag tag_verified">올캣인증</span>
@@ -156,7 +156,7 @@
 										<p class="desc">20~30만원</p>
 									</div>
 								</div>
-								<button type="button" class="btn_round primary" onclick="openPopup('pop-profile-confirm')">역할 제안에 응하기</button>
+								<button type="button" class="btn_common primary" onclick="openPopup('pop_profile_confirm')">역할 제안에 응하기</button>
 							</div>
 						</li>
 					</ul>
@@ -189,7 +189,7 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button type="button" class="btn_round primary">지원하기</button>
+							<button type="button" class="btn_common primary">지원하기</button>
 						</div>
 					</li>
 
@@ -213,7 +213,7 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button type="button" class="btn_round primary">지원하기</button>
+							<button type="button" class="btn_common primary">지원하기</button>
 						</div>
 					</li>
 
@@ -237,7 +237,7 @@
 									<p class="desc">20~30만원</p>
 								</div>
 							</div>
-							<button class="btn_round closed">지원 마감</button>
+							<button class="btn_common closed">지원 마감</button>
 						</div>
 					</li>
 				</ul>
@@ -264,16 +264,16 @@
 			</div>
 		</footer>
 	</div>
-	<div id="pop-profile-confirm" class="popup-overlay">
-        <div class="popup popup-confirm">
-            <div class="popup-header">
-                <h3 class="popup-title">지원할 프로필 선택</h3>
-                <button type="button" class="btn-close" onclick="closePopup('pop-profile-confirm')">
+	<div id="pop_profile_confirm" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">지원할 프로필 선택</h3>
+                <button type="button" class="btn-close" onclick="closePopup('pop_profile_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
-            <div class="popup-content">
-                <div class="popup-message">
+            <div class="popup_content">
+                <div class="popup_msg">
                     <p>해당 공고에 지원할 프로필을 선택해주세요.<br>
 						배역 설명에 적합한 프로필을 선택해 주셔야<br>
 						캐스팅 확률이 높아집니다.</p>
@@ -291,9 +291,9 @@
 					</div>
                 </div>
             </div>
-            <div class="popup-footer">
-                <button type="button" class="btn_round secondary" onclick="closePopup('pop-profile-confirm')">취소</button>
-                <button type="button" class="btn_round primary" onclick="">지원하기</button>
+            <div class="popup_footer">
+                <button type="button" class="btn_common secondary" onclick="closePopup('pop_profile_confirm')">취소</button>
+                <button type="button" class="btn_common primary" onclick="">지원하기</button>
             </div>
         </div>
     </div>
