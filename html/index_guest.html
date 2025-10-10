@@ -45,32 +45,35 @@
 				<section>
 					<div class="section_title">
 						<h2>지금 진행중인 캐스팅 공고 <span class="cnt">32개</span></h2>
-						<a href="javascript:void(0)" class="link">더 많은 캐스팅 공고 보기</a>
+						<button type="button" class="link_move">더 많은 캐스팅 공고 보기</button>
 					</div>
 					<div class="tabs">
-						<button class="tab-btn active" data-tab="all">모든 캐스팅 공고</button>
-						<button class="tab-btn" data-tab="movie">영화</button>
-						<button class="tab-btn" data-tab="ad">광고</button>
-						<button class="tab-btn" data-tab="broadcast">방송</button>
-						<button class="tab-btn" data-tab="audition">오디션</button>
-						<button class="tab-btn" data-tab="student">학생 작품</button>
+						<button class="btn_tab active" data-tab="all">모든 캐스팅 공고</button>
+						<button class="btn_tab" data-tab="movie">영화</button>
+						<button class="btn_tab" data-tab="ad">광고</button>
+						<button class="btn_tab" data-tab="broadcast">방송</button>
+						<button class="btn_tab" data-tab="audition">오디션</button>
+						<button class="btn_tab" data-tab="student">학생 작품</button>
 					</div>
-					<div class="casting_call_list">
-						<div class="item" data-category="ad">
+					<ul class="casting_call_list">
+						<li class="item" data-category="ad">
 							<a href="javascript://">
 								<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
 								<div class="item_body">
-									<!--<div class="detail-mouse-hover">
-										<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
+									<!--<div class="label-with-tooltip">
+										<span class="label_recommend">올캣추천</span>
+										<div class="detail-mouse-hover">
+											<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
+										</div>
 									</div>-->
 									<div class="top_status">
-										<div class="flex_center gap5">
+										<div class="flex_gap10">
 											<strong class="d_day soon">D-2</strong>
-											<div class="tag_list">
-												<span class="tag tag_recommend">올캣추천</span>
-												<span class="tag tag_urgent">마감임박</span>
-												<span class="tag tag_verified">올캣인증</span>
-												<span class="tag tag_new">NEW</span>
+											<div class="label_group">
+												<span class="label_recommend">올캣추천</span>
+												<span class="label_urgent">마감임박</span>
+												<span class="label_verified">올캣인증</span>
+												<span class="label_new">NEW</span>
 											</div>
 										</div>
 										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
@@ -93,8 +96,8 @@
 									</div>
 								</div>
 							</a>
-						</div>
-						<div class="item" data-category="movie">
+						</li>
+						<li class="item" data-category="movie">
 							<a href="javascript://">
 								<img src="../static/images/thumb2.png" alt="">
 								<div class="item_body">
@@ -114,15 +117,17 @@
 									</div>
 								</div>
 							</a>
-						</div>
-						<div class="item" data-category="broadcast">
+						</li>
+						<li class="item" data-category="broadcast">
 							<a href="javascript://">
 								<img src="../static/images/thumb3.png" alt="">
 							<div class="item_body">
 								<div class="top_status">
-									<strong>D-7</strong>
-									<div class="tag_list">
-										<span class="tag tag_verified">올캣인증</span>
+									<div class="flex_gap10">
+										<strong>D-7</strong>
+										<div class="label_group">
+											<span class="label_verified">올캣인증</span>
+										</div>
 									</div>
 									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
@@ -142,15 +147,17 @@
 									</div>
 								</div>
 							</a>
-						</div>
-						<div class="item" data-category="student">
+						</li>
+						<li class="item" data-category="student">
 							<a href="javascript://">
 								<img src="../static/images/thumb2.png" alt="">
 							<div class="item_body">
 								<div class="top_status">
-									<strong>D-10</strong>
-									<div class="tag_list">
-										<span class="tag tag_recommend">올캣추천</span>
+									<div class="flex_gap10">
+										<strong>D-10</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+										</div>
 									</div>
 									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
@@ -170,8 +177,8 @@
 									</div>
 								</div>
 							</a>
-						</div>
-					</div>
+						</li>
+					</ul>
 					<div class="swiper banner_swiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -197,26 +204,26 @@
 				<section>
 					<div class="section_title">
 						<h2>올캣에서 활동 중인 아티스트 <span class="cnt">1,289명</span></h2>
-						<a href="javascript:void(0)" class="link">더 많은 아티스트 보기</a>
+						<button type="button" class="link_move">더 많은 아티스트 보기</button>
 					</div>
 					<div class="tabs">
-						<button class="tab-btn active" data-tab="all_artist">모든 아티스트</button>
-						<button class="tab-btn" data-tab="male">남성</button>
-						<button class="tab-btn" data-tab="female">여성</button>
-						<button class="tab-btn" data-tab="etc">기타</button>
+						<button class="btn_tab active" data-tab="all_artist">모든 아티스트</button>
+						<button class="btn_tab" data-tab="male">남성</button>
+						<button class="btn_tab" data-tab="female">여성</button>
+						<button class="btn_tab" data-tab="etc">기타</button>
 					</div>
 					<ul class="profile_list">
 						<li class="profile_item" data-category="male">
 							<a href="javascript://">
 								<div class="profile_img">
-									<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+									<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 								</div>
 								<div class="profile_info">
 									<div class="profile_header">
 										<div class="top_status">
-											<div class="flex_center gap5">
-												<h3 class="name">김시현1</h3>
-												<span class="tag tag_verified">올캣인증</span>
+											<div class="flex_gap10">
+												<h3 class="name">김시현</h3>
+												<span class="label_verified">올캣인증</span>
 											</div>
 											<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 										</div>
@@ -233,14 +240,14 @@
 						<li class="profile_item" data-category="female">
 							<a href="javascript://">
 								<div class="profile_img">
-									<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+									<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 								</div>
 								<div class="profile_info">
 									<div class="profile_header">
 										<div class="top_status">
-											<div class="flex_center gap5">
-												<h3 class="name">김시현1</h3>
-												<span class="tag tag_verified">올캣인증</span>
+											<div class="flex_gap10">
+												<h3 class="name">김시현</h3>
+												<span class="label_verified">올캣인증</span>
 											</div>
 											<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 										</div>
@@ -257,14 +264,14 @@
 						<li class="profile_item" data-category="male">
 							<a href="javascript://">
 								<div class="profile_img">
-									<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+									<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 								</div>
 								<div class="profile_info">
 									<div class="profile_header">
 										<div class="top_status">
-											<div class="flex_center gap5">
-												<h3 class="name">김시현1</h3>
-												<span class="tag tag_verified">올캣인증</span>
+											<div class="flex_gap10">
+												<h3 class="name">김시현</h3>
+												<span class="label_verified">올캣인증</span>
 											</div>
 											<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 										</div>
@@ -315,10 +322,10 @@
 				<div class="top">
 					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
 					<div class="btns">
-						<a href="javascript:void(0)" class="ft_pill">아티스트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_pill">프로젝트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_sns insta">instagram</a>
-						<a href="javascript:void(0)" class="ft_sns youtube">youtube</a>
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
 					</div>
 				</div>
 				<div class="legal">
@@ -332,7 +339,7 @@
 	</div>
 
 <script>
-const tabs = document.querySelectorAll('.tab-btn');
+const tabs = document.querySelectorAll('.btn_tab');
 const cards = document.querySelectorAll('.item');
 const profileItems = document.querySelectorAll('.profile_item');
 

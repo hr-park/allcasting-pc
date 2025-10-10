@@ -189,3 +189,31 @@ document.addEventListener('click', function(e) {
         closePopup(e.target.id);
     }
 });
+
+document.querySelectorAll('.tabs').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.btn_tab');
+    const ul = tabGroup.nextElementSibling?.matches('ul')
+      ? tabGroup.nextElementSibling
+      : tabGroup.parentElement.querySelector('ul');
+    const categoryElements = list ? ul.querySelectorAll('li[data-category]') : [];
+  
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // 탭 active 상태 갱신
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+  
+        const category = tab.dataset.tab;
+  
+        // li[data-category] 필터링
+        categoryElements.forEach(el => {
+          if (category === 'all' || el.dataset.category === category) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+  

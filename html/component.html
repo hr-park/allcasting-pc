@@ -31,7 +31,7 @@
 				<h1>section_title</h1>
 				<div class="section_title">
 					<h2>section_title <span class="cnt">32개</span></h2>
-					<a href="javascript:void(0)" class="link">더 많은 캐스팅 공고 보기</a>
+					<button type="button" class="link_move">더 많은 캐스팅 공고 보기</button>
 				</div>
 				<p class="section_title_desc">section_title_desc :: 서브 타이틀</p>
 				<div class="section_title">
@@ -46,54 +46,54 @@
 			<section>
 				<h1>tabs</h1>
 				<div class="tabs">
-					<button class="tab-btn active" data-tab="all">모든 캐스팅 공고</button>
-					<button class="tab-btn" data-tab="movie">영화</button>
-					<button class="tab-btn" data-tab="ad">광고</button>
-					<button class="tab-btn" data-tab="broadcast">방송</button>
-					<button class="tab-btn" data-tab="audition">오디션</button>
-					<button class="tab-btn" data-tab="student">학생 작품</button>
+					<button class="btn_tab active" data-tab="all">모든 캐스팅 공고</button>
+					<button class="btn_tab" data-tab="movie">영화</button>
+					<button class="btn_tab" data-tab="ad">광고</button>
+					<button class="btn_tab" data-tab="broadcast">방송</button>
+					<button class="btn_tab" data-tab="audition">오디션</button>
+					<button class="btn_tab" data-tab="student">학생 작품</button>
 				</div>
 			</section>
 			<section>
 				<h1>casting_call_list</h1>
 				<ul class="casting_call_list">
 					<li class="item" data-category="ad">
-						<a href="javascript://">
-							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
-							<div class="item_body">
-								<div class="detail-mouse-hover">
-									<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
-								</div>
-								<div class="top_status">
-									<div class="flex_center gap5">
-										<strong class="d_day soon">D-2</strong>
-										<div class="tag_list">
-											<span class="tag tag_recommend">올캣추천</span>
-											<span class="tag tag_urgent">마감임박</span>
-											<span class="tag tag_verified">올캣인증</span>
-											<span class="tag tag_new">NEW</span>
+						<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+						<div class="item_body">
+							<div class="top_status">
+								<div class="flex_gap10">
+									<strong class="d_day soon">D-2</strong>
+									<div class="label_group">
+										<div class="label-with-tooltip">
+											<span class="label_recommend">올캣추천</span>
+											<div class="detail-mouse-hover">
+												<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
+											</div>
 										</div>
+										<span class="label_urgent">마감임박</span>
+										<span class="label_verified">올캣인증</span>
+										<span class="label_new">NEW</span>
 									</div>
-									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
-								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
-								<ul class="sub_dot_list min">
-									<li>CJ Entertainment</li>
-									<li>단편영화</li>
-									<li>학생작품</li>
-								</ul>
-								<div class="detail_row_box">
-									<div class="detail_row">
-										<strong class="tit">모집분야</strong>
-										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
-									</div>
-									<div class="detail_row">
-										<strong class="tit">출연료</strong>
-										<p class="desc">최대 30만원</p>
-									</div>
+								<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+							</div>
+							<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+							<ul class="sub_dot_list min">
+								<li>CJ Entertainment</li>
+								<li>단편영화</li>
+								<li>학생작품</li>
+							</ul>
+							<div class="detail_row_box">
+								<div class="detail_row">
+									<strong class="tit">모집분야</strong>
+									<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+								</div>
+								<div class="detail_row">
+									<strong class="tit">출연료</strong>
+									<p class="desc">최대 30만원</p>
 								</div>
 							</div>
-						</a>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -132,17 +132,17 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="banner-image">
-								<a href="javascript://"><img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1"></a></a>
+								<img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="banner-image">
-								<a href="javascript://"><img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1"></a></a>
+								<img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="banner-image">
-								<a href="javascript://"><img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1"></a></a>
+								<img src="../static/images/banner/banner_sample_search.png" alt="배너 이미지 1">
 							</div>
 						</div>
 					</div>
@@ -154,28 +154,26 @@
 				<h1>profile_list - type1</h1>
 				<ul class="profile_list">
 					<li class="profile_item" data-category="male">
-						<a href="javascript://">
-							<div class="profile_img">
-								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
-							</div>
-							<div class="profile_info">
-								<div class="profile_header">
-									<div class="top_status">
-										<div class="flex_center gap5">
-											<h3 class="name">김시현1</h3>
-											<span class="tag tag_verified">올캣인증</span>
-										</div>
-										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+						<div class="profile_img">
+							<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+						</div>
+						<div class="profile_info">
+							<div class="profile_header">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<h3 class="name">김시현</h3>
+										<span class="label_verified">올캣인증</span>
 									</div>
-									<ul class="sub_dot_list">
-										<li>25세</li>
-										<li>여성</li>
-										<li>국내 전체</li>
-									</ul>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
-								<p class="profile_details">165cm / 46kg / 경력 33건</p>
+								<ul class="sub_dot_list">
+									<li>25세</li>
+									<li>여성</li>
+									<li>국내 전체</li>
+								</ul>
 							</div>
-						</a>
+							<p class="profile_details">165cm / 46kg / 경력 33건</p>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -183,87 +181,92 @@
 				<h1>profile_list_row</h1>
 				<ul class="profile_list_row">
 					<li class="profile_item" data-category="male">
-						<a href="javascript://">
-							<div class="profile_img">
-								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
-							</div>
-							<div class="profile_info">
-								<div class="profile_header">
-									<div class="top_status">
-										<div class="flex_center gap5">
-											<h3 class="name">김시현1</h3>
-											<span class="tag tag_verified">올캣인증</span>
-										</div>
-										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+						<div class="profile_img">
+							<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+						</div>
+						<div class="profile_info">
+							<div class="profile_header">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<h3 class="name">김시현</h3>
+										<span class="label_verified">올캣인증</span>
 									</div>
-									<ul class="sub_dot_list">
-										<li>25세</li>
-										<li>여성</li>
-										<li>국내 전체</li>
-									</ul>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
-								<p class="profile_details">165cm / 46kg / 경력 33건</p>
-								<div class="tags">
-									<span>#코믹 연기</span>
-									<span>#승마</span>
-									<span>#액션 연기</span>
-									<span class="more">+ 그 외 4</span>
-								</div>
+								<ul class="sub_dot_list">
+									<li>25세</li>
+									<li>여성</li>
+									<li>국내 전체</li>
+								</ul>
 							</div>
-						</a>
+							<p class="profile_details">165cm / 46kg / 경력 33건</p>
+							<div class="tags">
+								<span>#코믹 연기</span>
+								<span>#승마</span>
+								<span>#액션 연기</span>
+								<span class="more">+ 그 외 4</span>
+							</div>
+						</div>
 					</li>
 					<li class="profile_item" data-category="male">
-						<a href="javascript://">
-							<div class="profile_img">
-								<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
-							</div>
-							<div class="profile_info">
-								<div class="profile_header">
-									<div class="top_status">
-										<div class="flex_center gap5">
-											<h3 class="name">김시현1</h3>
-											<span class="tag tag_verified">올캣인증</span>
-										</div>
-										<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+						<div class="profile_img">
+							<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+						</div>
+						<div class="profile_info">
+							<div class="profile_header">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<h3 class="name">김시현</h3>
+										<span class="label_verified">올캣인증</span>
 									</div>
-									<ul class="sub_dot_list">
-										<li>25세</li>
-										<li>여성</li>
-										<li>국내 전체</li>
-									</ul>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
 								</div>
-								<p class="profile_details">165cm / 46kg / 경력 33건</p>
-								<div class="tags">
-									<span>#코믹 연기</span>
-									<span>#승마</span>
-									<span>#액션 연기</span>
-									<span class="more">+ 그 외 4</span>
-								</div>
+								<ul class="sub_dot_list">
+									<li>25세</li>
+									<li>여성</li>
+									<li>국내 전체</li>
+								</ul>
 							</div>
-						</a>
+							<p class="profile_details">165cm / 46kg / 경력 33건</p>
+							<div class="tags">
+								<span>#코믹 연기</span>
+								<span>#승마</span>
+								<span>#액션 연기</span>
+								<span class="more">+ 그 외 4</span>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</section>
 			<section>
-				<h1>tag_list</h1>
-				<div class="tag_list">
-					<span class="tag tag_recommend">올캣추천</span>
-					<span class="tag tag_urgent">마감임박</span>
-					<span class="tag tag_verified">올캣인증</span>
-					<span class="tag tag_new">NEW</span>
-					<span class="tag tag-history">캐스팅 이력</span>
-					<span class="tag tag_famous">인기</span>
-					<span class="tag tag_closed">마감완료</span>
+				<h1>tags</h1>
+				<div class="tags">
+					<span>#코믹 연기</span>
+					<span>#승마</span>
+					<span>#액션 연기</span>
+					<span class="more">+ 그 외 4</span>
 				</div>
 			</section>
 			<section>
-				<h1>badge_list</h1>
-				<div class="badge_list">
-					<span class="badge badge_draft">작성중</span>
-					<span class="badge badge_public">전체공개</span>
-					<span class="badge badge_private">비공개</span>
-					<span class="badge badge_partial">일부공개</span>
-					<span class="badge badge_primary">대표</span>
+				<h1>label_group</h1>
+				<div class="label_group">
+					<span class="label_recommend">올캣추천</span>
+					<span class="label_urgent">마감임박</span>
+					<span class="label_verified">올캣인증</span>
+					<span class="label_new">NEW</span>
+					<span class="label_history">캐스팅 이력</span>
+					<span class="label_popular">인기</span>
+					<span class="label_closed">마감완료</span>
+				</div>
+			</section>
+			<section>
+				<h1>status_group</h1>
+				<div class="status_group">
+					<span class="status_draft">작성중</span>
+					<span class="status_public">전체공개</span>
+					<span class="status_private">비공개</span>
+					<span class="status_partial">일부공개</span>
+					<span class="status_primary">대표</span>
 				</div>
 			</section>
 			<section>
@@ -319,7 +322,7 @@
 					</div>
 					<div>
 						<h2>status_wrapper</h2>
-						<div class="flex_center gap5">
+						<div class="flex_gap10">
 							<div class="status_wrapper">
 								<div class="count">5,514명 지원</div>
 								<span class="status status_ongoing">공고 진행중</span>
@@ -334,7 +337,7 @@
 					</div>
 					<div>
 						<h2>custom_select</h2>
-						<div class="flex_center gap5">
+						<div class="flex_gap10">
 							<div class="custom_select">
 								<select>
 									<option value="">역할 선택</option>
@@ -356,6 +359,9 @@
 			<section>
 				<h1>Popup</h1>
 				<button type="button" class="btn_common primary" onclick="openPopup('pop_profile_confirm')">openPopup</button>
+				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_report_confirm')">신고하기</button>
+				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_profile_confirm')">지원할 프로필 선택</button>
+				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_role_suggest')">역할 제안하기</button>
 			</section>
 
 			<section>
@@ -365,31 +371,135 @@
 				<button type="button" class="btn_common primary_line">btn_common primary_line</button>
 				<button type="button" class="btn_common closed">btn_common closed</button>
 			</section>
+
+			<section>
+				<h1>btn_action</h1>
+				<div class="flex_gap10">
+					<button class="btn_action btn_report">신고하기</button>
+					<button class="btn_action btn_share">공유하기</button>
+					<button class="btn_action btn_copy">복사하기</button>
+					<button class="btn_action btn_edit">수정하기</button>
+					<button class="btn_action text_only">설정하기</button>
+				</div>
+			</section>
 		</div>
 	</div>
+	<!-- 신고하기 팝업 -->
+	<div id="pop_report_confirm" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">신고하기</h3>
+                <button type="button" class="btn-close" onclick="closePopup('pop_report_confirm')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg">
+                    <p>신고 사유를 알려주시면 운영진이 검토한 뒤 조치를 취하겠습니다.<br>
+						ALLCASTING의 개인정보 보호방침, 이용약관 및 현행법을 <br>
+						위반한 행위는 제재 대상이 됩니다.</p>
+					<div class="pop_detail_row">
+						<strong class="tit">신고 사유</strong>
+						<div class="desc">
+							<div class="custom_select min">
+								<select>
+									<option value="">신고 사유를 선택하세요.</option>
+									<option value="">사유1</option>
+									<option value="">사유2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <button type="button" class="btn_common primary" onclick="">확인</button>
+            </div>
+        </div>
+    </div>
 
+	<!-- 지원할 프로필 선택 팝업 -->
 	<div id="pop_profile_confirm" class="popup_overlay">
         <div class="popup popup_confirm">
             <div class="popup_header">
-                <h3 class="popup_title">{popup_title}</h3>
+                <h3 class="popup_title">지원할 프로필 선택</h3>
                 <button type="button" class="btn-close" onclick="closePopup('pop_profile_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
             <div class="popup_content">
                 <div class="popup_msg">
-                    <p>{popup_msg}</p>
+                    <p>해당 공고에 지원할 프로필을 선택해주세요.<br>
+						배역 설명에 적합한 프로필을 선택해 주셔야<br>
+						캐스팅 확률이 높아집니다.</p>
+					<div class="pop_detail_row">
+						<strong class="tit">지원 프로필</strong>
+						<div class="desc">
+							<div class="custom_select min">
+								<select>
+									<option value="">역할 선택</option>
+									<option value="">배우</option>
+									<option value="">모델</option>
+								</select>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
             <div class="popup_footer">
-                <button type="button" class="btn_common secondary" onclick="closePopup('pop_profile_confirm')">btn_common secondary</button>
-                <button type="button" class="btn_common primary" onclick="">btn_common primary</button>
+                <button type="button" class="btn_common secondary" onclick="closePopup('pop_profile_confirm')">취소</button>
+                <button type="button" class="btn_common primary" onclick="">지원하기</button>
+            </div>
+        </div>
+    </div>
+
+	<!-- 역할 제안하기 팝업 -->
+	<div id="pop_role_suggest" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">역할 제안하기</h3>
+                <button type="button" class="btn-close" onclick="closePopup('pop_role_suggest')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg">
+                    <p>해당 아티스트에게 프로젝트 제안을 할 수 있습니다.<br>
+						제안하고 싶은 프로젝트와 역할을 선택해 주세요.</p>
+					<div class="pop_detail_row">
+						<strong class="tit">프로젝트</strong>
+						<div class="desc">
+							<div class="custom_select min">
+								<select>
+									<option value="">프로젝트를 선택하세요.</option>
+									<option value="">프로젝트1</option>
+									<option value="">프로젝트2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="pop_detail_row">
+						<strong class="tit">역할</strong>
+						<div class="desc">
+							<div class="custom_select min">
+								<select>
+									<option value="">역할을 선택하세요.</option>
+									<option value="">역할1</option>
+									<option value="">역할2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <button type="button" class="btn_common primary" onclick="">역할 제안 알림보내기</button>
             </div>
         </div>
     </div>
 
 <script>
-const tabs = document.querySelectorAll('.tab-btn');
+const tabs = document.querySelectorAll('.btn_tab');
 const cards = document.querySelectorAll('.item');
 const profileItems = document.querySelectorAll('.profile_item');
 

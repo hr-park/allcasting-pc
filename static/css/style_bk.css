@@ -66,7 +66,7 @@ input:focus{outline:0 none}
 .ml10{margin-left:10px}
 .mr10{margin-right:10px}
 .pos_rel{position:relative}
-.pos_abs{position:absolute !important;}
+.status_pos_abs{position:absolute !important;}
 .mb5{margin-bottom:5px}
 .v_top{vertical-align:top}
 .ft_size_14{font-size:14px}
@@ -105,7 +105,7 @@ input:focus{outline:0 none}
 .header_type1 .page_name{font-size:16px;font-weight:700;color:#222}
 .header_type1 .btn_info{position:absolute;top:15px;right:55px;width:30px;height:30px;text-indent:-9999px;background:url('../images_bk/ico/ico_info.svg') no-repeat 50% 50% / 24px auto;}
 .header_type1 .btn_schedule{position:absolute;right:20px;top:15px;display:inline-block;width:30px;height:30px;text-indent:-9999px;border:0 none;text-indent:-9999px;background:url('../images_bk/ico/ico_schedule.svg') no-repeat 50% 50% / 24px auto;}
-.header_type1.pos_abs .btn_prev{background:url('../images_bk/btn/btn_prev_white.svg') no-repeat 50% 50% / 10px auto;}
+.header_type1.status_pos_abs .btn_prev{background:url('../images_bk/btn/btn_prev_white.svg') no-repeat 50% 50% / 10px auto;}
 
 .header_type2{display:flex;height:56px;padding:0 20px;align-items:center;justify-content:space-between;box-sizing:border-box;}
 .header_type2 nav ul{display:flex;gap:20px;align-items:center}

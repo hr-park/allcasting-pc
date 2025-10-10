@@ -40,7 +40,7 @@
 				</div>
 			</div>
 		</header>
-		<main class="my_profile bg_white">
+		<main class="profile bg_white">
 			<div class="inner">
 				<div class="profile_list_page">
 					<div class="profile-main">
@@ -55,21 +55,23 @@
 									<li>여성</li>
 									<li>국내 전체</li>
 								</ul>
-								<button class="follow_btn">
-									+ 프로듀스 추가하기
-								</button>
+								<button class="btn_add_profile"><span>새 프로필 추가하기</span></button>
 								<div class="detail_row_box">
 									<div class="detail_row">
-										<strong class="tit">매체</strong>
-										<p class="desc">영화, 장편, 학생 작품</p>
+										<strong class="tit">내 프로필</strong>
+										<p class="desc">5개</p>
 									</div>
 									<div class="detail_row">
-										<strong class="tit">장르</strong>
-										<p class="desc">드라마, 코미디, 로맨스, 스릴러</p>
+										<strong class="tit">회원 구분</strong>
+										<p class="desc">배우(Perform)</p>
 									</div>
 									<div class="detail_row">
-										<strong class="tit">촬영기간</strong>
-										<p class="desc">2025.06.30 ~ 2025.09.30</p>
+										<strong class="tit">인증</strong>
+										<p class="desc"><span class="label_verified">올캣인증</span></p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">계정설정</strong>
+										<p class="desc"><button class="btn_action text_only">설정하기</button></p>
 									</div>
 								</div>
 							</div>
@@ -84,17 +86,21 @@
 							<li class="profile_item" data-category="male">
 								<a href="javascript://">
 									<div class="profile_img">
-										<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+										<div class="status_group">
+											<span class="status_draft">작성중</span>
+										</div>
 									</div>
 									<div class="profile_info">
 										<div class="profile_header">
 											<div class="top_status">
-												<div class="flex_center gap5">
-													<h3 class="name">김시현1</h3>
-													<span class="tag tag_verified">올캣인증</span>
+												<div class="flex_gap10">
+													<h3 class="name">김시현</h3>
+													<span class="label_verified">올캣인증</span>
 												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												<!--<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>-->
 											</div>
+											<p class="type">배우용 프로필_01</p>
 											<ul class="sub_dot_list">
 												<li>25세</li>
 												<li>여성</li>
@@ -108,17 +114,22 @@
 							<li class="profile_item" data-category="female">
 								<a href="javascript://">
 									<div class="profile_img">
-										<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
+										<div class="status_group">
+											<span class="status_primary">대표</span>
+											<span class="status_public">전체공개</span>
+										</div>
 									</div>
 									<div class="profile_info">
 										<div class="profile_header">
 											<div class="top_status">
-												<div class="flex_center gap5">
-													<h3 class="name">김시현1</h3>
-													<span class="tag tag_verified">올캣인증</span>
+												<div class="flex_gap10">
+													<h3 class="name">김시현</h3>
+													<span class="label_verified">올캣인증</span>
 												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												<!--<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>-->
 											</div>
+											<p class="type">배우용 프로필_01</p>
 											<ul class="sub_dot_list">
 												<li>25세</li>
 												<li>여성</li>
@@ -132,17 +143,18 @@
 							<li class="profile_item" data-category="female">
 								<a href="javascript://">
 									<div class="profile_img">
-										<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 									</div>
 									<div class="profile_info">
 										<div class="profile_header">
 											<div class="top_status">
-												<div class="flex_center gap5">
-													<h3 class="name">김시현1</h3>
-													<span class="tag tag_verified">올캣인증</span>
+												<div class="flex_gap10">
+													<h3 class="name">김시현</h3>
+													<span class="label_verified">올캣인증</span>
 												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												<!--<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>-->
 											</div>
+											<p class="type">배우용 프로필_02</p>
 											<ul class="sub_dot_list">
 												<li>25세</li>
 												<li>여성</li>
@@ -156,17 +168,18 @@
 							<li class="profile_item" data-category="female">
 								<a href="javascript://">
 									<div class="profile_img">
-										<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 									</div>
 									<div class="profile_info">
 										<div class="profile_header">
 											<div class="top_status">
-												<div class="flex_center gap5">
-													<h3 class="name">김시현1</h3>
-													<span class="tag tag_verified">올캣인증</span>
+												<div class="flex_gap10">
+													<h3 class="name">김시현</h3>
+													<span class="label_verified">올캣인증</span>
 												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												<!--<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>-->
 											</div>
+											<p class="type">배우용 프로필_03</p>
 											<ul class="sub_dot_list">
 												<li>25세</li>
 												<li>여성</li>
@@ -180,17 +193,18 @@
 							<li class="profile_item" data-category="female">
 								<a href="javascript://">
 									<div class="profile_img">
-										<!--<img src="../static/images/profile_sample2.jpg" alt="김아티스트">-->
+										<img src="../static/images/profile_sample2.jpg" alt="김아티스트">
 									</div>
 									<div class="profile_info">
 										<div class="profile_header">
 											<div class="top_status">
-												<div class="flex_center gap5">
-													<h3 class="name">김시현1</h3>
-													<span class="tag tag_verified">올캣인증</span>
+												<div class="flex_gap10">
+													<h3 class="name">김시현</h3>
+													<span class="label_verified">올캣인증</span>
 												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+												<!--<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>-->
 											</div>
+											<p class="type">배우용 프로필_04</p>
 											<ul class="sub_dot_list">
 												<li>25세</li>
 												<li>여성</li>
@@ -212,10 +226,10 @@
 				<div class="top">
 					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
 					<div class="btns">
-						<a href="javascript:void(0)" class="ft_pill">아티스트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_pill">프로젝트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_sns insta">instagram</a>
-						<a href="javascript:void(0)" class="ft_sns youtube">youtube</a>
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
 					</div>
 				</div>
 				<div class="legal">

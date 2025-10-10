@@ -48,15 +48,15 @@
 			<div class="inner">
 				<div class="section_title">
 					<h2>심사 하기</h2>
-					<div class="desc_group">
+					<!--<div class="desc_group">
 						<p class="desc">지원 마감 후, 심사 시작 버튼 클릭후에 심사를 시작할 수 있습니다.</p>
 						<button type="button" class="btn_common primary_line">지원 마감</button>
 						<button type="button" class="btn_common primary">심사 확정</button>
-					</div>
-					<!--<div class="desc_group">
+					</div>-->
+					<div class="desc_group">
 						<p class="desc primary">심사 확정 상태입니다. 알림이 필요한 심사 결과를 변경할 경우, 지원자에게 즉시 알림이 전송됩니다.</p>
 						<button type="button" class="btn_common closed">심사 확정</button>
-					</div>-->
+					</div>
 				</div>
 				<p class="section_title_desc">나의 심사 내역을 모두 확인 할 수 있습니다.</p>
 				<div class="view_top_grid">
@@ -432,7 +432,67 @@
 	}
 
 	// DOM 로드 후 SortableJS 드래그 앤 드롭 설정
-	document.addEventListener('DOMContentLoaded', setupSortableDragAndDrop);
+	document.addEventListener('DOMContentLoaded', () => {
+		// ✅ 기본 드롭 상태 정의
+		const defaultDropData = {
+			normal: [
+			{ name: '김시현', img: '../static/images/profile_sample2.jpg' },
+			{ name: '이민수', img: '../static/images/profile_sample2.jpg' }
+			],
+			casting: [
+			{ name: '박지영', img: '../static/images/profile_sample2.jpg' },
+			{ name: '정현우', img: '../static/images/profile_sample2.jpg' }
+			]
+		};
+
+		// ✅ 일반 드롭존 기본 프로필 렌더링
+		const dropZones = document.querySelectorAll('.review_section:not(.casting) .drop_zone');
+		dropZones.forEach(zone => {
+			if (defaultDropData.normal && defaultDropData.normal.length > 0) {
+			zone.innerHTML = defaultDropData.normal
+				.map(profile => `
+				<div class="dropped_profile">
+					<div class="dropped_profile_img">
+					<img src="${profile.img}" alt="${profile.name}">
+					</div>
+					<p class="profile_name">${profile.name}</p>
+					<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+				</div>
+				`)
+				.join('');
+			} else {
+			zone.innerHTML = '<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>';
+			}
+		});
+
+		// ✅ 캐스팅 섹션 기본 프로필 렌더링
+		const castingZones = document.querySelectorAll('.review_section.casting .drop_zone');
+		castingZones.forEach(zone => {
+			if (defaultDropData.casting && defaultDropData.casting.length > 0) {
+			zone.innerHTML = defaultDropData.casting
+				.map(profile => `
+				<div class="dropped_profile">
+					<div class="dropped_profile_img">
+					<img src="${profile.img}" alt="${profile.name}">
+					</div>
+					<p class="profile_name">${profile.name}</p>
+					<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
+				</div>
+				`)
+				.join('') + `
+				<p class="drop_text casting_message">심사 확정 후,<br>캐스팅 콜이 가능합니다.</p>
+			`;
+			} else {
+			zone.innerHTML = `
+				<p class="drop_text">여기로 배우 프로필을<br>드래그해서 가져오세요.</p>
+			`;
+			}
+		});
+
+		// ✅ 드래그앤드롭 기능 활성화
+		setupSortableDragAndDrop();
+		});
+
 	</script>
 </body>
 </html>

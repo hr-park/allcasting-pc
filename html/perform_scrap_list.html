@@ -54,29 +54,31 @@
 				</div>
 				<p class="section_title_desc">내가 스크랩한 관심 공고만 모아 볼수 있습니다.</p>
 				<div class="tabs">
-					<button class="tab-btn active" data-tab="all">모든 캐스팅 공고</button>
-					<button class="tab-btn" data-tab="movie">영화</button>
-					<button class="tab-btn" data-tab="ad">광고</button>
-					<button class="tab-btn" data-tab="broadcast">방송</button>
-					<button class="tab-btn" data-tab="audition">오디션</button>
-					<button class="tab-btn" data-tab="student">학생 작품</button>
+					<button class="btn_tab active" data-tab="all">모든 캐스팅 공고</button>
+					<button class="btn_tab" data-tab="movie">영화</button>
+					<button class="btn_tab" data-tab="ad">광고</button>
+					<button class="btn_tab" data-tab="broadcast">방송</button>
+					<button class="btn_tab" data-tab="audition">오디션</button>
+					<button class="btn_tab" data-tab="student">학생 작품</button>
 				</div>
 				<ul class="casting_call_list">
 					<li class="item" data-category="ad">
 						<a href="javascript://">
 							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
 							<div class="item_body">
-								<div class="detail-mouse-hover">
-									<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
-								</div>
 								<div class="top_status">
-									<div class="flex_center gap5">
+									<div class="flex_gap10">
 										<strong class="d_day soon">D-2</strong>
-										<div class="tag_list">
-											<span class="tag tag_recommend">올캣추천</span>
-											<span class="tag tag_urgent">마감임박</span>
-											<span class="tag tag_verified">올캣인증</span>
-											<span class="tag tag_new">NEW</span>
+										<div class="label_group">
+											<div class="label-with-tooltip">
+												<span class="label_recommend">올캣추천</span>
+												<div class="detail-mouse-hover">
+													<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
+												</div>
+											</div>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
 										</div>
 									</div>
 									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
@@ -109,10 +111,10 @@
 				<div class="top">
 					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
 					<div class="btns">
-						<a href="javascript:void(0)" class="ft_pill">아티스트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_pill">프로젝트를 찾는다면?</a>
-						<a href="javascript:void(0)" class="ft_sns insta">instagram</a>
-						<a href="javascript:void(0)" class="ft_sns youtube">youtube</a>
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
 					</div>
 				</div>
 				<div class="legal">
@@ -149,13 +151,13 @@
 	// 					<p class="text-wrapper">올캣이 추천하는 캐스팅 공고입니다.</p>
 	// 				</div>
 	// 				<div class="top_status">
-	// 					<div class="flex_center gap5">
+	// 					<div class="flex_gap10">
 	// 						<strong class="d_day soon">D-2</strong>
-	// 						<div class="tag_list">
-	// 							<span class="tag tag_recommend">올캣추천</span>
-	// 							<span class="tag tag_urgent">마감임박</span>
-	// 							<span class="tag tag_verified">올캣인증</span>
-	// 							<span class="tag tag_new">NEW</span>
+	// 						<div class="label_group">
+	// 							<span class="label_recommend">올캣추천</span>
+	// 							<span class="label_urgent">마감임박</span>
+	// 							<span class="label_verified">올캣인증</span>
+	// 							<span class="label_new">NEW</span>
 	// 						</div>
 	// 					</div>
 	// 					<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
