@@ -48,7 +48,7 @@
 								</select>
 							</div>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="gender">성별 <span class="lab_sub">(연기가 가능한 성별)</span></label>
@@ -66,28 +66,28 @@
 								<label for="gender3">기타</label>
 							</div>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="age">나이</label>
 						<div class="inp_box">
 							<input type="text" id="age" class="inp_txt" onclick="javascript:openPop('pop_age')" readonly placeholder="역할의 나이를 선택해 주세요."/>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="howmany">모집 인원</label>
 						<div class="inp_box">
 							<input type="text" id="howmany" class="inp_txt" placeholder="역할의 모집 인원을 입력해 주세요."/>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="role_name">역할 이름</label>
 						<div class="inp_box">
 							<input type="text" id="role_name" class="inp_txt" placeholder="역할의 이름을 입력해 주세요."/>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="description">역할 설명</label>
@@ -127,7 +127,7 @@
 								<input type="text" id="maxPayInput" class="inp_txt" placeholder="최대 출연료"/>
 							</div>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 						<div class="inp_box justify_end">
 							<div class="inp_chk">
 								<input type="checkbox" name="" id="chk1">
@@ -293,7 +293,7 @@
 		let isValid = true;
 		essentialFields.forEach(field => {
 			const input = field.querySelector('.inp_txt, select');
-			const errorMessage = field.querySelector('.msg_error');
+			const errorMessage = field.querySelector('.msg_desc');
 			if (input) {
 				if (input.value.trim() === '' || (input.tagName === 'SELECT' && input.selectedIndex === 0)) {
 					input.classList.add('error');

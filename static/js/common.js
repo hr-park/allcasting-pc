@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.inp_txt').forEach(input => {
         input.addEventListener('input', () => {
             const inpField = input.closest('.inp_field');
-            const errorMessage = inpField ? inpField.querySelector('.msg_error') : null;
+            const errorMessage = inpField ? inpField.querySelector('.msg_desc') : null;
     
             if (errorMessage) {
                 if (input.classList.contains('error')) {
@@ -55,6 +55,8 @@ function closePop(popName) {
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
 }
+*/
+
 
 function showNotification(message) {
     const layerNoti = document.querySelector('#layerNoti');

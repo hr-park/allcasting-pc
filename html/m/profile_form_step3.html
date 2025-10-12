@@ -38,7 +38,7 @@
 					<div class="inp_field essential">
 						<label for="year">연도</label>
 						<div class="inp_box"><input type="text" id="year" class="inp_txt" onclick="javascript:openPop('pop_year')" placeholder="작품에 참여한 연도를 선택해 주세요." readonly /><button type="button" class="btn_reset">X</button></div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field">
 						<label for="media">매체</label>
@@ -59,7 +59,7 @@
 					<div class="inp_field essential">
 						<label for="title">작품명</label>
 						<div class="inp_box"><input type="text" id="title" class="inp_txt" placeholder="작품명을 입력해 주세요."/><button type="button" class="btn_reset">X</button></div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field">
 						<label for="role">역할</label>
@@ -140,8 +140,8 @@
 			const roleSelect = document.querySelector('#role');
 			const roleValue = roleSelect.selectedIndex !== 0 ? roleSelect.value.trim() : '';
 			const isRepresentative = document.getElementById('representative').checked;
-			const errorMessageYear = yearInput.closest('.inp_field').querySelector('.msg_error');
-			const errorMessageTitle = titleInput.closest('.inp_field').querySelector('.msg_error');
+			const errorMessageYear = yearInput.closest('.inp_field').querySelector('.msg_desc');
+			const errorMessageTitle = titleInput.closest('.inp_field').querySelector('.msg_desc');
 
 			if (yearValue === '') {
 				yearInput.classList.add('error');

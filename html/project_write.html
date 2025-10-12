@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1><a href="javascript:void(0)" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<!-- Caster GNB -->
+					<nav class="gnb">
+						<a href="index_caster.html">홈</a>
+						<a href="project_list.html" class="active">내 프로젝트</a>
+						<a href="review_mng_list.html">심사 관리</a>
+						<a href="javascript://">오디션 일정</a>
+						<a href="artist_list.html">관심 아티스트</a>
+					</nav>
+					<!--// Caster GNB -->
+				</div>
+				<div class="header_actions">
+					<a href="search.html" class="btn btn_search">검색</a>
+					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="javascript:void(0)" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main class="profile">
+			<div class="inner">
+				<div class="section_title">
+					<h2>프로젝트 등록 및 수정</h2>
+					<div class="desc_group">
+						<p class="desc">초안 상태입니다. 저장 완료시 등록됩니다.</p>
+						<button type="button" class="btn_common secondary">초안 삭제</button>
+						<button type="button" class="btn_common primary">저장하기</button>
+					</div>
+				</div>
+				<div class="profile_view profile_write">
+					<div class="left">
+						<div class="profile_box">
+								<p class="tit">이름 및 공개범위</p>
+								<div class="reg_form">
+								<div class="inp_field">
+									<label for="">프로젝트명</label>
+									<div class="inp_box">
+										<input type="text" id="" class="inp_txt" placeholder="모집 공고에 등록될 제목을 적어주세요."/>
+									</div>
+								</div>
+								<script>
+document.addEventListener("DOMContentLoaded", function () {
+  flatpickr(".date_range", {
+    mode: "range",                // ✅ 2개 날짜 선택
+    dateFormat: "Y-m-d",          // 표시 형식
+    locale: "ko",                 // 한국어 지원
+    allowInput: true,
+    onClose: function (selectedDates, dateStr, instance) {
+      console.log("선택된 날짜:", dateStr); // 예: 2025-10-01 to 2025-10-10
+    }
+  });
+});
+									</script>
+								<div class="inp_field">
+									<label for="">모집 기간</label>
+									<div class="inp_box">
+										<input type="text" id="" class="inp_txt date_range" placeholder="지원가능한 기간을 선택해주세요." />
+										<span class="msg_desc">*지원 시작일과 종료일 2개 선택.</span>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label for="">감독 및 제작사</label>
+									<div class="inp_box">
+										<div class="row">
+											<input type="text" id="" class="inp_txt" placeholder="감독명" />
+											<input type="text" id="" class="inp_txt" placeholder="제작사명" />
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>매체</label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="yearSelect">
+												<option value="">대분류</option>
+												<option>영화</option>
+												<option>TV</option>
+												<option>무대</option>
+												<option>온라인</option>
+												<option>광고</option>
+												<option>기타 경력</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>장르 <span class="msg_desc">*선택 사항</span></label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="yearSelect">
+												<option value="">장르선택, 최대 3개</option>
+												<option value="">장르</option>
+												<option value="">장르</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>작품 설명 <p class="txt_counter"><span id="roleDescCounter" class="counter">0</span>/1,000</p></label>
+									<div class="inp_box">
+										<textarea id="" class="inp_textarea" placeholder="작품 설명을 작성해주세요."></textarea>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>작품 이미지 <span class="msg_desc">*선택 사항</span></label>
+									<div class="inp_box">
+										<label class="photo project">
+											<input type="file" accept="image/*" hidden="">
+										</label>
+										<p class="msg_desc">*작품 설명 영역에 표시할 대표 이미지를 추가해보세요.</p>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>촬영 기간</label>
+									<div class="inp_box">
+										<input type="text" id="" class="inp_txt date_range" placeholder="촬영예정 기간을 선택하세요." />
+										<span class="msg_desc">*촬영 시작일과 종료일 2개 선택.</span>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>촬영 지역</label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="yearSelect">
+												<option value="">지역 선택, 최대 3개</option>
+												<option>지역1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>학생작품</label>
+									<div class="inp_box">
+										<div class="inp_checkbox">
+											<input type="checkbox" id="chkStudentWork">
+											<label for="chkStudentWork">학생 작품입니다.</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="profile_box">
+							<p class="tit">모집 역할</p>
+							<form class="reg_form" id="recruitRoleForm">
+								<div class="inp_field">
+									<label>역할 구분</label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="roleType">
+												<option value="">비중이나 유형선택</option>
+												<option>주연</option>
+												<option>조연</option>
+												<option>단역</option>
+												<option>보조출연</option>
+												<option>모델</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>성별</label>
+									<div class="inp_box">
+										<div class="row">
+											<div class="inp_checkbox">
+												<input type="checkbox" name="gender" id="gender1">
+												<label for="gender1">남성</label>
+											</div>
+											<div class="inp_checkbox">
+												<input type="checkbox" name="gender" id="gender2">
+												<label for="gender2">여성</label>
+											</div>
+											<div class="inp_checkbox">
+												<input type="checkbox" name="gender" id="gender3">
+												<label for="gender3">기타</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label for="ageRange">나이</label>
+									<div class="inp_box">
+										<input type="text" id="ageRange" class="inp_txt" placeholder="역할의 나이를 입력해 주세요.">
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>모집 인원</label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="recruitCount">
+												<option value="">모집 인원 선택</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>역할 이름</label>
+									<div class="inp_box">
+										<input type="text" id="roleName" class="inp_txt" placeholder="역할의 이름을 입력해 주세요.">
+									</div>
+								</div>
+								<div class="inp_field">
+									<label>역할 설명 <p class="txt_counter"><span id="" class="counter">0</span>/1,000</p></label>
+									<div class="inp_box">
+										<textarea id="roleDesc" class="inp_textarea" placeholder="역할 설명을 작성해주세요."></textarea>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="chkNudity">
+											<label for="chkNudity">노출연기 있음</label>
+										</div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label for="tagSpecialty">필요 특기 <span class="lab_sub">*선택 사항</span></label>
+									<input type="hidden" value="" name="tag" id="rdTag">
+									<div class="inp_box">
+										<div class="flex_gap10">
+											<span class="txt">#</span>
+											<input type="text" id="tagSpecialty" class="inp_txt" placeholder="자유롭게 입력해 주세요.">
+										</div>
+										<div id="tagSpecialtyList" class="tags"></div>
+									</div>
+								</div>
+								<div class="inp_field">
+									<label for="">출연료</label>
+									<div class="inp_box">
+										<div class="custom_select min">
+											<select id="payType">
+												<option value="">작품당</option>
+											</select>
+										</div>
+										<div class="row">
+											<div class="col">
+												<input type="text" id="payMin" class="inp_txt" oninput="chkNumber(this, 0)" pattern="[0-9]*" placeholder="최소 출연료">
+											</div>
+											부터
+											<div class="col">
+												<input type="text" id="payMax" class="inp_txt" oninput="chkNumber(this, 0)" pattern="[0-9]*" placeholder="최대 출연료">
+											</div>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="chkNegotiable">
+											<label for="chkNegotiable">협의 후 결정</label>
+										</div>
+										<div class="inp_checkbox">
+											<input type="checkbox" id="chkUnpaid">
+											<label for="chkUnpaid">무급</label>
+										</div>
+										<button type="button" id="addRoleBtn" class="btn_round_add w_full"><span>모집 역할 추가하기</span></button>
+										<!-- 역할 모집 목록이 추가될 영역 -->
+										<ul id="roleSummary" class="form_summary casting_cards_list">
+											
+										</ul>
+									</div>
+								</div>
+							</ㄹ>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row links"><a href="javascript://">이용약관</a> &middot; <a href="javascript://">개인정보처리방침</a></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- 이미지 자르기 팝업 -->
+	<div id="pop_crop" class="popup_overlay">
+		<div class="popup popup_confirm">
+			<div class="popup_header">
+			<h3 class="popup_title">이미지 자르기</h3>
+			<button type="button" class="btn_close" onclick="closePopup('pop_crop')">
+				<span class="blind">닫기</span>
+			</button>
+			</div>
+
+			<div class="popup_content">
+				<div class="crop_area">
+					<img id="cropPreview" src="" alt="Preview">
+				</div>
+				<p class="popup_msg">썸네일 규격에 맞게 크롭되니 얼굴이 중앙에 위치하도록 해주세요.</p>
+			</div>
+			<div class="popup_footer">
+			<button type="button" class="btn_common secondary" onclick="closePopup('pop_crop')">취소</button>
+			<button type="button" class="btn_common primary" id="btnCropDone">완료</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+
+	<script>
+
+	//글자수 카운트
+	document.addEventListener("DOMContentLoaded", function() {
+		const textareas = document.querySelectorAll('textarea');
+		textareas.forEach((textarea) => {
+			textarea.addEventListener('input', function() {
+			const field = textarea.closest('.inp_field');
+			const counter = field.querySelector('.counter');
+			const maxLength = 1000;
+			
+			if (textarea.value.length > maxLength) {
+				textarea.value = textarea.value.substring(0, maxLength); // 1000자까지만 유지
+			}
+
+			if (counter) {
+				counter.textContent = textarea.value.length; // 현재 글자수 표시
+			}
+			});
+		});
+	});
+
+
+	
+	//TAG
+	const tag = {};
+	let counter = 0;
+
+	const addTag = (value) => {
+		tag[counter] = value;
+		counter++;
+	};
+
+	const marginTag = () => Object.values(tag).filter(word => word !== "");
+
+	document.getElementById('tagSpecialty').addEventListener('keypress', (e) => {
+		const self = e.target;
+
+		if (e.key === 'Enter' || e.keyCode === 32) {
+			const tagValue = self.value; 
+
+			//해시태그 값이 없으면 실행X
+			if (tagValue !== '') {
+				//중복 태그 확인
+				const result = Object.values(tag).filter(word => word === tagValue);
+				
+				//중복 태그가 없으면 실행
+				if (result.length === 0) { 
+					const tagListSpecialty = document.getElementById('tagSpecialtyList');
+					const span = document.createElement('span');
+					span.classList.add('tag');
+					span.innerHTML = `#${tagValue}<span class='btn_del' idx='${counter}'>태그삭제</span>`;
+					tagListSpecialty.appendChild(span);
+					addTag(tagValue);
+					self.value = '';
+				} else {
+					alert('특기가 중복됩니다.');
+				}
+			}
+			e.preventDefault(); //스페이스바 시 빈 공간이 생기지 않도록 방지
+		}
+	});
+
+	//인덱스 검사 후 삭제
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn_del')) {
+            const index = e.target.getAttribute('idx');
+            tag[index] = '';
+            e.target.parentElement.remove();
+        }
+    });
+
+/*
+	document.querySelectorAll('.photo input').forEach(input=>{
+	input.addEventListener('change', e=>{
+		const file=e.target.files[0];
+		const label=e.target.closest('.photo');
+		if(file){
+		const url=URL.createObjectURL(file);
+		label.style.backgroundImage=`url(${url})`;
+		label.style.backgroundSize='cover';
+		label.style.backgroundPosition='center';
+		label.classList.add('has-image');
+		label.textContent='';
+		if(!label.querySelector('.remove-btn')){
+			const btn=document.createElement('button');
+			btn.className='remove-btn';
+			btn.textContent='×';
+			btn.addEventListener('click', ev=>{
+			ev.stopPropagation();
+			label.style.backgroundImage='';
+			label.classList.remove('has-image');
+			e.target.value='';
+			btn.remove();
+			});
+			label.appendChild(btn);
+		}
+		}
+	});
+	});
+*/
+
+	
+	// 모집 역할 추가
+	document.getElementById("addRoleBtn").addEventListener("click", function () {
+		const roleType = document.getElementById("roleType").value;
+		const genderEls = document.querySelectorAll('input[name="gender"]:checked');
+		const genders = Array.from(genderEls).map(el => el.nextElementSibling.textContent).join(', ') || "성별무관";
+		const age = document.getElementById("ageRange").value.trim();
+		const recruitCount = document.getElementById("recruitCount").value.trim();
+		const roleName = document.getElementById("roleName").value.trim();
+		const desc = document.getElementById("roleDesc").value.trim();
+		const tags = Array.from(document.querySelectorAll("#tagSpecialtyList .tag")).map(tag => tag.textContent.replace('태그삭제','')).join(' ');
+		const minPay = document.getElementById("payMin").value.trim();
+		const maxPay = document.getElementById("payMax").value.trim();
+		const chkNegotiable = document.getElementById("chkNegotiable").checked;
+		const chkUnpaid = document.getElementById("chkUnpaid").checked;
+
+		if (roleName === "") {
+			alert("역할 이름을 입력해주세요.");
+			return;
+		}
+
+		const roleSummary = document.getElementById("roleSummary");
+
+		// 카드 생성
+		const li = document.createElement("li");
+		li.classList.add("casting_card");
+		li.innerHTML = `
+			<div class="card-header">
+			<span class="category">${roleType || "배역"}</span>
+			<span class="status"><button class="btn_action btn_del">삭제</button></span>
+			</div>
+			<div class="item_body">
+			<h3 class="card-title">${genders}, ${age ? age + "세, " : ""}${recruitCount || ""}, ${roleName}</h3>
+			<p class="card-description">${desc}</p>
+			<div class="sub_desc">
+				${tags ? `<p class="hashtags">${tags.split(' ').map(t => `<span>${t}</span>`).join('')}</p>` : ""}
+				<div class="detail_row">
+				<strong class="tit">출연료</strong>
+				<p class="desc">
+					${chkUnpaid ? "무급" : chkNegotiable ? "협의 후 결정" : (minPay || maxPay ? `${minPay}~${maxPay}만원` : "미정")}
+				</p>
+				</div>
+			</div>
+			</div>
+		`;
+
+		roleSummary.appendChild(li);
+
+		li.querySelector(".btn_del").addEventListener("click", () => li.remove());
+
+		document.getElementById("recruitRoleForm").reset();
+		document.getElementById("tagSpecialtyList").innerHTML = "";
+	});
+
+
+		/* ============================================
+		📸 이미지 업로드 + 자르기 팝업 + 미리보기 + 서브사진 자동 추가
+		============================================ */
+		document.addEventListener('DOMContentLoaded', () => {
+			let currentInput = null;
+			let cropper = null;
+
+			// ✅ 파일 선택 시 팝업 열기
+			function openCropPopup(e) {
+				currentInput = e.target;
+				const file = e.target.files[0];
+				if (!file) return;
+
+				const img = document.getElementById('cropPreview');
+				img.src = URL.createObjectURL(file);
+
+				// 팝업 열기
+				openPopup('pop_crop');
+
+				// 이미지 로드 후 cropper 생성
+				img.onload = () => {
+				if (cropper) cropper.destroy(); // 기존 cropper 제거
+				cropper = new Cropper(img, {
+					aspectRatio: 1, // 정사각형 비율
+					viewMode: 1,
+					autoCropArea: 1,
+					responsive: true,
+					background: false
+				});
+				};
+			}
+
+			// ✅ "등록하기" 버튼 클릭 시 잘라내기
+			function handleCroppedImage() {
+				if (!cropper || !currentInput) return;
+
+				cropper.getCroppedCanvas().toBlob(blob => {
+				const croppedUrl = URL.createObjectURL(blob);
+				const label = currentInput.closest('.photo');
+				if (!label) return console.warn('.photo 부모 요소를 찾을 수 없습니다.');
+
+				// 배경 이미지로 적용
+				label.style.backgroundImage = `url(${croppedUrl})`;
+				label.style.backgroundSize = 'cover';
+				label.style.backgroundPosition = 'center';
+				label.classList.add('has-image');
+				label.textContent = '';
+
+				closePopup('pop_crop');
+				cropper.destroy();
+				cropper = null;
+				currentInput = null;
+				});
+			}
+
+			// ✅ 이벤트 연결
+			document.querySelectorAll('.photo input[type="file"]').forEach(input => {
+				input.addEventListener('change', openCropPopup);
+			});
+
+			const btnCropDone = document.getElementById('btnCropDone');
+			if (btnCropDone) btnCropDone.addEventListener('click', handleCroppedImage);
+			});
+
+
+
+	</script>
+</body>
+</html>

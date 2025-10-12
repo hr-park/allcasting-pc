@@ -38,12 +38,12 @@
 					<div class="inp_field essential">
 						<label for="title">영상 제목</label>
 						<div class="inp_box"><input type="text" id="title" class="inp_txt" placeholder="영상 제목을 입력해 주세요."/><button type="button" class="btn_reset">X</button></div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field">
 						<label for="url">영상 URL</label>
 						<div class="inp_box"><input type="text" id="url" class="inp_txt" placeholder="유튜브 영상 링크를 넣어 주세요."/><button type="button" class="btn_reset">X</button></div>
-						<span class="msg_error">URL 형식이 아닙니다.</span>
+						<span class="msg_desc">URL 형식이 아닙니다.</span>
 					</div>
 					<div class="inp_field">
 						<div class="video_box"><iframe width="" height="" src="https://www.youtube.com/embed/_FOm1HamXJ8" title="" frameborder="0" allow="" allowfullscreen></iframe></div>
@@ -72,8 +72,8 @@
 		const videoTitleValue = videoTitleInput.value.trim();
 		const videoUrlInput = document.querySelector('#url');
 		const videoUrlValue = videoUrlInput.value.trim();
-		const errorMessageTitle = videoTitleInput.closest('.inp_field').querySelector('.msg_error');
-		const errorMessageUrl = videoUrlInput.closest('.inp_field').parentElement.querySelector('.msg_error');
+		const errorMessageTitle = videoTitleInput.closest('.inp_field').querySelector('.msg_desc');
+		const errorMessageUrl = videoUrlInput.closest('.inp_field').parentElement.querySelector('.msg_desc');
 
 		if (videoTitleValue === '') {
 			videoTitleInput.classList.add('error');

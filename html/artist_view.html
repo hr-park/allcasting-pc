@@ -43,9 +43,13 @@
 		<main class="profile bg_white">
 			<div class="inner">
 				<div class="section_title">
-					<h2>김시현의 프로필</h2>
+					<h2>김시현의 프로필 <span class="label_verified">올캣인증</span></h2>
+					<div class="flex_gap10">
+						<button class="btn_action btn_report" onclick="openPopup('pop_report_confirm')">신고하기</button>
+						<button class="btn_action btn_share">공유하기</button>
+					</div>
 				</div>
-				<div class="profile_view">
+				<div class="profile_view eval"><!-- artist_view에 eval 클래스-->
 					<div class="left">
 						<div class="photo_img">
 							<img src="../static/images/profile_sample2.jpg" alt="프로필">
@@ -70,18 +74,18 @@
 								<button type="button" class="link_move">모든 영상 보기</button>
 							</div>
 							<ul class="video_list">
-								<li>
+								<li class="primary">
 									<div class="video_img">
 										<img src="../static/images/video_sample1.jpg" alt="tvN 드라마 유미의 세포들">
 										<span class="status_primary status_pos_abs">대표</span>
-										<span class="video_duration">00:15</span>
+										<span class="duration">00:15</span>
 									</div>
 									<p class="video_title">tvN 드라마 '유미의 세포들' 조연, 불량 tvN 드라마 '유미의 세포들' 조연</p>
 								</li>
 								<li>
 									<div class="video_img">
 										<img src="../static/images/video_sample2.jpg" alt="JTBC 드라마 어쩌다 18">
-										<span class="video_duration">00:31</span>
+										<span class="duration">00:31</span>
 									</div>
 									<p class="video_title">JTBC 드라마 '어쩌다 18' 주연</p>
 								</li>
@@ -89,6 +93,53 @@
 						</div>
 					</div>
 					<div class="right">
+						<!-- 평가하기 -->
+						<div id="eval" class="eval_box">
+							<div class="eval_header">
+								<div>
+									<h3>지원자 평가하기</h3>
+									<p class="date">오디션 제안: 2025년 7월 23일</p>
+								</div>
+								<div class="eval_nav">
+									<button class="btn_common btn_prev">이전</button>
+									<button class="btn_common btn_next">다음 지원자</button>
+								</div>
+							</div>
+							<div class="eval_row">
+								<div class="label_area">별점 주기</div>
+								<div class="content_area">
+									<div class="star_select_rating">
+										<span class="star" data-value="1"></span>
+										<span class="star" data-value="2"></span>
+										<span class="star" data-value="3"></span>
+										<span class="star" data-value="4"></span>
+										<span class="star" data-value="5"></span>
+									</div>
+								</div>
+							</div>
+							<div class="eval_row">
+								<div class="label_area">분류</div>
+								<div class="content_area">
+									<div class="btns">
+										<input type="radio" name="action" id="listup" hidden>
+										<label for="listup" class="btn">리스트업</label>
+
+										<input type="radio" name="action" id="audition" hidden>
+										<label for="audition" class="btn">오디션 제안</label>
+
+										<input type="radio" name="action" id="casting" hidden>
+										<label for="casting" class="btn">캐스팅</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 평가하기 -->
+						<div id="roleSuggest" class="suggest_box">
+							<p class="tit">김시현님에게 바로 역할 제안하기</p>
+							<p class="desc">딱맞는 역할이 있다면 지금 바로 클릭!</p>
+							<button type="button" class="btn_role_suggest">역할 제안하기</button>
+						</div>
+
 						<!-- 기본 정보 -->
 						<div class="profile_box">
 							<p class="tit">기본 정보</p>
@@ -208,6 +259,7 @@
 								</li>
 							</ul>
 						</div>
+						<p class="txt_update">최근 업데이트: 2025년 6월 30일</p>
 					</div>
 				</div>
 			</div>
@@ -233,8 +285,58 @@
 			</div>
 		</footer>
 	</div>
+
+	<div id="pop_report_confirm" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">신고하기</h3>
+                <button type="button" class="btn_close" onclick="closePopup('pop_report_confirm')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg">
+                    <p>신고 사유를 알려주시면 운영진이 검토한 뒤 조치를 취하겠습니다.<br>
+						ALLCASTING의 개인정보 보호방침, 이용약관 및 현행법을 <br>
+						위반한 행위는 제재 대상이 됩니다.</p>
+					<div class="pop_detail_row">
+						<strong class="tit">신고 사유</strong>
+						<div class="desc">
+							<div class="custom_select min">
+								<select>
+									<option value="">신고 사유를 선택하세요.</option>
+									<option value="">사유1</option>
+									<option value="">사유2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <button type="button" class="btn_common primary" onclick="">확인</button>
+            </div>
+        </div>
+    </div>
 	
 	<script>
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const params = new URLSearchParams(window.location.search);
+			const from = params.get('from');
+
+			const evalBox = document.getElementById('eval'); // 평가 박스
+			const roleSuggest = document.getElementById('roleSuggest'); // 역할제안 박스
+
+			if (from === 'favorite') {
+				evalBox.style.display = 'block';
+				roleSuggest.style.display = 'none';
+			} else {
+				evalBox.style.display = 'none';
+				roleSuggest.style.display = 'block';
+			}
+		});
+
 		// photo_list에 12개의 li 요소 생성
 		document.addEventListener('DOMContentLoaded', function() {
 			const photoList = document.querySelector('.photo_list');
@@ -254,6 +356,17 @@
 				`;
 				}
 			}
+		});
+
+
+		document.querySelectorAll('.star_select_rating').forEach(container => {
+			const stars = container.querySelectorAll('.star');
+			stars.forEach(star => {
+				star.addEventListener('click', () => {
+					const value = star.dataset.value;
+					stars.forEach(s => s.classList.toggle('filled', s.dataset.value <= value));
+				});
+			});
 		});
 	</script>
 </body>

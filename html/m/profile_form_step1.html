@@ -38,14 +38,14 @@
 					<div class="inp_field essential">
 						<label for="name">이름</label>
 						<div class="inp_box"><input type="text" id="name" class="inp_txt" placeholder="아티스트로서 활동하는 이름을 적어 주세요."/><button type="button" class="btn_reset">X</button></div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field essential">
 						<label for="age">연령대</label>
 						<div class="inp_box">
 							<input type="text" id="age" class="inp_txt" onclick="javascript:openPop('pop_age')" readonly placeholder="연기가 가능한 연령대를 선택해 주세요."/>
 						</div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field">
 						<label for="age">성별 <span class="lab_sub">(연기가 가능한 성별)</span></label>
@@ -67,7 +67,7 @@
 					<div class="inp_field essential">
 						<label for="area">활동 지역</label>
 						<div class="inp_box" onclick="javascript:openPop('pop_su')"><input type="text" id="area" class="inp_txt" placeholder="활동 가능한 지역을 선택해 주세요(최대 5개)." readonly /></div>
-						<span class="msg_error">필수 입력 사항입니다.</span>
+						<span class="msg_desc">필수 입력 사항입니다.</span>
 					</div>
 					<div class="inp_field">
 						<label for="area">신체 사이즈 <span class="lab_sub">(선택사항)</span></label>
@@ -352,9 +352,9 @@
 		const areaInput = document.querySelector('#area');
 		const areaValue = areaInput.value.trim();
 
-		const errorMessageName = nameInput.closest('.inp_field').querySelector('.msg_error');
-		const errorMessageAge = ageInput.closest('.inp_field').querySelector('.msg_error');
-		const errorMessageArea = areaInput.closest('.inp_field').querySelector('.msg_error');
+		const errorMessageName = nameInput.closest('.inp_field').querySelector('.msg_desc');
+		const errorMessageAge = ageInput.closest('.inp_field').querySelector('.msg_desc');
+		const errorMessageArea = areaInput.closest('.inp_field').querySelector('.msg_desc');
 
 		if (nameValue === '') {
 			nameInput.classList.add('error');

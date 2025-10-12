@@ -151,7 +151,7 @@
 				</div>
 			</section>
 			<section>
-				<h1>profile_list - type1</h1>
+				<h1>profile_list</h1>
 				<ul class="profile_list">
 					<li class="profile_item" data-category="male">
 						<div class="profile_img">
@@ -201,9 +201,9 @@
 							</div>
 							<p class="profile_details">165cm / 46kg / 경력 33건</p>
 							<div class="tags">
-								<span>#코믹 연기</span>
-								<span>#승마</span>
-								<span>#액션 연기</span>
+								<span class="tag">#코믹 연기</span>
+								<span class="tag">#승마</span>
+								<span class="tag">#액션 연기</span>
 								<span class="more">+ 그 외 4</span>
 							</div>
 						</div>
@@ -229,10 +229,7 @@
 							</div>
 							<p class="profile_details">165cm / 46kg / 경력 33건</p>
 							<div class="tags">
-								<span>#코믹 연기</span>
-								<span>#승마</span>
-								<span>#액션 연기</span>
-								<span class="more">+ 그 외 4</span>
+								<span class="tag">#코믹 연기</span>
 							</div>
 						</div>
 					</li>
@@ -241,9 +238,8 @@
 			<section>
 				<h1>tags</h1>
 				<div class="tags">
-					<span>#코믹 연기</span>
-					<span>#승마</span>
-					<span>#액션 연기</span>
+					<span class="tag">#코믹 연기</span>
+					<span class="tag">#승마</span>
 					<span class="more">+ 그 외 4</span>
 				</div>
 			</section>
@@ -358,7 +354,6 @@
 			</section>
 			<section>
 				<h1>Popup</h1>
-				<button type="button" class="btn_common primary" onclick="openPopup('pop_profile_confirm')">openPopup</button>
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_report_confirm')">신고하기</button>
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_profile_confirm')">지원할 프로필 선택</button>
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_role_suggest')">역할 제안하기</button>
@@ -380,6 +375,14 @@
 					<button class="btn_action btn_copy">복사하기</button>
 					<button class="btn_action btn_edit">수정하기</button>
 					<button class="btn_action text_only">설정하기</button>
+					<button class="btn_action btn_del">삭제</button>
+				</div>
+			</section>
+
+			<section>
+				<h1>btn Other</h1>
+				<div class="flex_gap10">
+					<button class="btn_round_add"><span>btn_round_add</span></button>
 				</div>
 			</section>
 		</div>
@@ -389,7 +392,7 @@
         <div class="popup popup_confirm">
             <div class="popup_header">
                 <h3 class="popup_title">신고하기</h3>
-                <button type="button" class="btn-close" onclick="closePopup('pop_report_confirm')">
+                <button type="button" class="btn_close" onclick="closePopup('pop_report_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
@@ -423,7 +426,7 @@
         <div class="popup popup_confirm">
             <div class="popup_header">
                 <h3 class="popup_title">지원할 프로필 선택</h3>
-                <button type="button" class="btn-close" onclick="closePopup('pop_profile_confirm')">
+                <button type="button" class="btn_close" onclick="closePopup('pop_profile_confirm')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
@@ -458,7 +461,7 @@
         <div class="popup popup_confirm">
             <div class="popup_header">
                 <h3 class="popup_title">역할 제안하기</h3>
-                <button type="button" class="btn-close" onclick="closePopup('pop_role_suggest')">
+                <button type="button" class="btn_close" onclick="closePopup('pop_role_suggest')">
                     <span class="blind">닫기</span>
                 </button>
             </div>
