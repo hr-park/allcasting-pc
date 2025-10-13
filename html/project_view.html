@@ -7,9 +7,9 @@
 	<title>All CASTING - 캐스팅 공고</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
 	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
-	<script src="../static/js/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -298,7 +298,7 @@ document.querySelector('.btn_share').addEventListener('click', function() {
 	} else {
 		// 폴백: 클립보드에 URL 복사
 		navigator.clipboard.writeText(window.location.href).then(function() {
-			alert('링크가 클립보드에 복사되었습니다.');
+			swalConfirmPopup("링크가 클립보드에 복사되었습니다.");
 		});
 	}
 });

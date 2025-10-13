@@ -7,9 +7,9 @@
 	<title>All CASTING</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
 	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
-	<script src="../static/js/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -215,7 +215,7 @@
 
 	for (let i = 0; i < 10; i++) {
 		const li = document.createElement('li');
-		li.className = 'profile_item';
+		li.className = 'profile_item drag-source';
 		li.innerHTML = `
 			<div class="profile_img">
 				<img src="../static/images/profile_sample2.jpg"  alt="${names[i]}">
@@ -263,6 +263,7 @@
 					pull: 'clone',
 					put: false
 				},
+				draggable: '.drag-source',
 				sort: false,
 				animation: 150,
 				ghostClass: 'sortable-ghost',
@@ -304,6 +305,8 @@
 					pull: false,
 					put: true
 				},
+				draggable: '.drag-source',
+				sort: false,
 				animation: 150,
 				ghostClass: 'sortable-ghost',
 				chosenClass: 'sortable-chosen',
@@ -326,7 +329,7 @@
 					);
 					if (duplicate) {
 						evt.item.remove();
-						alert('이미 추가된 프로필입니다.');
+						swalConfirmPopup("이미 추가된 프로필입니다.");
 						return;
 					}
 
@@ -340,25 +343,25 @@
 					evt.item.remove();
 
 					const newProfile = document.createElement('div');
-					newProfile.className = 'dropped_profile';
-					newProfile.innerHTML = `
+						newProfile.className = 'dropped_profile';
+						newProfile.innerHTML = `
 						<div class="dropped_profile_img">${profileImg.innerHTML}</div>
 						<p class="profile_name">${profileName}</p>
 						<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
-					`;
+						`;
 
-					const isCasting = section.classList.contains('casting');
-					if (isCasting) {
+						const isCasting = section.classList.contains('casting');
+						if (isCasting) {
 						const msg = evt.to.querySelector('.casting_message');
 						if (msg) evt.to.insertBefore(newProfile, msg);
 						else evt.to.appendChild(newProfile);
-					} else {
+						} else {
 						evt.to.appendChild(newProfile);
 					}
 
 					// ✅ 캐스팅 상태 메시지 갱신
 					if (isCasting) updateCastingMessage(section);
-					}
+				}
 			});
 		});
 	}
@@ -421,7 +424,7 @@
 
 	// DOM 로드 후 SortableJS 드래그 앤 드롭 설정
 	document.addEventListener('DOMContentLoaded', () => {
-		// ✅ 기본 드롭 상태 정의
+		// ✅ 기본 드롭 상태 정의 (퍼블 확인용)
 		const defaultDropData = {
 			normal: [
 			{ name: '김시현', img: '../static/images/profile_sample2.jpg' },
@@ -459,7 +462,7 @@
 			if (defaultDropData.casting && defaultDropData.casting.length > 0) {
 				zone.innerHTML = defaultDropData.casting
 					.map((profile, index) => {
-						// 짝수/홀수 여부에 따라 두 번째 버튼 변경
+						// 버튼 퍼블 확인용
 						const secondButtonClass = (index % 2 === 0) ? 'primary' : 'closed';
 						const secondButtonText = (index % 2 === 0) ? '캐스팅콜하기' : '캐스팅콜 완료';
 
@@ -475,7 +478,7 @@
 						`;
 					})
 					.join('') + `
-					<p class="casting_message">모든 지원자를<br>캐스팅 콜 하세요.</p>
+					<!--<p class="casting_message">모든 지원자를<br>캐스팅 콜 하세요.</p>-->
 				`;
 			} else {
 				zone.innerHTML = `

@@ -7,9 +7,9 @@
 	<title>All CASTING</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
 	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
-	<script src="../static/js/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -179,7 +179,7 @@
 									<div class="inp_box">
 										<div class="custom_select min">
 											<select id="yearSelect">
-												<option value="">선택</option>
+												<option value="" selected disabled>선택</option>
 												<option value="2021">2021년</option>
 												<option value="2022">2022년</option>
 											</select>
@@ -191,9 +191,13 @@
 									<div class="inp_box">
 										<div class="custom_select min">
 											<select id="mediaSelect">
-												<option value="">선택</option>
-												<option value="TV 드라마">TV 드라마</option>
-												<option value="영화">영화</option>
+												<option value="" selected disabled>대분류</option>
+												<option>영화</option>
+												<option>TV</option>
+												<option>무대</option>
+												<option>온라인</option>
+												<option>광고</option>
+												<option>기타 경력</option>
 											</select>
 										</div>
 									</div>
@@ -361,7 +365,7 @@
 					addTag(tagValue);
 					self.value = '';
 				} else {
-					alert('특기가 중복됩니다.');
+					swalConfirmPopup("특기가 중복됩니다.");
 				}
 			}
 			e.preventDefault(); //스페이스바 시 빈 공간이 생기지 않도록 방지
@@ -377,36 +381,6 @@
         }
     });
 
-/*
-	document.querySelectorAll('.photo input').forEach(input=>{
-	input.addEventListener('change', e=>{
-		const file=e.target.files[0];
-		const label=e.target.closest('.photo');
-		if(file){
-		const url=URL.createObjectURL(file);
-		label.style.backgroundImage=`url(${url})`;
-		label.style.backgroundSize='cover';
-		label.style.backgroundPosition='center';
-		label.classList.add('has-image');
-		label.textContent='';
-		if(!label.querySelector('.remove-btn')){
-			const btn=document.createElement('button');
-			btn.className='remove-btn';
-			btn.textContent='×';
-			btn.addEventListener('click', ev=>{
-			ev.stopPropagation();
-			label.style.backgroundImage='';
-			label.classList.remove('has-image');
-			e.target.value='';
-			btn.remove();
-			});
-			label.appendChild(btn);
-		}
-		}
-	});
-	});
-*/
-
 	//작품 추가	
 	document.getElementById("addCareerBtn").addEventListener("click", function() {
 		const year = document.getElementById("yearSelect").value;
@@ -417,7 +391,7 @@
 		
 		// 작품명 필수 입력 검사
 		if (work === "") {
-			alert("작품명을 입력해주세요.");
+			swalConfirmPopup("작품명을 입력해주세요.");
 			return;
 		}
 
@@ -460,8 +434,8 @@
 		const list = document.getElementById('videoSummary');
 		const count = list.children.length + 1;
 
-		if (!title) return alert('영상 제목을 입력해주세요.');
-		if (!url) return alert('유튜브 URL을 입력해주세요.');
+		if (!title) return swalConfirmPopup("영상 제목을 입력해주세요.");
+		if (!url) return swalConfirmPopup("유튜브 URL을 입력해주세요.");
 
 		// 기본 썸네일 (URL 체크 없이)
 		const thumbnail = `/static/images/video_sample1.jpg`;
@@ -488,94 +462,87 @@
 		// 입력 리셋
 		document.getElementById('videoTitle').value = '';
 		document.getElementById('videoUrl').value = '';
+	});
+
+	/* ============================================
+	📸 이미지 업로드 + 자르기 팝업 + 미리보기 + 서브사진 자동 추가
+	============================================ */
+	document.addEventListener('DOMContentLoaded', () => {
+		let currentInput = null;
+		let cropper = null;
+
+		// ✅ 파일 선택 시 팝업 열기
+		function openCropPopup(e) {
+			currentInput = e.target;
+			const file = e.target.files[0];
+			if (!file) return;
+
+			const img = document.getElementById('cropPreview');
+			img.src = URL.createObjectURL(file);
+
+			// 팝업 열기
+			openPopup('pop_crop');
+
+			// 이미지 로드 후 cropper 생성
+			img.onload = () => {
+			if (cropper) cropper.destroy(); // 기존 cropper 제거
+			cropper = new Cropper(img, {
+				aspectRatio: 1, // 정사각형 비율
+				viewMode: 1,
+				autoCropArea: 1,
+				responsive: true,
+				background: false
+			});
+			};
+		}
+
+		// ✅ "등록하기" 버튼 클릭 시 잘라내기
+		function handleCroppedImage() {
+			if (!cropper || !currentInput) return;
+
+			cropper.getCroppedCanvas().toBlob(blob => {
+			const croppedUrl = URL.createObjectURL(blob);
+			const label = currentInput.closest('.photo');
+			if (!label) return console.warn('.photo 부모 요소를 찾을 수 없습니다.');
+
+			// 배경 이미지로 적용
+			label.style.backgroundImage = `url(${croppedUrl})`;
+			label.style.backgroundSize = 'cover';
+			label.style.backgroundPosition = 'center';
+			label.classList.add('has-image');
+			label.textContent = '';
+
+			// ✅ 서브사진이면 자동 추가 (기본 3개 다 찼을 때만)
+			if (label.classList.contains('sub')) {
+				const list = label.closest('.photo-list');
+				const subs = Array.from(list.querySelectorAll('.photo.sub'));
+				const filled = subs.filter(sub => sub.classList.contains('has-image')).length;
+
+				// 모든 서브사진이 채워졌고, 50개 미만일 때만 추가
+				if (filled === subs.length && subs.length < 50) {
+					const newLabel = document.createElement('label');
+					newLabel.className = 'photo sub';
+					newLabel.innerHTML = `<input type="file" accept="image/*" hidden>`;
+					newLabel.querySelector('input').addEventListener('change', openCropPopup);
+					list.appendChild(newLabel);
+				}
+			}
+
+			closePopup('pop_crop');
+			cropper.destroy();
+			cropper = null;
+			currentInput = null;
+			});
+		}
+
+		// ✅ 이벤트 연결
+		document.querySelectorAll('.photo input[type="file"]').forEach(input => {
+			input.addEventListener('change', openCropPopup);
 		});
 
-
-
-
-
-		/* ============================================
-		📸 이미지 업로드 + 자르기 팝업 + 미리보기 + 서브사진 자동 추가
-		============================================ */
-		document.addEventListener('DOMContentLoaded', () => {
-			let currentInput = null;
-			let cropper = null;
-
-			// ✅ 파일 선택 시 팝업 열기
-			function openCropPopup(e) {
-				currentInput = e.target;
-				const file = e.target.files[0];
-				if (!file) return;
-
-				const img = document.getElementById('cropPreview');
-				img.src = URL.createObjectURL(file);
-
-				// 팝업 열기
-				openPopup('pop_crop');
-
-				// 이미지 로드 후 cropper 생성
-				img.onload = () => {
-				if (cropper) cropper.destroy(); // 기존 cropper 제거
-				cropper = new Cropper(img, {
-					aspectRatio: 1, // 정사각형 비율
-					viewMode: 1,
-					autoCropArea: 1,
-					responsive: true,
-					background: false
-				});
-				};
-			}
-
-			// ✅ "등록하기" 버튼 클릭 시 잘라내기
-			function handleCroppedImage() {
-				if (!cropper || !currentInput) return;
-
-				cropper.getCroppedCanvas().toBlob(blob => {
-				const croppedUrl = URL.createObjectURL(blob);
-				const label = currentInput.closest('.photo');
-				if (!label) return console.warn('.photo 부모 요소를 찾을 수 없습니다.');
-
-				// 배경 이미지로 적용
-				label.style.backgroundImage = `url(${croppedUrl})`;
-				label.style.backgroundSize = 'cover';
-				label.style.backgroundPosition = 'center';
-				label.classList.add('has-image');
-				label.textContent = '';
-
-				// ✅ 서브사진이면 자동 추가 (기본 3개 다 찼을 때만)
-				if (label.classList.contains('sub')) {
-					const list = label.closest('.photo-list');
-					const subs = Array.from(list.querySelectorAll('.photo.sub'));
-					const filled = subs.filter(sub => sub.classList.contains('has-image')).length;
-
-					// 모든 서브사진이 채워졌고, 50개 미만일 때만 추가
-					if (filled === subs.length && subs.length < 50) {
-						const newLabel = document.createElement('label');
-						newLabel.className = 'photo sub';
-						newLabel.innerHTML = `<input type="file" accept="image/*" hidden>`;
-						newLabel.querySelector('input').addEventListener('change', openCropPopup);
-						list.appendChild(newLabel);
-					}
-				}
-
-				closePopup('pop_crop');
-				cropper.destroy();
-				cropper = null;
-				currentInput = null;
-				});
-			}
-
-			// ✅ 이벤트 연결
-			document.querySelectorAll('.photo input[type="file"]').forEach(input => {
-				input.addEventListener('change', openCropPopup);
-			});
-
-			const btnCropDone = document.getElementById('btnCropDone');
-			if (btnCropDone) btnCropDone.addEventListener('click', handleCroppedImage);
-			});
-
-
-
+		const btnCropDone = document.getElementById('btnCropDone');
+		if (btnCropDone) btnCropDone.addEventListener('click', handleCroppedImage);
+	});
 	</script>
 </body>
 </html>

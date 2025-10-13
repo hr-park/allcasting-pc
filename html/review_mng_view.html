@@ -7,9 +7,9 @@
 	<title>All CASTING</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
 	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
-	<script src="../static/js/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -214,7 +214,7 @@
 
 	for (let i = 0; i < 10; i++) {
 		const li = document.createElement('li');
-		li.className = 'profile_item';
+		li.className = 'profile_item drag-source';
 		li.innerHTML = `
 			<div class="profile_img">
 				<img src="../static/images/profile_sample2.jpg"  alt="${names[i]}">
@@ -262,6 +262,7 @@
 					pull: 'clone',
 					put: false
 				},
+				draggable: '.drag-source',
 				sort: false,
 				animation: 150,
 				ghostClass: 'sortable-ghost',
@@ -303,25 +304,14 @@
 					pull: false,
 					put: true
 				},
+				draggable: '.drag-source',
+				sort: false,
 				animation: 150,
 				ghostClass: 'sortable-ghost',
 				chosenClass: 'sortable-chosen',
 				dragClass: 'sortable-drag',
 				onMove: function(evt) {
-					// 드래그 중에 드롭 존에 들어왔을 때 미리보기 표시
-					// try {
-					// 	if (evt.to && evt.to.classList.contains('drop_zone') && draggedElementInfo) {
-					// 		showPreview(evt.to, draggedElementInfo);
-					// 	}
-					// } catch (error) {
-					// 	console.log('미리보기 표시 중 오류:', error);
-					// }
 					return false;
-				},
-				onEnd: function(evt) {
-					// 드래그가 끝나면 모든 미리보기 제거
-					//const allPreviews = document.querySelectorAll('.drag-preview');
-					//allPreviews.forEach(preview => preview.remove());
 				},
 				// ✅ 실제로 드롭했을 때만 프로필 표시
 				onAdd: function(evt) {
@@ -338,7 +328,7 @@
 					);
 					if (duplicate) {
 						evt.item.remove();
-						alert('이미 추가된 프로필입니다.');
+						swalConfirmPopup("이미 추가된 프로필입니다.");
 						return;
 					}
 
@@ -352,25 +342,25 @@
 					evt.item.remove();
 
 					const newProfile = document.createElement('div');
-					newProfile.className = 'dropped_profile';
-					newProfile.innerHTML = `
+						newProfile.className = 'dropped_profile';
+						newProfile.innerHTML = `
 						<div class="dropped_profile_img">${profileImg.innerHTML}</div>
 						<p class="profile_name">${profileName}</p>
 						<button type="button" class="remove_btn" onclick="removeProfile(this)">삭제</button>
-					`;
+						`;
 
-					const isCasting = section.classList.contains('casting');
-					if (isCasting) {
+						const isCasting = section.classList.contains('casting');
+						if (isCasting) {
 						const msg = evt.to.querySelector('.casting_message');
 						if (msg) evt.to.insertBefore(newProfile, msg);
 						else evt.to.appendChild(newProfile);
-					} else {
+						} else {
 						evt.to.appendChild(newProfile);
 					}
 
 					// ✅ 캐스팅 상태 메시지 갱신
 					if (isCasting) updateCastingMessage(section);
-					}
+				}
 			});
 		});
 	}

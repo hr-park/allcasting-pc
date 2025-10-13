@@ -7,9 +7,9 @@
 	<title>All CASTING</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
 	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/flatpickr.min.css">
-	<script src="../static/js/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -61,16 +61,17 @@
 						<div class="search-filters">
 							<div class="custom_select">
 								<select>
-									<option value="">역할 선택</option>
-									<option value="actor">배우</option>
-									<option value="model">모델</option>
-									<option value="singer">가수</option>
-									<option value="dancer">댄서</option>
+									<option value="" selected disabled>역할 선택</option>
+									<option value="주연">주연</option>
+									<option value="조연">조연</option>
+									<option value="단역">단역</option>
+									<option value="보조출연">보조출연</option>
+									<option value="모델">모델</option>
 								</select>
 							</div>
 							<div class="custom_select">
 								<select>
-									<option value="">연령대 선택</option>
+									<option value="" selected disabled>연령대 선택</option>
 									<option value="10s">10대</option>
 									<option value="20s">20대</option>
 									<option value="30s">30대</option>

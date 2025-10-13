@@ -219,3 +219,145 @@ document.querySelectorAll('.tabs').forEach(tabGroup => {
     });
   });
   
+
+  function swalConfirmPopup(title) {
+	Swal.fire({
+		title: title,
+		showCloseButton: true,
+		customClass: {
+			popup: 'pop_confirm',
+			confirmButton: "btn_common primary",
+		},
+		confirmButtonText: "확인"
+	});
+}
+
+// 선택자 기반으로 초기화
+// document.querySelectorAll('.form-control').forEach(element => {
+//   new Choices(element, {
+//     classNames: {
+//       containerOuter: ['choiceschoiceschoices']
+//     }
+//   });
+// });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+
+//     const commonClass = ['choiceschoiceschoices'];
+
+//     const choices = new Choices(element, {
+//         classNames: {
+//         containerOuter: ['choiceschoiceschoices'],
+//         containerInner: ['choices__inner'],
+//         input: ['choices__input'],
+//         inputCloned: ['choices__input--cloned'],
+//         list: ['choices__list'],
+//         listItems: ['choices__list--multiple'],
+//         listSingle: ['choices__list--single'],
+//         listDropdown: ['choices__list--dropdown'],
+//         item: ['choices__item'],
+//         itemSelectable: ['choices__item--selectable'],
+//         itemDisabled: ['choices__item--disabled'],
+//         itemChoice: ['choices__item--choice'],
+//         description: ['choices__description'],
+//         placeholder: ['choices__placeholder'],
+//         group: ['choices__group'],
+//         groupHeading: ['choices__heading'],
+//         button: ['choices__button'],
+//         activeState: ['is-active'],
+//         focusState: ['is-focused'],
+//         openState: ['is-open'],
+//         disabledState: ['is-disabled'],
+//         highlightedState: ['is-highlighted'],
+//         selectedState: ['is-selected'],
+//         flippedState: ['is-flipped'],
+//         loadingState: ['is-loading'],
+//         invalidState: ['is-invalid'],
+//         notice: ['choices__notice'],
+//         addChoice: ['choices__item--selectable', 'add-choice'],
+//         noResults: ['has-no-results'],
+//         noChoices: ['has-no-choices'],
+        
+//         },
+//     });
+// });
+
+
+
+
+function initSelectTag(selector = '[data-max]') {
+  document.querySelectorAll(selector).forEach(select => {
+    const maxCount = parseInt(select.dataset.max) || Infinity;
+
+    // select 상위 inp_box 안에서 태그 리스트 선택
+    const container = select.closest('.inp_box');
+    if (!container) return;
+
+    const tagList = container.querySelector('.tags');
+    if (!tagList) return;
+    
+    // hidden input 생성 또는 찾기
+    let hiddenInput = select.parentNode.querySelector(`input[type="hidden"][name="${select.name}"]`);
+    if (!hiddenInput) {
+      hiddenInput = document.createElement('input');
+      hiddenInput.type = 'hidden';
+      hiddenInput.name = select.name;
+      select.parentNode.appendChild(hiddenInput);
+    }
+
+    // 선택된 값 저장용
+    const selectedValues = {};
+    let counter = 0;
+
+    const updateHidden = () => {
+      const values = Object.values(selectedValues).filter(v => v !== '');
+      hiddenInput.value = values.join(',');
+    };
+
+    // select 값 선택 시 태그 생성
+    select.addEventListener('change', (e) => {
+      const value = e.target.value;
+      if (!value) return;
+
+      const currentCount = Object.values(selectedValues).filter(v => v !== '').length;
+
+      if (currentCount >= maxCount) {
+        swalConfirmPopup(`최대 ${maxCount}개까지 선택 가능합니다.`);
+        select.value = '';
+        return;
+      }
+
+      if (Object.values(selectedValues).includes(value)) {
+        swalConfirmPopup('이미 선택된 값입니다.');
+        select.value = '';
+        return;
+      }
+
+      const span = document.createElement('span');
+      span.classList.add('tag');
+      span.innerHTML = `${value} <span class='btn_del' data-idx='${counter}'>×</span>`;
+      tagList.appendChild(span);
+
+      selectedValues[counter] = value;
+      counter++;
+
+      updateHidden();
+      select.value = '';
+    });
+
+    // 삭제 기능
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('btn_del')) {
+        const idx = e.target.dataset.idx;
+        selectedValues[idx] = '';
+        e.target.parentElement.remove();
+        updateHidden();
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initSelectTag(); // 기본 선택자 사용
+});
