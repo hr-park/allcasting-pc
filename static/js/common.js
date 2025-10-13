@@ -118,8 +118,8 @@ function deleteItem(){
 }
 
 function closeNotice(button) {
-    const notice = button.closest(".msg_notice_hover");
-    const noticeTxt = button.closest(".msg_notice_hover p");
+    const notice = button.closest(".msg_cat_tooltip");
+    const noticeTxt = button.closest(".msg_cat_tooltip p");
     if (notice) {
         noticeTxt.style.display = "none";
     }

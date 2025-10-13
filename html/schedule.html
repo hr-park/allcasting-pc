@@ -6,9 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>All CASTING</title>
 	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
-	<link rel="stylesheet" href="../static/css/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
 	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
@@ -24,9 +24,9 @@
 					<!-- Caster GNB -->
 					<nav class="gnb">
 						<a href="index_caster.html">홈</a>
-						<a href="project_list.html" class="active">내 프로젝트</a>
+						<a href="project_list.html">내 프로젝트</a>
 						<a href="review_mng_list.html">심사 관리</a>
-						<a href="javascript://">오디션 일정</a>
+						<a href="schedule.html" class="active">오디션 일정</a>
 						<a href="artist_list.html">관심 아티스트</a>
 					</nav>
 					<!--// Caster GNB -->
@@ -43,278 +43,171 @@
 				</div>
 			</div>
 		</header>
-		<main class="profile">
+		<main class="">
 			<div class="inner">
 				<div class="section_title">
-					<h2>프로젝트 등록 및 수정</h2>
+					<h2>나의 오디션 일정</h2>
 					<div class="desc_group">
 						<p class="desc">초안 상태입니다. 저장 완료시 등록됩니다.</p>
 						<button type="button" class="btn_common secondary">초안 삭제</button>
 						<button type="button" class="btn_common primary">저장하기</button>
 					</div>
 				</div>
-				<div class="profile_view profile_write">
-					<div class="left">
-						<div class="profile_box">
-								<p class="tit">이름 및 공개범위</p>
-								<div class="reg_form">
-								<div class="inp_field">
-									<label for="">프로젝트명</label>
-									<div class="inp_box">
-										<input type="text" id="" class="inp_txt" placeholder="모집 공고에 등록될 제목을 적어주세요."/>
-									</div>
-								</div>
-								<script>
-document.addEventListener("DOMContentLoaded", function () {
-  flatpickr(".date_range", {
-    mode: "range",                // ✅ 2개 날짜 선택
-    dateFormat: "Y-m-d",          // 표시 형식
-    locale: "ko",                 // 한국어 지원
-    allowInput: true,
-    onClose: function (selectedDates, dateStr, instance) {
-      console.log("선택된 날짜:", dateStr); // 예: 2025-10-01 to 2025-10-10
-    }
-  });
-});
-									</script>
-								<div class="inp_field">
-									<label for="">모집 기간</label>
-									<div class="inp_box">
-										<input type="text" id="" class="inp_txt date_range" placeholder="지원가능한 기간을 선택해주세요." />
-										<span class="msg_desc">*지원 시작일과 종료일 2개 선택.</span>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label for="">감독 및 제작사</label>
-									<div class="inp_box">
-										<div class="row">
-											<input type="text" id="" class="inp_txt" placeholder="감독명" />
-											<input type="text" id="" class="inp_txt" placeholder="제작사명" />
+				<div class="form_container">
+					<div class="col_left">
+						<div class="form_box">
+							<div class="section_title">
+								<h2>오디션 일정 선택 <span class="cnt">2건</span></h2>
+							</div>
+							<!--<div class="no_data">
+								일러스트 삽입
+								<p>아직 선택할 오디션이 없습니다.</p>
+							</div>-->
+							<ul class="col_num_list">
+								<li>
+									<strong class="num">01</strong>
+									<div class="casting_call_item">
+										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+										<div class="item_body">
+											<div class="top_status">
+												<div class="flex_gap10">
+													<strong class="d_day soon">D-2</strong>
+													<div class="label_group">
+														<span class="label_urgent">마감임박</span>
+													</div>
+												</div>
+												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+											</div>
+											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+											<ul class="sub_dot_list min">
+												<li>CJ Entertainment</li>
+												<li>단편영화</li>
+												<li>학생작품</li>
+											</ul>
+											<div class="detail_row_box">
+												<div class="detail_row">
+													<strong class="tit">모집분야</strong>
+													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+												</div>
+											</div>
+											<button type="button" class="btn_common primary">역할 제안에 응하기</button>
 										</div>
 									</div>
-								</div>
-								<div class="inp_field">
-									<label>매체</label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="midea">
-												<option value="" selected disabled>대분류</option>
-												<option>영화</option>
-												<option>TV</option>
-												<option>무대</option>
-												<option>온라인</option>
-												<option>광고</option>
-												<option>기타 경력</option>
-											</select>
+								</li>
+								<li>
+									<strong class="num">02</strong>
+									<div class="casting_call_item">
+										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+										<div class="item_body">
+											<div class="top_status">
+												<div class="flex_gap10">
+													<strong class="d_day">D-10</strong>
+													<div class="label_group">
+														<span class="label_verified">올캣인증</span>
+													</div>
+												</div>
+												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+											</div>
+											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+											<ul class="sub_dot_list min">
+												<li>CJ Entertainment</li>
+												<li>단편영화</li>
+												<li>학생작품</li>
+											</ul>
+											<div class="detail_row_box">
+												<div class="detail_row">
+													<strong class="tit">모집분야</strong>
+													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+												</div>
+											</div>
+											<button type="button" class="btn_common primary">역할 제안에 응하기</button>
 										</div>
 									</div>
+								</li>
+							</ul>
+						</div>
+						<!--<div><img src="../static/images/banner/banner_wide_small.png" alt="광고 또는 공지사항 배너"></div>-->
+					</div>
+					<div class="col_right">
+						<!-- schedule_wrap -->
+						<div class="schedule_wrap">
+							<div class="section_title">
+								<h2>오디션 일정 확인 <span class="cnt">9건</span></h2>
+							</div>
+							<div class="form_box">
+								<div id="fpCalendar"></div>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_open">
+									<strong class="tit">프로젝트 AAA</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
 								</div>
-								<div class="inp_field">
-									<label>장르 <span class="msg_desc">*선택 사항</span></label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="genre" data-max="3">
-												<option value="" selected disabled>장르선택, 최대 3개</option>
-												<option value="드라마">드라마</option>
-												<option value="액션">액션</option>
-												<option value="스릴러">스릴러</option>
-												<option value="공포">공포</option>
-												<option value="범죄">범죄</option>
-												<option value="판타지">판타지</option>
-												<option value="웨스턴">웨스턴</option>
-												<option value="애니메이션">애니메이션</option>
-												<option value="코미디">코미디</option>
-												<option value="전쟁">전쟁</option>
-												<option value="로맨스">로맨스</option>
-												<option value="미스터리">미스터리</option>
-												<option value="어드벤처">어드벤처</option>
-												<option value="가족">가족</option>
-												<option value="SF">SF</option>
-												<option value="역사/사극">역사/사극</option>
-												<option value="다큐멘터리">다큐멘터리</option>
-											</select>
-										</div>
-										<div class="tags"></div>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
 									</div>
-								</div>
-								<div class="inp_field">
-									<label>작품 설명 <p class="txt_counter"><span class="counter">0</span>/1,000</p></label>
-									<div class="inp_box">
-										<textarea id="" class="inp_textarea" placeholder="작품 설명을 작성해주세요."></textarea>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
 									</div>
-								</div>
-								<div class="inp_field">
-									<label>작품 이미지 <span class="msg_desc">*선택 사항</span></label>
-									<div class="inp_box">
-										<label class="photo project">
-											<input type="file" accept="image/*" hidden="">
-										</label>
-										<p class="msg_desc">*작품 설명 영역에 표시할 대표 이미지를 추가해보세요.</p>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층(서초대로 30길 96)
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
 									</div>
+								</dl>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_review">
+									<strong class="tit">프로젝트 BBB</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
 								</div>
-								<div class="inp_field">
-									<label>촬영 기간</label>
-									<div class="inp_box">
-										<input type="text" id="" class="inp_txt date_range" placeholder="촬영예정 기간을 선택하세요." />
-										<span class="msg_desc">*촬영 시작일과 종료일 2개 선택.</span>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
 									</div>
-								</div>
-								<div class="inp_field">
-									<label>촬영 지역</label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="region" data-max="3">
-												<option value="" selected disabled>지역 선택, 최대 3개</option>
-												<option value="국내 전체">국내 전체</option>
-												<option value="서울">서울</option>
-												<option value="경기">경기</option>
-												<option value="인천">인천</option>
-												<option value="부산">부산</option>
-												<option value="대구">대구</option>
-												<option value="대전">대전</option>
-												<option value="울산">울산</option>
-												<option value="세종">세종</option>
-												<option value="강원">강원</option>
-												<option value="충남">충남</option>
-												<option value="충북">충북</option>
-												<option value="전남">전남</option>
-												<option value="전북">전북</option>
-												<option value="경남">경남</option>
-												<option value="경북">경북</option>
-											</select>
-										</div>
-										<div class="tags"></div>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
 									</div>
-								</div>
-								<div class="inp_field">
-									<label>학생작품</label>
-									<div class="inp_box">
-										<div class="inp_checkbox">
-											<input type="checkbox" id="chkStudentWork">
-											<label for="chkStudentWork">학생 작품입니다.</label>
-										</div>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
 									</div>
+								</dl>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_draft">
+									<strong class="tit">프로젝트 CCC</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
 								</div>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
+									</div>
+								</dl>
 							</div>
 						</div>
-					</div>
-					<div class="right">
-						<div class="profile_box">
-							<p class="tit">모집 역할</p>
-							<form class="reg_form" id="recruitRoleForm">
-								<div class="inp_field">
-									<label>역할 구분</label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="role">
-												<option value="" selected disabled>비중이나 유형선택</option>
-												<option value="주연">주연</option>
-												<option value="조연">조연</option>
-												<option value="단역">단역</option>
-												<option value="보조출연">보조출연</option>
-												<option value="모델">모델</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label>성별</label>
-									<div class="inp_box">
-										<div class="row">
-											<div class="inp_checkbox">
-												<input type="checkbox" name="gender" id="gender1">
-												<label for="gender1">남성</label>
-											</div>
-											<div class="inp_checkbox">
-												<input type="checkbox" name="gender" id="gender2">
-												<label for="gender2">여성</label>
-											</div>
-											<div class="inp_checkbox">
-												<input type="checkbox" name="gender" id="gender3">
-												<label for="gender3">기타</label>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label for="ageRange">나이</label>
-									<div class="inp_box">
-										<input type="text" id="ageRange" class="inp_txt" placeholder="역할의 나이를 입력해 주세요.">
-									</div>
-								</div>
-								<div class="inp_field">
-									<label>모집 인원</label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="recruitCount">
-												<option value="" selected disabled>모집 인원 선택</option>
-												<option value="1">1</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label>역할 이름</label>
-									<div class="inp_box">
-										<input type="text" id="roleName" class="inp_txt" placeholder="역할의 이름을 입력해 주세요.">
-									</div>
-								</div>
-								<div class="inp_field">
-									<label>역할 설명 <p class="txt_counter"><span id="recruitTxtCount" class="counter">0</span>/1,000</p></label>
-									<div class="inp_box">
-										<textarea id="roleDesc" class="inp_textarea" placeholder="역할 설명을 작성해주세요."></textarea>
-										<div class="inp_checkbox">
-											<input type="checkbox" id="chkNudity">
-											<label for="chkNudity">노출연기 있음</label>
-										</div>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label for="tagSpecialty">필요 특기 <span class="lab_sub">*선택 사항</span></label>
-									<input type="hidden" value="" name="tag" id="rdTag">
-									<div class="inp_box">
-										<div class="flex_gap10">
-											<span class="txt">#</span>
-											<input type="text" id="tagSpecialty" class="inp_txt" placeholder="자유롭게 입력해 주세요.">
-										</div>
-										<div id="tagSpecialtyList" class="tags"></div>
-									</div>
-								</div>
-								<div class="inp_field">
-									<label for="">출연료</label>
-									<div class="inp_box">
-										<div class="custom_select min">
-											<select id="pay">
-												<option value="" selected disabled>작품당</option>
-												<option value="100">100</option>
-											</select>
-										</div>
-										<div class="row">
-											<div class="col">
-												<input type="text" id="payMin" class="inp_txt" oninput="chkNumber(this, 0)" pattern="[0-9]*" placeholder="최소 출연료">
-											</div>
-											부터
-											<div class="col">
-												<input type="text" id="payMax" class="inp_txt" oninput="chkNumber(this, 0)" pattern="[0-9]*" placeholder="최대 출연료">
-											</div>
-										</div>
-										<div class="inp_checkbox">
-											<input type="checkbox" id="chkNegotiable">
-											<label for="chkNegotiable">협의 후 결정</label>
-										</div>
-										<div class="inp_checkbox">
-											<input type="checkbox" id="chkUnpaid">
-											<label for="chkUnpaid">무급</label>
-										</div>
-										<button type="button" id="addRoleBtn" class="btn_round_add w_full"><span>모집 역할 추가하기</span></button>
-										<!-- 역할 모집 목록이 추가될 영역 -->
-										<ul id="roleSummary" class="form_summary casting_cards_list">
-											
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
+						<!--// schedule_wrap -->
 					</div>
 				</div>
 			</div>
@@ -335,281 +228,86 @@ document.addEventListener("DOMContentLoaded", function () {
 					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
 					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
 					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
-					<p class="row links"><a href="javascript://">이용약관</a> &middot; <a href="javascript://">개인정보처리방침</a></p>
+					<p class="row"><button type="button" class="link">이용약관</button> &middot; <button type="button" class="link">개인정보처리방침</button></p>
 				</div>
 			</div>
 		</footer>
 	</div>
-
-	<!-- 이미지 자르기 팝업 -->
-	<div id="pop_crop" class="popup_overlay">
-		<div class="popup popup_confirm">
-			<div class="popup_header">
-			<h3 class="popup_title">이미지 자르기</h3>
-			<button type="button" class="btn_close" onclick="closePopup('pop_crop')">
-				<span class="blind">닫기</span>
-			</button>
-			</div>
-
-			<div class="popup_content">
-				<div class="crop_area">
-					<img id="cropPreview" src="" alt="Preview">
-				</div>
-				<p class="popup_msg">썸네일 규격에 맞게 크롭되니 얼굴이 중앙에 위치하도록 해주세요.</p>
-			</div>
-			<div class="popup_footer">
-			<button type="button" class="btn_common secondary" onclick="closePopup('pop_crop')">취소</button>
-			<button type="button" class="btn_common primary" id="btnCropDone">완료</button>
-			</div>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
-
 	<script>
-	//글자수 카운트
-	document.addEventListener("DOMContentLoaded", function() {
-		const textareas = document.querySelectorAll('textarea');
-		textareas.forEach((textarea) => {
-			textarea.addEventListener('input', function() {
-			const field = textarea.closest('.inp_field');
-			const counter = field.querySelector('.counter');
-			const maxLength = 1000;
-			
-			if (textarea.value.length > maxLength) {
-				textarea.value = textarea.value.substring(0, maxLength); // 1000자까지만 유지
-			}
+		const fpCalendar = document.querySelector('#fpCalendar')
+			fpCalendar.flatpickr({
+				inline: true,
+				altInput: false,      // 대체 입력창 생성 안 함
+				clickOpens: false,    // 클릭 시 열리는 동작 비활성화 (이미 펼쳐짐)
+				dateFormat: "Y-m-d",
+				altFormat: "Y년 m월",
+				defaultDate: "today",
+				locale: 'ko',
+				onDayCreate: function(dObj, dStr, fp, dayElem) {
+					const dayNumber = dayElem.innerHTML;
+					dayElem.innerHTML = `<em>${dayNumber}</em><p class="stat"></p>`;
 
-			if (counter) {
-				counter.textContent = textarea.value.length; // 현재 글자수 표시
-			}
+					// 일요일 holiday
+					const date = new Date(dayElem.getAttribute('aria-label'));
+					if (date.getDay() === 0) {
+						dayElem.classList.add('holiday');
+					}
+
+					handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
+				},
+				onReady: function(selectedDates, dateStr, instance) {
+					const yearMonthNav = document.createElement('div');
+					yearMonthNav.className = 'flatpickr-monthBox';
+
+					const yearMonthSelect = document.createElement('select');
+					yearMonthSelect.className = 'flatpickr-monthSelect';
+
+					for (let year = 2025; year <= 2026; year++) {
+						for (let month = 1; month <= 12; month++) {
+							const option = document.createElement('option');
+							option.value = `${year}-${month}`;
+							option.textContent = `${year}년 ${month}월`;
+							if (year === instance.currentYear && month === instance.currentMonth + 1) {
+								option.selected = true;
+							}
+							yearMonthSelect.appendChild(option);
+						}
+					}
+
+					yearMonthSelect.addEventListener('change', function() {
+						const [year, month] = this.value.split('-').map(Number);
+						instance.setDate(new Date(year, month - 1, 1));
+					});
+
+					yearMonthNav.appendChild(yearMonthSelect);
+					instance.calendarContainer.insertBefore(yearMonthNav, instance.calendarContainer.firstChild);
+				},
+				onMonthChange: function(selectedDates, dateStr, instance) {
+					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+				},
+				onYearChange: function(selectedDates, dateStr, instance) {
+					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+				}
 			});
-		});
-	});
-	
-	//TAG
-	const tag = {};
-	let counter = 0;
 
-	const addTag = (value) => {
-		tag[counter] = value;
-		counter++;
-	};
+			function handleDayCreate(dObj, dStr, fp, dayElem) {
+				const d = dayElem.dateObj;
+				const y = d.getFullYear();
+				const m = String(d.getMonth() + 1).padStart(2, '0');
+				const day = String(d.getDate()).padStart(2, '0');
+				const ymd = `${y}-${m}-${day}`;
 
-	const marginTag = () => Object.values(tag).filter(word => word !== "");
+				const dayStat = dayElem.querySelector('.stat');
 
-	document.getElementById('tagSpecialty').addEventListener('keypress', (e) => {
-		const self = e.target;
-
-		if (e.key === 'Enter' || e.keyCode === 32) {
-			const tagValue = self.value; 
-
-			//해시태그 값이 없으면 실행X
-			if (tagValue !== '') {
-				//중복 태그 확인
-				const result = Object.values(tag).filter(word => word === tagValue);
-				
-				//중복 태그가 없으면 실행
-				if (result.length === 0) { 
-					const tagListSpecialty = document.getElementById('tagSpecialtyList');
-					const span = document.createElement('span');
-					span.classList.add('tag');
-					span.innerHTML = `#${tagValue}<span class='btn_del' idx='${counter}'>태그삭제</span>`;
-					tagListSpecialty.appendChild(span);
-					addTag(tagValue);
-					self.value = '';
-				} else {
-					swalConfirmPopup("특기가 중복됩니다.");
-					return;
+				// 퍼블 확인용: YYYY-MM-DD로 비교
+				if (ymd === '2025-10-13' || ymd === '2025-10-14' || ymd === '2025-10-15') {
+					dayStat.innerHTML += `<span class="state_review"></span><span class="state_draft"></span><span class="state_open_before"></span>`;
+				} else if (ymd === '2025-10-25') {
+					dayStat.innerHTML += `<span class="state_closed"></span>`;
 				}
 			}
-			e.preventDefault(); //스페이스바 시 빈 공간이 생기지 않도록 방지
-		}
-	});
-
-	//인덱스 검사 후 삭제
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn_del')) {
-            const index = e.target.getAttribute('idx');
-            tag[index] = '';
-            e.target.parentElement.remove();
-        }
-    });
-
-	
-	// 모집 역할 추가
-	document.getElementById("addRoleBtn").addEventListener("click", function () {
-		const roleType = document.getElementById("roleType").value.trim();
-		const genderEls = document.querySelectorAll('input[name="gender"]:checked');
-		const genders = Array.from(genderEls).map(el => el.nextElementSibling.textContent).join(', ');
-		const age = document.getElementById("ageRange").value.trim();
-		const recruitCount = document.getElementById("recruitCount").value.trim();
-		const roleName = document.getElementById("roleName").value.trim();
-		const desc = document.getElementById("roleDesc").value.trim();
-		const tags = Array.from(document.querySelectorAll("#tagSpecialtyList .tag"))
-						.map(tag => tag.textContent.replace('태그삭제','')).join(' ');
-		const minPay = document.getElementById("payMin").value.replace(/,/g, '').trim();
-		const maxPay = document.getElementById("payMax").value.replace(/,/g, '').trim();
-		const chkNegotiable = document.getElementById("chkNegotiable").checked;
-		const chkUnpaid = document.getElementById("chkUnpaid").checked;
-
-		// ✅ 필수 입력값 검증
-		if (roleType === "") {
-			swalConfirmPopup("역할 구분을 선택해주세요.");
-			return;
-		}
-
-		if (genderEls.length === 0) {
-			swalConfirmPopup("성별을 선택해주세요.");
-			return;
-		}
-
-		if (age === "") {
-			swalConfirmPopup("나이를 입력해주세요.");
-			return;
-		}
-
-		if (recruitCount === "") {
-			swalConfirmPopup("모집 인원을 선택해주세요.");
-			return;
-		}
-
-		if (roleName === "") {
-			swalConfirmPopup("역할 이름을 입력해주세요.");
-			return;
-		}
-
-		if (desc === "") {
-			swalConfirmPopup("역할 설명을 입력해주세요.");
-			return;
-		}
-
-		if (!chkUnpaid && !chkNegotiable && (minPay === "" || maxPay === "")) {
-			swalConfirmPopup("출연료를 입력하거나,<br>협의/무급 항목을 선택해주세요.");
-			return;
-		}
-		// =============================
-		const roleSummary = document.getElementById("roleSummary");
-
-		// 카드 생성
-		const li = document.createElement("li");
-		li.classList.add("casting_card");
-		li.innerHTML = `
-			<div class="card-header">
-				<span class="category">${roleType}</span>
-				<span class="status"><button class="btn_action btn_del">삭제</button></span>
-			</div>
-			<div class="item_body">
-				<h3 class="card-title">${genders}, ${age}세, ${recruitCount}, ${roleName}</h3>
-				<p class="card-description">${desc}</p>
-				<div class="sub_desc">
-					${tags ? `<p class="hashtags">${tags.split(' ').map(t => `<span>${t}</span>`).join('')}</p>` : ""}
-					<div class="detail_row">
-						<strong class="tit">출연료</strong>
-						<p class="desc">
-							${chkUnpaid ? "무급" : chkNegotiable ? "협의 후 결정" : (minPay && maxPay ? `${Number(minPay).toLocaleString()} ~ ${Number(maxPay).toLocaleString()}만원` : "미정")}
-						</p>
-					</div>
-				</div>
-			</div>
-		`;
-
-		roleSummary.appendChild(li);
-
-		// 삭제 버튼 이벤트
-		li.querySelector(".btn_del").addEventListener("click", () => li.remove());
-
-		// 폼 리셋
-		document.getElementById("recruitRoleForm").reset();
-		document.getElementById("tagSpecialtyList").innerHTML = "";
-
-		// 역할 설명 카운터 리셋
-		const counterEl = document.getElementById("recruitTxtCount");
-		if (counterEl) counterEl.textContent = "0";
-	});
-
-
-
-	/* ============================================
-	📸 이미지 업로드 + 자르기 팝업 + 미리보기 + 서브사진 자동 추가
-	============================================ */
-	document.addEventListener('DOMContentLoaded', () => {
-		let currentInput = null;
-		let cropper = null;
-
-		// ✅ 파일 선택 시 팝업 열기
-		function openCropPopup(e) {
-			currentInput = e.target;
-			const file = e.target.files[0];
-			if (!file) return;
-
-			const img = document.getElementById('cropPreview');
-			img.src = URL.createObjectURL(file);
-
-			// 팝업 열기
-			openPopup('pop_crop');
-
-			// 이미지 로드 후 cropper 생성
-			img.onload = () => {
-			if (cropper) cropper.destroy(); // 기존 cropper 제거
-			cropper = new Cropper(img, {
-				aspectRatio: 1, // 정사각형 비율
-				viewMode: 1,
-				autoCropArea: 1,
-				responsive: true,
-				background: false
-			});
-			};
-		}
-
-		// ✅ "등록하기" 버튼 클릭 시 잘라내기
-		function handleCroppedImage() {
-			if (!cropper || !currentInput) return;
-
-			cropper.getCroppedCanvas().toBlob(blob => {
-			const croppedUrl = URL.createObjectURL(blob);
-			const label = currentInput.closest('.photo');
-			if (!label) return console.warn('.photo 부모 요소를 찾을 수 없습니다.');
-
-			// 배경 이미지로 적용
-			label.style.backgroundImage = `url(${croppedUrl})`;
-			label.style.backgroundSize = 'cover';
-			label.style.backgroundPosition = 'center';
-			label.classList.add('has-image');
-			label.textContent = '';
-
-			closePopup('pop_crop');
-			cropper.destroy();
-			cropper = null;
-			currentInput = null;
-			});
-		}
-
-		// ✅ 이벤트 연결
-		document.querySelectorAll('.photo input[type="file"]').forEach(input => {
-			input.addEventListener('change', openCropPopup);
-		});
-
-		const btnCropDone = document.getElementById('btnCropDone');
-		if (btnCropDone) btnCropDone.addEventListener('click', handleCroppedImage);
-	});
-
-	// 숫자만 남기기 + 천단위 콤마 삽입
-	function formatNumber(input) {
-		let value = input.value.replace(/[^0-9]/g, ""); // 숫자만 남김
-		if (value) {
-			value = Number(value).toLocaleString(); // 천단위 콤마 추가
-		}
-		input.value = value;
-	}
-
-	document.getElementById("payMin").addEventListener("input", function() {
-		formatNumber(this);
-	});
-
-	document.getElementById("payMax").addEventListener("input", function() {
-		formatNumber(this);
-	});
 	</script>
 </body>
 </html>
