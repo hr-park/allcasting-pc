@@ -40,7 +40,7 @@
 				</div>
 			</div>
 		</header>
-		<main class="profile">
+		<main class="">
 			<div class="inner">
 				<div class="section_title">
 					<h2>프로필 등록 및 수정</h2>
@@ -50,9 +50,9 @@
 						<button type="button" class="btn_common primary">저장하기</button>
 					</div>
 				</div>
-				<div class="profile_view profile_write">
-					<div class="left">
-						<div class="profile_box">
+				<div class="form_container profile_write">
+					<div class="col_left">
+						<div class="form_box">
 							<p class="tit">이름 및 공개범위</p>
 							<div class="reg_form">
 								<div class="inp_field">
@@ -90,7 +90,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="profile_box">
+						<div class="form_box">
 							<p class="tit">기본 정보</p>
 							<div class="reg_form">
 								<div class="inp_field">
@@ -171,7 +171,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="profile_box">
+						<div class="form_box">
 							<p class="tit">기본 정보</p>
 							<div class="reg_form" id="careerForm">
 								<div class="inp_field">
@@ -230,8 +230,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="right">
-						<div class="profile_box">
+					<div class="col_right">
+						<div class="form_box">
 							<p class="tit">사진</p>
 							<div class="reg_form">
 								<div class="inp_field">
@@ -262,7 +262,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="profile_box">
+						<div class="form_box">
 							<p class="tit">영상</p>
 							<div class="reg_form">
 								<div class="inp_field">
@@ -301,7 +301,7 @@
 					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
 					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
 					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
-					<p class="row links"><a href="javascript://">이용약관</a> &middot; <a href="javascript://">개인정보처리방침</a></p>
+					<p class="row"><button type="button" class="link">이용약관</button> &middot; <button type="button" class="link">개인정보처리방침</button></p>
 				</div>
 			</div>
 		</footer>
@@ -329,6 +329,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- 이미지 크롭 Cropper.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
 

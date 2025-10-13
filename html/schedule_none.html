@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1><a href="javascript:void(0)" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<!-- Caster GNB -->
+					<nav class="gnb">
+						<a href="index_caster.html">홈</a>
+						<a href="project_list.html">내 프로젝트</a>
+						<a href="review_mng_list.html">심사 관리</a>
+						<a href="schedule.html" class="active">오디션 일정</a>
+						<a href="artist_list.html">관심 아티스트</a>
+					</nav>
+					<!--// Caster GNB -->
+				</div>
+				<div class="header_actions">
+					<a href="search.html" class="btn btn_search">검색</a>
+					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="javascript:void(0)" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main class="">
+			<div class="inner">
+				<div class="section_title">
+					<h2>나의 오디션 일정</h2>
+					<div class="desc_group">
+						<p class="desc">초안 상태입니다. 저장 완료시 등록됩니다.</p>
+						<button type="button" class="btn_common secondary">초안 삭제</button>
+						<button type="button" class="btn_common primary">저장하기</button>
+					</div>
+				</div>
+				<div class="form_container">
+					<div class="col_left">
+						<div class="form_box">
+							<div class="section_title">
+								<h2>오디션 일정 선택 <span class="cnt">0건</span></h2>
+							</div>
+							<div class="no_data">
+								일러스트 삽입
+								<p>아직 선택할 오디션이 없습니다.</p>
+							</div>
+						</div>
+						<div><img src="../static/images/banner/banner_wide_small.png" alt="광고 또는 공지사항 배너"></div>
+					</div>
+					<div class="col_right">
+						<!-- schedule_wrap -->
+						<div class="schedule_wrap">
+							<div class="section_title">
+								<h2>오디션 일정 확인 <span class="cnt">0건</span></h2>
+							</div>
+							<div class="form_box">
+								<div id="fpCalendar"></div>
+							</div>
+							<p class="no_data">선택한 날짜에 아직 일정이 없습니다.</p>
+						</div>
+						<!--// schedule_wrap -->
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row"><button type="button" class="link">이용약관</button> &middot; <button type="button" class="link">개인정보처리방침</button></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+		const fpCalendar = document.querySelector('#fpCalendar')
+			fpCalendar.flatpickr({
+				inline: true,
+				altInput: false,      // 대체 입력창 생성 안 함
+				clickOpens: false,    // 클릭 시 열리는 동작 비활성화 (이미 펼쳐짐)
+				dateFormat: "Y-m-d",
+				altFormat: "Y년 m월",
+				defaultDate: "today",
+				locale: 'ko',
+				onDayCreate: function(dObj, dStr, fp, dayElem) {
+					const dayNumber = dayElem.innerHTML;
+					dayElem.innerHTML = `<em>${dayNumber}</em><p class="stat"></p>`;
+
+					// 일요일 holiday
+					const date = new Date(dayElem.getAttribute('aria-label'));
+					if (date.getDay() === 0) {
+						dayElem.classList.add('holiday');
+					}
+
+					handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
+				},
+				onReady: function(selectedDates, dateStr, instance) {
+					const yearMonthNav = document.createElement('div');
+					yearMonthNav.className = 'flatpickr-monthBox';
+
+					const yearMonthSelect = document.createElement('select');
+					yearMonthSelect.className = 'flatpickr-monthSelect';
+
+					for (let year = 2025; year <= 2026; year++) {
+						for (let month = 1; month <= 12; month++) {
+							const option = document.createElement('option');
+							option.value = `${year}-${month}`;
+							option.textContent = `${year}년 ${month}월`;
+							if (year === instance.currentYear && month === instance.currentMonth + 1) {
+								option.selected = true;
+							}
+							yearMonthSelect.appendChild(option);
+						}
+					}
+
+					yearMonthSelect.addEventListener('change', function() {
+						const [year, month] = this.value.split('-').map(Number);
+						instance.setDate(new Date(year, month - 1, 1));
+					});
+
+					yearMonthNav.appendChild(yearMonthSelect);
+					instance.calendarContainer.insertBefore(yearMonthNav, instance.calendarContainer.firstChild);
+				},
+				onMonthChange: function(selectedDates, dateStr, instance) {
+					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+				},
+				onYearChange: function(selectedDates, dateStr, instance) {
+					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+				}
+			});
+
+			function handleDayCreate(dObj, dStr, fp, dayElem) {
+				const d = dayElem.dateObj;
+				const y = d.getFullYear();
+				const m = String(d.getMonth() + 1).padStart(2, '0');
+				const day = String(d.getDate()).padStart(2, '0');
+				const ymd = `${y}-${m}-${day}`;
+
+				const dayStat = dayElem.querySelector('.stat');
+
+				// 퍼블 확인용: YYYY-MM-DD로 비교
+				// if (ymd === '2025-10-13' || ymd === '2025-10-14' || ymd === '2025-10-15') {
+				// 	dayStat.innerHTML += `<span class="state_review"></span><span class="state_draft"></span><span class="state_open_before"></span>`;
+				// } else if (ymd === '2025-10-25') {
+				// 	dayStat.innerHTML += `<span class="state_closed"></span>`;
+				// }
+			}
+	</script>
+</body>
+</html>
