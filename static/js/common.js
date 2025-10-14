@@ -110,12 +110,12 @@ function chkNumber(target, num){
 };
 
 //deleteItem
-function deleteItem(){
-    if(confirm("정말 삭제하시겠습니까?")){
-        // 실제 삭제 처리 로직
-        alert("삭제되었습니다.");
-    }
-}
+// function deleteItem(){
+//     if(confirm("정말 삭제하시겠습니까?")){
+//         // 실제 삭제 처리 로직
+//         alert("삭제되었습니다.");
+//     }
+// }
 
 function closeNotice(button) {
     const notice = button.closest(".msg_cat_tooltip");
@@ -192,6 +192,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
+/*
 document.querySelectorAll('.tabs').forEach(tabGroup => {
     const tabs = tabGroup.querySelectorAll('.btn_tab');
     const ul = tabGroup.nextElementSibling?.matches('ul')
@@ -218,7 +219,64 @@ document.querySelectorAll('.tabs').forEach(tabGroup => {
       });
     });
   });
-  
+  */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tabs').forEach(tabGroup => {
+	const tabs = tabGroup.querySelectorAll('.btn_tab');
+	const ul = tabGroup.nextElementSibling?.matches('ul')
+		? tabGroup.nextElementSibling
+		: tabGroup.parentElement.querySelector('ul');
+	const categoryElements = ul ? ul.querySelectorAll('li[data-category]') : [];
+
+	tabs.forEach(tab => {
+		tab.addEventListener('click', () => {
+            // 페이지 로드 시 기존 .no_data 제거
+            const noDataElements = document.querySelectorAll('.no_data');
+            noDataElements.forEach(el => el.remove());
+            
+			// 탭 active 상태 갱신
+			tabs.forEach(t => t.classList.remove('active'));
+			tab.classList.add('active');
+
+			const category = tab.dataset.tab;
+            console.log(category)
+
+			if (categoryElements.length > 0) {
+				// li[data-category] 필터링
+				let anyVisible = false;
+				categoryElements.forEach(el => {
+					if (category === 'all' || el.dataset.category === category) {
+						el.classList.remove('hidden');
+						anyVisible = true;
+					} else {
+						el.classList.add('hidden');
+					}
+				});
+
+				// 리스트에 해당 항목이 없으면 no_items 표시
+				if (!anyVisible) {
+					if (!ul.querySelector('.no_items')) {
+						const li = document.createElement('li');
+						li.className = 'no_data';
+						li.textContent = '데이터가 없습니다.';
+						ul.appendChild(li);
+					}
+				} else {
+					const noItems = ul.querySelector('.no_items');
+					if (noItems) noItems.remove();
+				}
+			}/* else {
+				if (!tabGroup.parentElement.querySelector('.no_items')) {
+					const wrapper = document.createElement('div');
+					wrapper.className = 'no_data';
+					wrapper.textContent = '등록된 프로젝트가 없습니다.';
+					tabGroup.parentElement.appendChild(wrapper);
+				}
+			}*/
+		});
+	});
+});
+});
 
   function swalConfirmPopup(title) {
 	Swal.fire({

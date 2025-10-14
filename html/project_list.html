@@ -20,110 +20,106 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<h1><a href="index_caster.html" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
 					<!-- Caster GNB -->
 					<nav class="gnb">
-						<a href="index_caster.html">홈</a>
-						<a href="project_list.html" class="active">내 프로젝트</a>
-						<a href="review_mng_list.html">심사 관리</a>
-						<a href="schedule.html">오디션 일정</a>
-						<a href="artist_list.html">관심 아티스트</a>
+						<button type="button" class="link" onclick="location.href='index_caster.html'">홈</button>
+						<button type="button" class="link active" onclick="location.href='project_list.html'">내 프로젝트</button>
+						<button type="button" class="link" onclick="location.href='review_mng_list.html'">심사 관리</button>
+						<button type="button" class="link" onclick="location.href='schedule.html'">오디션 일정</button>
+						<button type="button" class="link" onclick="location.href='artist_list.html'">관심 아티스트</button>
 					</nav>
 					<!--// Caster GNB -->
 				</div>
 				<div class="header_actions">
-					<a href="search.html" class="btn btn_search">검색</a>
-					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
-					<a href="javascript:void(0)" class="btn btn_profile">
+					<button type="button" class="btn btn_search" onclick="location.href='search.html'">검색</button>
+					<button type="button" class="btn btn_notification" onclick="location.href='notification.html'">
+						<span class="badge_alert">새로운 알림</span>
+					</button>
+					<button type="button" class="btn btn_profile" onclick="location.href=''">
 						<span class="profile_img">
 							<img src="../static/images/profile_sample.jpg" alt="프로필">
 						</span>
 						<span class="badge_alert">새로운 알림</span>
-					</a>
+					</button>
 				</div>
 			</div>
 		</header>
 
-		<main class="main">
-			<div class="main-layout">
-				<div class="main-content">
-					<section class="bg_white pick">
-						<div class="inner">
-							<div class="section_title">
-								<h2>내 프로젝트 <span class="cnt">32개</span></h2>
-								<a href="javascript:void(0)" class="btn_link">+ 새프로젝트 등록</a>
-							</div>
-							<p class="section_title_desc">나의 프로젝트를 모두 확인할 수 있습니다.</p>
-							<div class="tabs">
-								<button class="btn_tab active" data-tab="all">모든 프로젝트</button>
-								<button class="btn_tab" data-tab="movie">진행중 프로젝트</button>
-								<button class="btn_tab" data-tab="ad">마감된 프로젝트</button>
-							</div>
-							<ul class="casting_call_list">
-								<li class="item" data-category="ad">
-									<a href="javascript://">
-										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
-										<div class="item_body">
-											<div class="top_status">
-												<div class="flex_gap10">
-													<strong class="d_day soon">D-2</strong>
-													<div class="label_group">
-														<span class="label_recommend">올캣추천</span>
-														<span class="label_urgent">마감임박</span>
-														<span class="label_verified">올캣인증</span>
-														<span class="label_new">NEW</span>
-													</div>
-												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
-											</div>
-											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
-											<ul class="sub_dot_list min">
-												<li>CJ Entertainment</li>
-												<li>단편영화</li>
-												<li>학생작품</li>
-											</ul>
-											<div class="status_wrapper">
-												<div class="count">5,514명 지원</div>
-												<span class="status status_open">공고 진행중</span>
-												<!--<span class="status status_closed">공고 마감</span>-->
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="item" data-category="ad">
-									<a href="javascript://">
-										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
-										<div class="item_body">
-											<div class="top_status">
-												<div class="flex_gap10">
-													<strong class="d_day soon">D-2</strong>
-													<div class="label_group">
-														<span class="label_recommend">올캣추천</span>
-														<span class="label_urgent">마감임박</span>
-														<span class="label_verified">올캣인증</span>
-														<span class="label_new">NEW</span>
-													</div>
-												</div>
-												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
-											</div>
-											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
-											<ul class="sub_dot_list min">
-												<li>CJ Entertainment</li>
-												<li>단편영화</li>
-												<li>학생작품</li>
-											</ul>
-											<div class="status_wrapper">
-												<div class="count">5,514명 지원</div>
-												<!--<span class="status status_open">공고 진행중</span>-->
-												<span class="status status_closed">공고 마감</span>
-											</div>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</section>
+		<main class="bg_white">
+			<div class="inner">
+				<div class="section_title">
+					<h2>내 프로젝트 <span class="cnt">32개</span></h2>
+					<a href="javascript:void(0)" class="btn_link">+ 새프로젝트 등록</a>
 				</div>
+				<p class="section_title_desc">나의 프로젝트를 모두 확인할 수 있습니다.</p>
+				<div class="tabs">
+					<button class="btn_tab active" data-tab="all">모든 프로젝트</button>
+					<button class="btn_tab" data-tab="tab1">진행중 프로젝트</button>
+					<button class="btn_tab" data-tab="tab2">마감된 프로젝트</button>
+				</div>
+				<ul class="casting_call_list">
+					<li class="item" data-category="tab2">
+						<a href="javascript://">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="status_wrapper">
+									<div class="count">5,514명 지원</div>
+									<span class="status status_open">공고 진행중</span>
+									<!--<span class="status status_closed">공고 마감</span>-->
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="item" data-category="tab2">
+						<a href="javascript://">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="status_wrapper">
+									<div class="count">5,514명 지원</div>
+									<!--<span class="status status_open">공고 진행중</span>-->
+									<span class="status status_closed">공고 마감</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</main>
 

@@ -20,27 +20,18 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<h1><a href="javascript:void(0)" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
 					<!-- Caster GNB -->
 					<nav class="gnb">
-						<a href="index_caster.html">홈</a>
-						<a href="project_list.html" class="active">내 프로젝트</a>
-						<a href="review_mng_list.html">심사 관리</a>
-						<a href="schedule.html">오디션 일정</a>
-						<a href="artist_list.html">관심 아티스트</a>
+						<button type="button" class="link" onclick="location.href='index_caster.html'">홈</button>
+						<button type="button" class="link active" onclick="location.href='project_list.html'">내 프로젝트</button>
+						<button type="button" class="link" onclick="location.href='review_mng_list.html'">심사 관리</button>
+						<button type="button" class="link" onclick="location.href='schedule.html'">오디션 일정</button>
+						<button type="button" class="link" onclick="location.href='artist_list.html'">관심 아티스트</button>
 					</nav>
-					<!--// Caster GNB -->
+					<!--// Caster GNB -->	
 				</div>
-				<div class="header_actions">
-					<a href="search.html" class="btn btn_search">검색</a>
-					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
-					<a href="javascript:void(0)" class="btn btn_profile">
-						<span class="profile_img">
-							<img src="../static/images/profile_sample.jpg" alt="프로필">
-						</span>
-						<span class="badge_alert">새로운 알림</span>
-					</a>
-				</div>
+				<button class="btn_start">시작하기</button>
 			</div>
 		</header>
 		<main class="">
@@ -64,19 +55,6 @@
 										<input type="text" id="" class="inp_txt" placeholder="모집 공고에 등록될 제목을 적어주세요."/>
 									</div>
 								</div>
-								<script>
-document.addEventListener("DOMContentLoaded", function () {
-  flatpickr(".date_range", {
-    mode: "range",                // ✅ 2개 날짜 선택
-    dateFormat: "Y-m-d",          // 표시 형식
-    locale: "ko",                 // 한국어 지원
-    allowInput: true,
-    onClose: function (selectedDates, dateStr, instance) {
-      console.log("선택된 날짜:", dateStr); // 예: 2025-10-01 to 2025-10-10
-    }
-  });
-});
-									</script>
 								<div class="inp_field">
 									<label for="">모집 기간</label>
 									<div class="inp_box">
@@ -368,6 +346,21 @@ document.addEventListener("DOMContentLoaded", function () {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
 
 	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const datePickers = document.querySelectorAll(".date_range");
+
+		datePickers.forEach(picker => {
+			flatpickr(picker, {
+				mode: "range",                // ✅ 2개 날짜 선택
+				dateFormat: "Y-m-d",          // 표시 형식
+				locale: "ko",                 // 한국어
+				allowInput: true,
+				onClose: function (selectedDates, dateStr, instance) {
+				}
+			});
+		});
+	});
+	
 	//글자수 카운트
 	document.addEventListener("DOMContentLoaded", function() {
 		const textareas = document.querySelectorAll('textarea');

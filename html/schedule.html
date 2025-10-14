@@ -20,7 +20,7 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<h1><a href="javascript:void(0)" class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></a></h1>
+					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
 					<!-- Caster GNB -->
 					<nav class="gnb">
 						<a href="index_caster.html">홈</a>
@@ -256,6 +256,8 @@
 					handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
 				},
 				onReady: function(selectedDates, dateStr, instance) {
+					instance.calendarContainer.classList.add("custom_calendar");
+					
 					const yearMonthNav = document.createElement('div');
 					yearMonthNav.className = 'flatpickr-monthBox';
 
