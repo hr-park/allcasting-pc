@@ -326,7 +326,7 @@ main{padding:35px 0 100px;}
 .btn_tab {min-width:120px; height:48px;line-height:46px;padding:0 30px; border:1px solid #E7E7E7; border-radius:44px; background:#fff; cursor:pointer; font-size:16px;color:#222}
 .btn_tab.active { background:#222; color:#fff; border-color:#666; }
 .casting_call_list { display:flex;gap:24px;flex-wrap:wrap }
-.casting_call_list .item {width:calc(33.33% - 16px); background:#fff; border:1px solid #e7e7e7; border-radius:4px;transition: all 0.2s ease; }
+.casting_call_list .item {width:calc(33.33% - 16px); background:#fff; border:1px solid #e7e7e7; border-radius:4px;transition: all 0.2s ease;cursor:pointer}
 .casting_call_list .item:hover {box-shadow:0 2px 4px rgba(0,0,0,0.25);border-color:#000;transform: translateY(-2px); }
 .casting_call_list .item img { width:100%; height:160px; object-fit:cover; }
 .casting_call_list .item_body {position:relative; padding:15px 20px 20px;}
@@ -362,7 +362,7 @@ main{padding:35px 0 100px;}
 .progress_desc_casting span:after{margin-left:8px;}
 
 
-.btn_more_list{display:block;width:64px;height:64px;margin:50px auto;border-radius:50%;text-indent:-9999px;background:#fff url('../images/btn/btn_more.svg') no-repeat 50% 50% / 54px auto;}
+.btn_more_list{display:block;width:64px;height:64px;margin:50px auto 0;border-radius:50%;text-indent:-9999px;background:#fff url('../images/btn/btn_more.svg') no-repeat 50% 50% / 54px auto;}
 
 .notification_list .item{display:flex;padding:30px 0 20px;border-bottom:1px solid #ddd;} 
 .notification_list .content{position:relative;padding-left:64px;}
@@ -488,6 +488,11 @@ main{padding:35px 0 100px;}
 .form_box > .tit .cnt{color:#ED3964;font-weight:400;font-size:18px;}
 .form_box > .tit .cnt:before{content:'';display:inline-block;width:1px;height:12px;background:#ddd;margin:0 8px;vertical-align:middle;}
 
+.form_box.detail{padding:0}
+.form_box.detail .col_num_list > li + li{margin:0}
+.audition_form{margin-top:30px}
+.audition_form h3{margin-bottom:20px;font-size:18px;font-weight:700}
+
 .eval_box {background:#222; color:#fff; padding:20px; border-radius:4px;}
 .eval_box .eval_header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:30px;}
 .eval_box .eval_header h3 {font-size:24px; font-weight:700; margin:0 0 10px;}
@@ -555,6 +560,7 @@ main{padding:35px 0 100px;}
 .inp_field .inp_txt{height:46px;font-size:18px;color:#222;border-bottom:1px solid #E7E7E7}
 .inp_field .inp_txt:focus:not(textarea),
 .inp_field .inp_txt:not(:placeholder-shown):not(textarea){border-color:#000}
+.inp_field .inp_txt.location{padding:10px 30px 10px 0;background:url('../images/ico/ico_map.svg') no-repeat right 10px top 50% / 24px auto}
 .inp_field .inp_box .custom_select select{height:40px}
 .inp_field .inp_textarea{height:200px;padding:10px;font-size:18px;color:#222;border:1px solid #E7E7E7}
 .inp_field .inp_textarea:placeholder{color:#666}
@@ -588,6 +594,7 @@ main{padding:35px 0 100px;}
 
 .inp_box .photo.project{height:120px}
 .inp_box .photo.project.has-image{height:286px}
+
 
 /* ===== Casting Cards List Styles ===== */
 .recruit_field{padding:30px 0 100px}
@@ -730,7 +737,7 @@ main{padding:35px 0 100px;}
 .schedule_wrap .no_data{padding:80px 0;color:#fff;}
 
 .schedule_box{width:100%;margin-top:20px;border:1px solid #E7E7E7;border-radius:4px;padding:20px 32px;background:#fff;} 
-.schedule_box .card_header{position:relative;padding:5px 0 15px 20px;margin-bottom:25px;border-bottom:1px solid #000}
+.schedule_box .card_header{position:relative;padding:5px 0 15px 20px;margin-bottom:15px;border-bottom:1px solid #000}
 .schedule_box .card_header:before{content:'';position:absolute;top:5px;left:0;display:inline-block;width:8px;height:calc(100% - 20px);background:#999;border-radius:4px;}
 .schedule_box .tit{display:block;margin-bottom:8px;font-size:20px;font-weight:700;color:#222;} 
 .schedule_box .contact{display:block;font-size:16px;color:#666} 
@@ -839,7 +846,7 @@ main{padding:35px 0 100px;}
 .custom_calendar .flatpickr-weekday{font-size:16px;color:#666;font-weight:700}
 /*.custom_calendar .flatpickr-current-month{display:none;}*/
 .custom_calendar .flatpickr-monthBox{position:relative;width:200px;height:32px;padding:0;margin:0 auto;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
-.custom_calendar .flatpickr-monthSelect{padding:0 10px;font-size:20px;height:24px;border:0;font-weight:700;outline:0;}
+.custom_calendar .flatpickr-monthSelect{padding:0 10px;font-size:20px;height:24px;border:0;font-weight:700;outline:0;background:#fff;}
 .custom_calendar .flatpickr-monthSelect option{font-size:18px}
 .custom_calendar .flatpickr-innerContainer{width:100%;padding:25px 0 15px;}
 .custom_calendar .flatpickr-rContainer{width:100%;}

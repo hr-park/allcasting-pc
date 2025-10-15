@@ -20,26 +20,34 @@
 		<header class="header">
 			<div class="inner">
 				<div class="logo_wrap">
-					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
-					<!-- Caster GNB -->
-					<nav class="gnb">
-						<a href="index_caster.html">홈</a>
-						<a href="project_list.html">내 프로젝트</a>
-						<a href="review_mng_list.html">심사 관리</a>
-						<a href="schedule.html" class="active">오디션 일정</a>
-						<a href="artist_list.html">관심 아티스트</a>
-					</nav>
-					<!--// Caster GNB -->
+				<h1 class="logo">
+					<img src="../static/images/logo.png" alt="ALLCASTING">
+				</h1>
+				<!-- Perform GNB -->
+				<nav class="gnb">
+					<button type="button" class="link" onclick="location.href='index_perform.html'">홈</button>
+					<button type="button" class="link" onclick="location.href='apply_list.html'">지원현황</button>
+					<button type="button" class="link active" onclick="location.href='schedule.html'">내 일정</button>
+					<button type="button" class="link" onclick="location.href='favorite_list.html'">관심 공고</button>
+				</nav>
+				<!--// Perform GNB -->
 				</div>
+
 				<div class="header_actions">
-					<a href="search.html" class="btn btn_search">검색</a>
-					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
-					<a href="javascript:void(0)" class="btn btn_profile">
-						<span class="profile_img">
-							<img src="../static/images/profile_sample.jpg" alt="프로필">
-						</span>
-						<span class="badge_alert">새로운 알림</span>
-					</a>
+				<button type="button" class="btn btn_search" onclick="location.href='search.html'">
+					검색
+				</button>
+
+				<button type="button" class="btn btn_notification" onclick="location.href='notification.html'">
+					<span class="badge_alert">새로운 알림</span>
+				</button>
+
+				<button type="button" class="btn btn_profile" onclick="location.href=''">
+					<span class="profile_img">
+					<img src="../static/images/profile_sample.jpg" alt="프로필">
+					</span>
+					<span class="badge_alert">새로운 알림</span>
+				</button>
 				</div>
 			</div>
 		</header>
@@ -55,7 +63,7 @@
 				</div>
 				<div class="form_container">
 					<div class="col_left">
-						<div class="form_box">
+						<div class="form_box list">
 							<div class="section_title">
 								<h2>오디션 일정 선택 <span class="cnt">2건</span></h2>
 							</div>
@@ -90,7 +98,50 @@
 													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
 												</div>
 											</div>
-											<button type="button" class="btn_common primary">역할 제안에 응하기</button>
+											<button type="button" class="btn_common primary" onclick="openAuditionForm(this)">역할 제안에 응하기</button>
+											<!-- 오디션 일정 선택 폼 (초기 숨김) -->
+											<div class="audition_form" style="display:none;">
+												<h3>오디션 일정 선택</h3>
+												<div class="detail_row">
+													<strong class="tit">날짜</strong>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">10월 20일</option>
+																<option value="">10월 21일</option>
+															</select>
+														</div>
+													</dd>
+												</div>
+												<dl class="detail_row">
+													<dt class="tit">시간</dt>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">오전 10시</option>
+																<option value="">오후 2시</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">장소</dt>
+													<dd class="desc flex_gap10">
+														로캘리 1층
+														<button type="button" class="btn_action btn_map">지도보기</button>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">문의사항</dt>
+													<dd class="desc">02-3412-1111</dd>
+												</dl>
+												<div class="flex_gap10">
+													<button type="button" class="btn_common secondary" onclick="closeAuditionForm()">취소</button>
+													<button type="button" class="btn_common primary">오디션 일정 확정하기</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</li>
@@ -120,12 +171,133 @@
 													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
 												</div>
 											</div>
-											<button type="button" class="btn_common primary">역할 제안에 응하기</button>
+											<button type="button" class="btn_common primary" onclick="openAuditionForm(this)">오디션 일정 선택하기</button>
+											<!-- 오디션 일정 선택 폼 (초기 숨김) -->
+											<div class="audition_form" style="display:none;">
+												<h3>오디션 일정 선택</h3>
+												<dl class="detail_row">
+													<strong class="tit">날짜</strong>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">10월 20일</option>
+																<option value="">10월 21일</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">시간</dt>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">오전 10시</option>
+																<option value="">오후 2시</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">장소</dt>
+													<dd class="desc flex_gap10">
+														로캘리 1층
+														<button type="button" class="btn_action btn_map">지도보기</button>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">문의사항</dt>
+													<dd class="desc">02-3412-1111</dd>
+												</dl>
+												<div class="flex_gap10">
+													<button type="button" class="btn_common secondary" onclick="closeAuditionForm()">취소</button>
+													<button type="button" class="btn_common primary">오디션 일정 확정하기</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</li>
 							</ul>
 						</div>
+						<script>
+						function openAuditionForm(el) {
+							const btn = el;
+							const currentItem = btn.closest('.casting_call_item');
+							const form = currentItem.querySelector('.audition_form');
+							const listBox = document.querySelector('.form_box.list');
+							const sectionTitle = document.querySelector('.form_box.list .section_title');
+							const nums = document.querySelectorAll('.col_num_list .num');
+							const allItems = document.querySelectorAll('.casting_call_item');
+
+							if (!currentItem || !form) return;
+
+							// 모든 casting_call_item 숨기기
+							allItems.forEach(item => item.style.display = 'none');
+
+							// 클릭한 항목만 표시
+							currentItem.style.display = 'block';
+							listBox.classList.add('detail');
+
+							// .col_num_list .num 숨기기
+							nums.forEach(num => num.style.display = 'none');
+
+							// 섹션 타이틀 숨기기
+							if (sectionTitle) sectionTitle.style.display = 'none';
+
+							// 폼 보이기
+							form.style.display = 'block';
+
+							// 클릭된 버튼 숨기기
+							btn.style.display = 'none';
+							form.relatedButton = btn;
+						}
+
+						function closeAuditionForm() {
+							// 여러 개 있을 수 있으므로 querySelectorAll → forEach 로 처리
+							const forms = document.querySelectorAll('.audition_form');
+							const listBox = document.querySelector('.form_box.list');
+							const sectionTitle = listBox?.querySelector('.section_title');
+							const nums = document.querySelectorAll('.col_num_list .num');
+							const allItems = document.querySelectorAll('.casting_call_item');
+
+							if (!forms.length || !listBox) return;
+
+							// 각 폼에 대해 반복 처리
+							forms.forEach(form => {
+								// 폼 숨기기
+								form.style.display = 'none';
+
+								// 연결된 버튼 복원
+								if (form.relatedButton) {
+								form.relatedButton.style.display = '';
+								}
+
+								// 원래 위치 복귀 (open 시 저장해둔 원래 부모/위치로)
+								if (form._originalParent) {
+								if (form._originalNext && form._originalNext.parentNode === form._originalParent) {
+									form._originalParent.insertBefore(form, form._originalNext);
+								} else {
+									form._originalParent.appendChild(form);
+								}
+								}
+							});
+
+							// form_box.list의 detail 클래스 제거
+							listBox.classList.remove('detail');
+
+							// 숨겼던 casting_call_item 다시 보이기
+							allItems.forEach(item => item.style.display = '');
+
+							// .col_num_list .num 다시 보이기
+							nums.forEach(num => num.style.display = '');
+
+							// section_title 다시 표시
+							if (sectionTitle) sectionTitle.style.display = '';
+						}
+
+						</script>
+
 						<!--<div><img src="../static/images/banner/banner_wide_small.png" alt="광고 또는 공지사항 배너"></div>-->
 					</div>
 					<div class="col_right">

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
+					<!-- Caster GNB -->
+					<nav class="gnb">
+						<button type="button" class="link" onclick="location.href='index_caster.html'">홈</button>
+						<button type="button" class="link" onclick="location.href='project_list.html'">내 프로젝트</button>
+						<button type="button" class="link" onclick="location.href='review_mng_list.html'">심사 관리</button>
+						<button type="button" class="link active" onclick="location.href='schedule.html'">오디션 일정</button>
+						<button type="button" class="link" onclick="location.href='artist_list.html'">관심 아티스트</button>
+					</nav>
+					<!--// Caster GNB -->
+				</div>
+				<div class="header_actions">
+					<button type="button" class="btn btn_search" onclick="location.href='search.html'">
+						검색
+					</button>
+
+					<button type="button" class="btn btn_notification" onclick="location.href='notification.html'">
+						<span class="badge_alert">새로운 알림</span>
+					</button>
+
+					<button type="button" class="btn btn_profile" onclick="location.href=''">
+						<span class="profile_img">
+						<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="">
+			<div class="inner">
+				<div class="section_title">
+					<h2>나의 오디션 일정</h2>
+					<div class="desc_group">
+						<p class="desc">초안 상태입니다. 저장 완료시 등록됩니다.</p>
+						<button type="button" class="btn_common secondary">초안 삭제</button>
+						<button type="button" class="btn_common primary">저장하기</button>
+					</div>
+				</div>
+				<div class="form_container">
+					<div class="col_left">
+						<div class="form_box list">
+							<div class="section_title">
+								<h2>오디션 일정 선택 <span class="cnt">2건</span></h2>
+							</div>
+							<!--<div class="no_data">
+								일러스트 삽입
+								<p>아직 선택할 오디션이 없습니다.</p>
+							</div>-->
+							<ul class="col_num_list">
+								<li>
+									<strong class="num">01</strong>
+									<div class="casting_call_item">
+										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+										<div class="item_body">
+											<div class="top_status">
+												<div class="flex_gap10">
+													<strong class="d_day soon">D-2</strong>
+													<div class="label_group">
+														<span class="label_urgent">마감임박</span>
+													</div>
+												</div>
+												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+											</div>
+											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+											<ul class="sub_dot_list min">
+												<li>CJ Entertainment</li>
+												<li>단편영화</li>
+												<li>학생작품</li>
+											</ul>
+											<div class="detail_row_box">
+												<div class="detail_row">
+													<strong class="tit">모집분야</strong>
+													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+												</div>
+											</div>
+											<button type="button" class="btn_common primary" onclick="openAuditionForm(this)">오디션 일정 선택하기</button>
+											<!-- 오디션 일정 선택 폼 (초기 숨김) -->
+											<div class="audition_form" style="display:none;">
+												<h3>오디션 일정 선택</h3>
+												<dl class="detail_row">
+													<strong class="tit">날짜</strong>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">10월 20일</option>
+																<option value="">10월 21일</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">시간</dt>
+													<dd class="desc">
+														<div class="custom_select min">
+															<select>
+																<option value="" selected disabled>선택</option>
+																<option value="">오전 10시</option>
+																<option value="">오후 2시</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">장소</dt>
+													<dd class="desc flex_gap10">
+														로캘리 1층
+														<button type="button" class="btn_action btn_map">지도보기</button>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">문의사항</dt>
+													<dd class="desc">02-3412-1111</dd>
+												</dl>
+												<div class="flex_gap10">
+													<button type="button" class="btn_common secondary" onclick="closeAuditionForm()">취소</button>
+													<button type="button" class="btn_common primary">오디션 일정 확정하기</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<strong class="num">02</strong>
+									<div class="casting_call_item">
+										<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+										<div class="item_body">
+											<div class="top_status">
+												<div class="flex_gap10">
+													<strong class="d_day">D-10</strong>
+													<div class="label_group">
+														<span class="label_verified">올캣인증</span>
+													</div>
+												</div>
+												<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+											</div>
+											<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+											<ul class="sub_dot_list min">
+												<li>CJ Entertainment</li>
+												<li>단편영화</li>
+												<li>학생작품</li>
+											</ul>
+											<div class="detail_row_box">
+												<div class="detail_row">
+													<strong class="tit">모집분야</strong>
+													<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+												</div>
+											</div>
+											<button type="button" class="btn_common primary" onclick="openAuditionForm(this)">오디션 일정 선택하기</button>
+											<!-- 오디션 일정 선택 폼 (초기 숨김) -->
+											<div class="audition_form" style="display:none;">
+												<h3>오디션 일정 선택</h3>
+												<div class="detail_row">
+													<strong class="tit">날짜</strong>
+													<dd class="desc w_full">
+														<div class="custom_select min">
+															<select class="w_full">
+																<option value="" selected disabled>선택</option>
+																<option value="">10월 20일</option>
+																<option value="">10월 21일</option>
+															</select>
+														</div>
+													</dd>
+												</div>
+												<dl class="detail_row">
+													<dt class="tit">시간</dt>
+													<dd class="desc w_full">
+														<div class="custom_select min">
+															<select class="w_full">
+																<option value="" selected disabled>선택</option>
+																<option value="">오전 10시</option>
+																<option value="">오후 2시</option>
+															</select>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">슬롯</dt>
+													<dd class="desc">
+														<div class="flex_gap10">
+															<div class="custom_select min">
+																<select>
+																	<option value="" selected disabled>선택</option>
+																	<option value="">선택1</option>
+																	<option value="">선택1</option>
+																</select>
+															</div>
+															<div class="custom_select min">
+																<select>
+																	<option value="" selected disabled>선택</option>
+																	<option value="">선택1</option>
+																	<option value="">선택2</option>
+																</select>
+															</div>
+														</div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">장소</dt>
+													<dd class="desc w_full">
+														<div class="inp_field"><input type="text" class="inp_txt w_full location" placeholder="주소를 입력하세요."></div>
+														<div class="inp_field"><input type="text" class="inp_txt w_full" placeholder="상세 주소를 입력하세요."></div>
+													</dd>
+												</dl>
+												<dl class="detail_row">
+													<dt class="tit">문의사항</dt>
+													<dd class="desc w_full"><div class="inp_field"><input type="text" class="inp_txt" placeholder="연락처를 입력하세요."></div></dd>
+												</dl>
+												<div class="flex_gap10">
+													<button type="button" class="btn_common secondary">+ 일정 추가하기</button>
+													<button type="button" class="btn_common primary">오디션 일정 제안</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<script>
+						function openAuditionForm(el) {
+							const btn = el;
+							const currentItem = btn.closest('.casting_call_item');
+							const form = currentItem.querySelector('.audition_form');
+							const listBox = document.querySelector('.form_box.list');
+							const sectionTitle = document.querySelector('.form_box.list .section_title');
+							const nums = document.querySelectorAll('.col_num_list .num');
+							const allItems = document.querySelectorAll('.casting_call_item');
+
+							if (!currentItem || !form) return;
+
+							// 모든 casting_call_item 숨기기
+							allItems.forEach(item => item.style.display = 'none');
+
+							// 클릭한 항목만 표시
+							currentItem.style.display = 'block';
+							listBox.classList.add('detail');
+
+							// .col_num_list .num 숨기기
+							nums.forEach(num => num.style.display = 'none');
+
+							// 섹션 타이틀 숨기기
+							if (sectionTitle) sectionTitle.style.display = 'none';
+
+							// 폼 보이기
+							form.style.display = 'block';
+
+							// 클릭된 버튼 숨기기
+							btn.style.display = 'none';
+							form.relatedButton = btn;
+						}
+
+						function closeAuditionForm() {
+							// 여러 개 있을 수 있으므로 querySelectorAll → forEach 로 처리
+							const forms = document.querySelectorAll('.audition_form');
+							const listBox = document.querySelector('.form_box.list');
+							const sectionTitle = listBox?.querySelector('.section_title');
+							const nums = document.querySelectorAll('.col_num_list .num');
+							const allItems = document.querySelectorAll('.casting_call_item');
+
+							if (!forms.length || !listBox) return;
+
+							// 각 폼에 대해 반복 처리
+							forms.forEach(form => {
+								// 폼 숨기기
+								form.style.display = 'none';
+
+								// 연결된 버튼 복원
+								if (form.relatedButton) {
+								form.relatedButton.style.display = '';
+								}
+
+								// 원래 위치 복귀 (open 시 저장해둔 원래 부모/위치로)
+								if (form._originalParent) {
+								if (form._originalNext && form._originalNext.parentNode === form._originalParent) {
+									form._originalParent.insertBefore(form, form._originalNext);
+								} else {
+									form._originalParent.appendChild(form);
+								}
+								}
+							});
+
+							// form_box.list의 detail 클래스 제거
+							listBox.classList.remove('detail');
+
+							// 숨겼던 casting_call_item 다시 보이기
+							allItems.forEach(item => item.style.display = '');
+
+							// .col_num_list .num 다시 보이기
+							nums.forEach(num => num.style.display = '');
+
+							// section_title 다시 표시
+							if (sectionTitle) sectionTitle.style.display = '';
+						}
+
+						</script>
+
+						<!--<div><img src="../static/images/banner/banner_wide_small.png" alt="광고 또는 공지사항 배너"></div>-->
+					</div>
+					<div class="col_right">
+						<!-- schedule_wrap -->
+						<div class="schedule_wrap">
+							<div class="section_title">
+								<h2>오디션 일정 확인 <span class="cnt">9건</span></h2>
+							</div>
+							<div class="form_box">
+								<div id="fpCalendar"></div>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_open">
+									<strong class="tit">프로젝트 AAA</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
+								</div>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층(서초대로 30길 96)
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
+									</div>
+								</dl>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_review">
+									<strong class="tit">프로젝트 BBB</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
+								</div>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
+									</div>
+								</dl>
+							</div>
+							<div class="schedule_box">
+								<div class="card_header bar_draft">
+									<strong class="tit">프로젝트 CCC</strong>
+									<span class="contact">문의사항 02) 3412-1111</span>
+								</div>
+								<dl class="schedule_info">
+									<div class="info_item">
+										<dt class="label">일정</dt>
+										<dd class="value">2025년 10월 8일 오전 09:00 ~ 오후 01:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">시간</dt>
+										<dd class="value">오전 10:00 ~ 오후 3:00</dd>
+									</div>
+									<div class="info_item">
+										<dt class="label">장소</dt>
+										<dd class="value">
+										로캘리 1층
+										<button type="button" class="btn_action btn_map">지도보기</button>
+										</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+						<!--// schedule_wrap -->
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row"><button type="button" class="link">이용약관</button> &middot; <button type="button" class="link">개인정보처리방침</button></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+	const fpCalendar = document.querySelector('#fpCalendar')
+	fpCalendar.flatpickr({
+		inline: true,
+		altInput: false,      // 대체 입력창 생성 안 함
+		clickOpens: false,    // 클릭 시 열리는 동작 비활성화 (이미 펼쳐짐)
+		dateFormat: "Y-m-d",
+		altFormat: "Y년 m월",
+		defaultDate: "today",
+		locale: 'ko',
+		onDayCreate: function(dObj, dStr, fp, dayElem) {
+			const dayNumber = dayElem.innerHTML;
+			dayElem.innerHTML = `<em>${dayNumber}</em><p class="stat"></p>`;
+
+			// 일요일 holiday
+			const date = new Date(dayElem.getAttribute('aria-label'));
+			if (date.getDay() === 0) {
+				dayElem.classList.add('holiday');
+			}
+
+			handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
+		},
+		onReady: function(selectedDates, dateStr, instance) {
+			instance.calendarContainer.classList.add("custom_calendar");
+			
+			const yearMonthNav = document.createElement('div');
+			yearMonthNav.className = 'flatpickr-monthBox';
+
+			const yearMonthSelect = document.createElement('select');
+			yearMonthSelect.className = 'flatpickr-monthSelect';
+
+			for (let year = 2025; year <= 2026; year++) {
+				for (let month = 1; month <= 12; month++) {
+					const option = document.createElement('option');
+					option.value = `${year}-${month}`;
+					option.textContent = `${year}년 ${month}월`;
+					if (year === instance.currentYear && month === instance.currentMonth + 1) {
+						option.selected = true;
+					}
+					yearMonthSelect.appendChild(option);
+				}
+			}
+
+			yearMonthSelect.addEventListener('change', function() {
+				const [year, month] = this.value.split('-').map(Number);
+				instance.setDate(new Date(year, month - 1, 1));
+			});
+
+			yearMonthNav.appendChild(yearMonthSelect);
+			instance.calendarContainer.insertBefore(yearMonthNav, instance.calendarContainer.firstChild);
+		},
+		onMonthChange: function(selectedDates, dateStr, instance) {
+			const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+			yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+		},
+		onYearChange: function(selectedDates, dateStr, instance) {
+			const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+			yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+		}
+	});
+
+	function handleDayCreate(dObj, dStr, fp, dayElem) {
+		const d = dayElem.dateObj;
+		const y = d.getFullYear();
+		const m = String(d.getMonth() + 1).padStart(2, '0');
+		const day = String(d.getDate()).padStart(2, '0');
+		const ymd = `${y}-${m}-${day}`;
+
+		const dayStat = dayElem.querySelector('.stat');
+
+		// 퍼블 확인용: YYYY-MM-DD로 비교
+		if (ymd === '2025-10-13' || ymd === '2025-10-14' || ymd === '2025-10-15') {
+			dayStat.innerHTML += `<span class="state_review"></span><span class="state_draft"></span><span class="state_open_before"></span>`;
+		} else if (ymd === '2025-10-25') {
+			dayStat.innerHTML += `<span class="state_closed"></span>`;
+		}
+	}
+	</script>
+</body>
+</html>

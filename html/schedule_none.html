@@ -23,23 +23,29 @@
 					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
 					<!-- Caster GNB -->
 					<nav class="gnb">
-						<a href="index_caster.html">홈</a>
-						<a href="project_list.html">내 프로젝트</a>
-						<a href="review_mng_list.html">심사 관리</a>
-						<a href="schedule.html" class="active">오디션 일정</a>
-						<a href="artist_list.html">관심 아티스트</a>
+						<button type="button" class="link" onclick="location.href='index_caster.html'">홈</button>
+						<button type="button" class="link" onclick="location.href='project_list.html'">내 프로젝트</button>
+						<button type="button" class="link" onclick="location.href='review_mng_list.html'">심사 관리</button>
+						<button type="button" class="link active" onclick="location.href='schedule.html'">오디션 일정</button>
+						<button type="button" class="link" onclick="location.href='artist_list.html'">관심 아티스트</button>
 					</nav>
 					<!--// Caster GNB -->
 				</div>
 				<div class="header_actions">
-					<a href="search.html" class="btn btn_search">검색</a>
-					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
-					<a href="javascript:void(0)" class="btn btn_profile">
+					<button type="button" class="btn btn_search" onclick="location.href='search.html'">
+						검색
+					</button>
+
+					<button type="button" class="btn btn_notification" onclick="location.href='notification.html'">
+						<span class="badge_alert">새로운 알림</span>
+					</button>
+
+					<button type="button" class="btn btn_profile" onclick="location.href=''">
 						<span class="profile_img">
-							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						<img src="../static/images/profile_sample.jpg" alt="프로필">
 						</span>
 						<span class="badge_alert">새로운 알림</span>
-					</a>
+					</button>
 				</div>
 			</div>
 		</header>
@@ -104,80 +110,82 @@
 		</footer>
 	</div>
 	<script>
-		const fpCalendar = document.querySelector('#fpCalendar')
-			fpCalendar.flatpickr({
-				inline: true,
-				altInput: false,      // 대체 입력창 생성 안 함
-				clickOpens: false,    // 클릭 시 열리는 동작 비활성화 (이미 펼쳐짐)
-				dateFormat: "Y-m-d",
-				altFormat: "Y년 m월",
-				defaultDate: "today",
-				locale: 'ko',
-				onDayCreate: function(dObj, dStr, fp, dayElem) {
-					const dayNumber = dayElem.innerHTML;
-					dayElem.innerHTML = `<em>${dayNumber}</em><p class="stat"></p>`;
+	const fpCalendar = document.querySelector('#fpCalendar')
+	fpCalendar.flatpickr({
+		inline: true,
+		altInput: false,      // 대체 입력창 생성 안 함
+		clickOpens: false,    // 클릭 시 열리는 동작 비활성화 (이미 펼쳐짐)
+		dateFormat: "Y-m-d",
+		altFormat: "Y년 m월",
+		defaultDate: "today",
+		locale: 'ko',
+		onDayCreate: function(dObj, dStr, fp, dayElem) {
+			const dayNumber = dayElem.innerHTML;
+			dayElem.innerHTML = `<em>${dayNumber}</em><p class="stat"></p>`;
 
-					// 일요일 holiday
-					const date = new Date(dayElem.getAttribute('aria-label'));
-					if (date.getDay() === 0) {
-						dayElem.classList.add('holiday');
+			// 일요일 holiday
+			const date = new Date(dayElem.getAttribute('aria-label'));
+			if (date.getDay() === 0) {
+				dayElem.classList.add('holiday');
+			}
+
+			handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
+		},
+		onReady: function(selectedDates, dateStr, instance) {
+			instance.calendarContainer.classList.add("custom_calendar");
+			
+			const yearMonthNav = document.createElement('div');
+			yearMonthNav.className = 'flatpickr-monthBox';
+
+			const yearMonthSelect = document.createElement('select');
+			yearMonthSelect.className = 'flatpickr-monthSelect';
+
+			for (let year = 2025; year <= 2026; year++) {
+				for (let month = 1; month <= 12; month++) {
+					const option = document.createElement('option');
+					option.value = `${year}-${month}`;
+					option.textContent = `${year}년 ${month}월`;
+					if (year === instance.currentYear && month === instance.currentMonth + 1) {
+						option.selected = true;
 					}
-
-					handleDayCreate(dObj, dStr, fp, dayElem);	// 날짜 하단 스케쥴 아이콘 추가 handler
-				},
-				onReady: function(selectedDates, dateStr, instance) {
-					const yearMonthNav = document.createElement('div');
-					yearMonthNav.className = 'flatpickr-monthBox';
-
-					const yearMonthSelect = document.createElement('select');
-					yearMonthSelect.className = 'flatpickr-monthSelect';
-
-					for (let year = 2025; year <= 2026; year++) {
-						for (let month = 1; month <= 12; month++) {
-							const option = document.createElement('option');
-							option.value = `${year}-${month}`;
-							option.textContent = `${year}년 ${month}월`;
-							if (year === instance.currentYear && month === instance.currentMonth + 1) {
-								option.selected = true;
-							}
-							yearMonthSelect.appendChild(option);
-						}
-					}
-
-					yearMonthSelect.addEventListener('change', function() {
-						const [year, month] = this.value.split('-').map(Number);
-						instance.setDate(new Date(year, month - 1, 1));
-					});
-
-					yearMonthNav.appendChild(yearMonthSelect);
-					instance.calendarContainer.insertBefore(yearMonthNav, instance.calendarContainer.firstChild);
-				},
-				onMonthChange: function(selectedDates, dateStr, instance) {
-					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
-					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
-				},
-				onYearChange: function(selectedDates, dateStr, instance) {
-					const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
-					yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+					yearMonthSelect.appendChild(option);
 				}
+			}
+
+			yearMonthSelect.addEventListener('change', function() {
+				const [year, month] = this.value.split('-').map(Number);
+				instance.setDate(new Date(year, month - 1, 1));
 			});
 
-			function handleDayCreate(dObj, dStr, fp, dayElem) {
-				const d = dayElem.dateObj;
-				const y = d.getFullYear();
-				const m = String(d.getMonth() + 1).padStart(2, '0');
-				const day = String(d.getDate()).padStart(2, '0');
-				const ymd = `${y}-${m}-${day}`;
+			yearMonthNav.appendChild(yearMonthSelect);
+			instance.calendarContainer.insertBefore(yearMonthNav, instance.calendarContainer.firstChild);
+		},
+		onMonthChange: function(selectedDates, dateStr, instance) {
+			const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+			yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+		},
+		onYearChange: function(selectedDates, dateStr, instance) {
+			const yearMonthSelect = instance.calendarContainer.querySelector('.flatpickr-monthSelect');
+			yearMonthSelect.value = `${instance.currentYear}-${instance.currentMonth + 1}`;
+		}
+	});
 
-				const dayStat = dayElem.querySelector('.stat');
+	function handleDayCreate(dObj, dStr, fp, dayElem) {
+		const d = dayElem.dateObj;
+		const y = d.getFullYear();
+		const m = String(d.getMonth() + 1).padStart(2, '0');
+		const day = String(d.getDate()).padStart(2, '0');
+		const ymd = `${y}-${m}-${day}`;
 
-				// 퍼블 확인용: YYYY-MM-DD로 비교
-				// if (ymd === '2025-10-13' || ymd === '2025-10-14' || ymd === '2025-10-15') {
-				// 	dayStat.innerHTML += `<span class="state_review"></span><span class="state_draft"></span><span class="state_open_before"></span>`;
-				// } else if (ymd === '2025-10-25') {
-				// 	dayStat.innerHTML += `<span class="state_closed"></span>`;
-				// }
-			}
+		const dayStat = dayElem.querySelector('.stat');
+
+		// 퍼블 확인용: YYYY-MM-DD로 비교
+		// if (ymd === '2025-10-13' || ymd === '2025-10-14' || ymd === '2025-10-15') {
+		// 	dayStat.innerHTML += `<span class="state_review"></span><span class="state_draft"></span><span class="state_open_before"></span>`;
+		// } else if (ymd === '2025-10-25') {
+		// 	dayStat.innerHTML += `<span class="state_closed"></span>`;
+		// }
+	}
 	</script>
 </body>
 </html>
