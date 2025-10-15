@@ -249,16 +249,17 @@ main{padding:35px 0 100px;}
 .pop_detail_row .desc select{width:100%}
 
 
-.progress_bar {position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin:12px 0;}
+.progress_bar {position:relative;display:flex;justify-content:space-between;align-items:flex-start;min-height:70px;margin:12px 0;}
 .progress_bar::after {content:'';position:absolute;z-index:0;top:10px;left:0;width: 100%;height:4px;background-color:#E7E7E7;}
 .progress_bar .step {position:relative;flex:1;text-align:center;}
 .progress_bar .step:first-child{text-align:left;}
 .progress_bar .step:last-child{text-align:right;}
+.progress_bar.step5 .step:not(:first-child):not(:last-child) {flex:2;}
 .progress_bar .step .circle {position:relative;z-index:1;display:inline-block;width:20px;height:20px;border-radius:50%;background-color:#D9D9D9;vertical-align:middle;}
 .progress_bar .step.completed .circle {background:#4599F8 url('../images/ico/ico_check.svg') no-repeat 50% 50% / 100% auto;}
 .progress_bar .step .step_label {display:block;margin-top:8px;font-size:12px;color:#666;line-height:1.6;word-break:keep-all;}
 .progress_bar .step.completed .step_label {color:#222;font-weight:700;}
-.progress-desc {display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:auto;font-size:16px;color:#666;text-align:center;line-height:24px;}
+.progress-desc {display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:20px;font-size:16px;color:#666;text-align:center;line-height:24px;}
 
 /* ===== Tag Styles ===== */
 .label_group {display:flex;align-items:center;gap:8px;}
@@ -326,11 +327,12 @@ main{padding:35px 0 100px;}
 .btn_tab {min-width:120px; height:48px;line-height:46px;padding:0 30px; border:1px solid #E7E7E7; border-radius:44px; background:#fff; cursor:pointer; font-size:16px;color:#222}
 .btn_tab.active { background:#222; color:#fff; border-color:#666; }
 .casting_call_list { display:flex;gap:24px;flex-wrap:wrap }
-.casting_call_list .item {width:calc(33.33% - 16px); background:#fff; border:1px solid #e7e7e7; border-radius:4px;transition: all 0.2s ease;cursor:pointer}
+.casting_call_list .item {width:calc(33.33% - 16px); background:#fff; border:1px solid #e7e7e7; border-radius:4px;transition: all 0.2s ease;}
+.casting_call_list .item[onclick]{cursor:pointer}
 .casting_call_list .item:hover {box-shadow:0 2px 4px rgba(0,0,0,0.25);border-color:#000;transform: translateY(-2px); }
 .casting_call_list .item img { width:100%; height:160px; object-fit:cover; }
 .casting_call_list .item_body {position:relative; padding:15px 20px 20px;}
-.casting_call_list .item_body .btn_common{width:100%;margin-top:40px;}
+.casting_call_list .item_body .btn_common{width:100%;margin-top:20px;}
 .casting_call_list .item.closed .thumb{position:relative}
 .casting_call_list .item.closed .thumb:after{content:'공고 마감';position:absolute;left:0;top:0;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:rgba(0, 0, 0, .4);color:#fff;font-size:24px;font-weight:700}
 .casting_call_list .item.closed .top_status .d_day{color:rgba(231, 231, 231, .9)}
