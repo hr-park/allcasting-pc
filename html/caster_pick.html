@@ -26,7 +26,7 @@
 						<button type="button" class="link active" onclick="location.href='index_caster.html'">홈</button>
 						<button type="button" class="link" onclick="location.href='project_list.html'">내 프로젝트</button>
 						<button type="button" class="link" onclick="location.href='review_mng_list.html'">심사 관리</button>
-						<button type="button" class="link" onclick="location.href='schedule.html'">오디션 일정</button>
+						<button type="button" class="link" onclick="location.href='schedule_caster.html'">오디션 일정</button>
 						<button type="button" class="link" onclick="location.href='artist_list.html'">관심 아티스트</button>
 					</nav>
 					<!--// Caster GNB -->
@@ -189,39 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
-const tabs = document.querySelectorAll('.btn_tab');
-const cards = document.querySelectorAll('.item');
-const profileItems = document.querySelectorAll('.profile_item');
-
-tabs.forEach(tab => {
-	tab.addEventListener('click', () => {
-		tabs.forEach(t => t.classList.remove('active'));
-		tab.classList.add('active');
-		const category = tab.dataset.tab;
-		
-		// 캐스팅 공고 필터링
-		cards.forEach(card => {
-			if (category === 'all' || card.dataset.category === category) {
-				card.classList.remove('hidden');
-			} else {
-				card.classList.add('hidden');
-			}
-		});
-		
-		// 아티스트 프로필 필터링
-		profileItems.forEach(profile => {
-			if (category === 'all_artist' || profile.dataset.category === category) {
-				profile.classList.remove('hidden');
-			} else {
-				profile.classList.add('hidden');
-			}
-		});
-	});
-});
 </script>
-
-
 </body>
 </html>

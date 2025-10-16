@@ -1,102 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.inp_txt').forEach(input => {
-        input.addEventListener('input', () => {
-            const inpField = input.closest('.inp_field');
-            const errorMessage = inpField ? inpField.querySelector('.msg_desc') : null;
-    
-            if (errorMessage) {
-                if (input.classList.contains('error')) {
-                    input.classList.remove('error');
-                }
-                if (window.getComputedStyle(errorMessage).display !== 'none') {
-                    errorMessage.style.display = 'none';
-                }
-            }
-        });
-    });
-});
-
-//select init
-function resetSelectBox() {
-    const selectContainers = document.querySelectorAll('.sel_box');
-
-    selectContainers.forEach(selectContainer => {
-        const selectElmnt = selectContainer.querySelector('select');
-        const selectSelected = selectContainer.querySelector('.select-selected');
-        const selectItems = selectContainer.querySelector('.select-items');
-
-        selectElmnt.selectedIndex = 0;
-        selectSelected.classList.remove('has_value');
-        selectItems.classList.remove('same-as-selected');
-
-        const sameAsSelectedItems = selectItems.querySelectorAll('.same-as-selected');
-        sameAsSelectedItems.forEach(item => {
-            item.classList.remove('same-as-selected');
-        });
-
-        selectSelected.innerHTML = selectElmnt.options[selectElmnt.selectedIndex].innerHTML;
-    });
-}
-
-function openPop(popName) {
-    document.querySelectorAll(`#${popName}`).forEach(pop => {
-        pop.style.visibility = 'visible';
-        pop.classList.add('active');
-    });
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-}
-
-function closePop(popName) {
-    document.querySelectorAll(`#${popName}`).forEach(pop => {
-        pop.style.visibility = 'hidden';
-        pop.classList.remove('active');
-    });
-    document.documentElement.style.overflow = '';
-    document.body.style.overflow = '';
-}
-*/
-
-
-function showNotification(message) {
-    const layerNoti = document.querySelector('#layerNoti');
-    if (!layerNoti) {
-        document.querySelector('.content').insertAdjacentHTML('beforeend', `<div class="layer_noti" id="layerNoti">${message}</div>`);
-        setTimeout(function(){
-            const updatedLayerNoti = document.querySelector('#layerNoti');
-            if (updatedLayerNoti) {
-                updatedLayerNoti.remove();
-            }
-        }, 1000);
-    }
-}
-
-//리스트 삭제
-function deleteListItem(){
-    if (event.target.classList.contains('btn_del')) {
-        const listItem = event.target.closest('li');
-        if (listItem) {
-            Swal.fire({
-                title: "삭제하시겠습니까?",
-                customClass: {
-                    popup: 'pop_confirm only_tit' //confirm창에 pop_confirm 클래스 추가
-                },
-                html:"",
-                reverseButtons : true,
-                showCancelButton: true,
-                showDenyButton: false,
-                cancelButtonText: "취소",
-                confirmButtonText: "삭제"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    //showNotification('');
-                    listItem.remove();
-                }
-            });
-        }
-    }
-}
-
 //button active toggleclass
 function toggleActiveClass(button) {
     button.classList.toggle('active');
@@ -192,93 +93,65 @@ document.addEventListener('click', function(e) {
     }
 });
 
-/*
-document.querySelectorAll('.tabs').forEach(tabGroup => {
-    const tabs = tabGroup.querySelectorAll('.btn_tab');
-    const ul = tabGroup.nextElementSibling?.matches('ul')
-      ? tabGroup.nextElementSibling
-      : tabGroup.parentElement.querySelector('ul');
-    const categoryElements = list ? ul.querySelectorAll('li[data-category]') : [];
-  
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // 탭 active 상태 갱신
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-  
-        const category = tab.dataset.tab;
-  
-        // li[data-category] 필터링
-        categoryElements.forEach(el => {
-          if (category === 'all' || el.dataset.category === category) {
-            el.classList.remove('hidden');
-          } else {
-            el.classList.add('hidden');
-          }
-        });
-      });
-    });
-  });
-  */
+// 탭 리스트
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.tabs').forEach(tabGroup => {
-	const tabs = tabGroup.querySelectorAll('.btn_tab');
-	const ul = tabGroup.nextElementSibling?.matches('ul')
-		? tabGroup.nextElementSibling
-		: tabGroup.parentElement.querySelector('ul');
-	const categoryElements = ul ? ul.querySelectorAll('li[data-category]') : [];
+    document.querySelectorAll('.tabs').forEach(tabGroup => {
+        const tabs = tabGroup.querySelectorAll('.btn_tab');
 
-	tabs.forEach(tab => {
-		tab.addEventListener('click', () => {
-            // 페이지 로드 시 기존 .no_data 제거
-            const noDataElements = document.querySelectorAll('.no_data');
-            noDataElements.forEach(el => el.remove());
-            
-			// 탭 active 상태 갱신
-			tabs.forEach(t => t.classList.remove('active'));
-			tab.classList.add('active');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                // (안전) 이벤트 버블링으로 인한 외부 리스너 간섭 방지
+                e.stopPropagation();
 
-			const category = tab.dataset.tab;
-            console.log(category)
+                // ✅ 클릭된 탭이 속한 .tabs 기준으로 "바로 다음 형제 UL"만 대상
+                const container = tab.closest('.tabs');
+                let targetUl = null;
+                if (container && container.nextElementSibling && container.nextElementSibling.tagName === 'UL') {
+                    targetUl = container.nextElementSibling;
+                }
 
-			if (categoryElements.length > 0) {
-				// li[data-category] 필터링
-				let anyVisible = false;
-				categoryElements.forEach(el => {
-					if (category === 'all' || el.dataset.category === category) {
-						el.classList.remove('hidden');
-						anyVisible = true;
-					} else {
-						el.classList.add('hidden');
-					}
-				});
+                // 탭 active 상태 갱신 (해당 탭 그룹 한정)
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
 
-				// 리스트에 해당 항목이 없으면 no_items 표시
-				if (!anyVisible) {
-					if (!ul.querySelector('.no_items')) {
-						const li = document.createElement('li');
-						li.className = 'no_data';
-						li.textContent = '데이터가 없습니다.';
-						ul.appendChild(li);
-					}
-				} else {
-					const noItems = ul.querySelector('.no_items');
-					if (noItems) noItems.remove();
-				}
-			}/* else {
-				if (!tabGroup.parentElement.querySelector('.no_items')) {
-					const wrapper = document.createElement('div');
-					wrapper.className = 'no_data';
-					wrapper.textContent = '등록된 프로젝트가 없습니다.';
-					tabGroup.parentElement.appendChild(wrapper);
-				}
-			}*/
-		});
-	});
-});
+                const category = tab.dataset.tab;
+                console.log(category);
+
+                // 대상 UL이 없으면 조용히 종료 (다른 리스트 영향 X)
+                if (!targetUl) return;
+
+                // ✅ 대상 UL 내부에서만 no_data 제거
+                targetUl.querySelectorAll('.no_data').forEach(el => el.remove());
+
+                const items = targetUl.querySelectorAll('li[data-category]');
+                if (items.length === 0) return;
+
+                let anyVisible = false;
+
+                // ✅ 대상 UL의 항목만 필터링
+                items.forEach(li => {
+                    if (category === 'all' || li.dataset.category === category) {
+                        li.classList.remove('hidden');
+                        anyVisible = true;
+                    } else {
+                        li.classList.add('hidden');
+                    }
+                });
+
+                // ✅ 대상 UL에만 "리스트가 없습니다." 표시
+                if (!anyVisible && !targetUl.querySelector('.no_data')) {
+                    const li = document.createElement('li');
+                    li.className = 'no_data';
+                    li.textContent = '리스트가 없습니다.';
+                    targetUl.appendChild(li);
+                }
+            });
+        });
+    });
 });
 
-  function swalConfirmPopup(title) {
+
+function swalConfirmPopup(title) {
 	Swal.fire({
 		title: title,
 		showCloseButton: true,
@@ -289,60 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		confirmButtonText: "확인"
 	});
 }
-
-// 선택자 기반으로 초기화
-// document.querySelectorAll('.form-control').forEach(element => {
-//   new Choices(element, {
-//     classNames: {
-//       containerOuter: ['choiceschoiceschoices']
-//     }
-//   });
-// });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-//     const commonClass = ['choiceschoiceschoices'];
-
-//     const choices = new Choices(element, {
-//         classNames: {
-//         containerOuter: ['choiceschoiceschoices'],
-//         containerInner: ['choices__inner'],
-//         input: ['choices__input'],
-//         inputCloned: ['choices__input--cloned'],
-//         list: ['choices__list'],
-//         listItems: ['choices__list--multiple'],
-//         listSingle: ['choices__list--single'],
-//         listDropdown: ['choices__list--dropdown'],
-//         item: ['choices__item'],
-//         itemSelectable: ['choices__item--selectable'],
-//         itemDisabled: ['choices__item--disabled'],
-//         itemChoice: ['choices__item--choice'],
-//         description: ['choices__description'],
-//         placeholder: ['choices__placeholder'],
-//         group: ['choices__group'],
-//         groupHeading: ['choices__heading'],
-//         button: ['choices__button'],
-//         activeState: ['is-active'],
-//         focusState: ['is-focused'],
-//         openState: ['is-open'],
-//         disabledState: ['is-disabled'],
-//         highlightedState: ['is-highlighted'],
-//         selectedState: ['is-selected'],
-//         flippedState: ['is-flipped'],
-//         loadingState: ['is-loading'],
-//         invalidState: ['is-invalid'],
-//         notice: ['choices__notice'],
-//         addChoice: ['choices__item--selectable', 'add-choice'],
-//         noResults: ['has-no-results'],
-//         noChoices: ['has-no-choices'],
-        
-//         },
-//     });
-// });
-
-
-
 
 function initSelectTag(selector = '[data-max]') {
   document.querySelectorAll(selector).forEach(select => {

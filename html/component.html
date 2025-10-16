@@ -501,59 +501,5 @@
             </div>
         </div>
     </div>
-
-<script>
-const tabs = document.querySelectorAll('.btn_tab');
-const cards = document.querySelectorAll('.item');
-const profileItems = document.querySelectorAll('.profile_item');
-
-tabs.forEach(tab => {
-	tab.addEventListener('click', () => {
-		tabs.forEach(t => t.classList.remove('active'));
-		tab.classList.add('active');
-		const category = tab.dataset.tab;
-		
-		// 캐스팅 공고 필터링
-		cards.forEach(card => {
-			if (category === 'all' || card.dataset.category === category) {
-				card.classList.remove('hidden');
-			} else {
-				card.classList.add('hidden');
-			}
-		});
-		
-		// 아티스트 프로필 필터링
-		profileItems.forEach(profile => {
-			if (category === 'all_artist' || profile.dataset.category === category) {
-				profile.classList.remove('hidden');
-			} else {
-				profile.classList.add('hidden');
-			}
-		});
-	});
-});
-
-// Banner Swiper
-const bannerSwipers = document.querySelectorAll('.banner_swiper');
-bannerSwipers.forEach((swiperElement, index) => {
-	const swiperInstance = new Swiper(swiperElement, {
-		effect: 'slide',
-		speed: 600,
-		spaceBetween: 0,
-		loop: true,
-		slidesPerView: 1,
-		autop_statuslay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: swiperElement.querySelector('.swiper-pagination'),
-			clickable: true,
-		},
-	});
-});
-</script>
-
-
 </body>
 </html>

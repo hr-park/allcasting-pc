@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>All CASTING</title>
+	<link rel="stylesheet" href="../static/css/NotoSansKR.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<div class="inner">
+				<div class="logo_wrap">
+					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
+					<nav class="gnb">
+						<button type="button" class="link active">홈</button>
+						<button type="button" class="link">올캣 소개</button>
+						<a href="javascript://">내 일정</a>
+						<a href="javascript://">관심 공고</a>
+					</nav>	
+				</div>
+				<div class="header_actions">
+					<a href="search.html" class="btn btn_search">검색</a>
+					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
+					<a href="javascript:void(0)" class="btn btn_profile">
+						<span class="profile_img">
+							<img src="../static/images/profile_sample.jpg" alt="프로필">
+						</span>
+						<span class="badge_alert">새로운 알림</span>
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="banner perform" style="background:url('../static/images/banner/visual.png') no-repeat center center/cover;">
+				<div class="hero_content">
+					<p class="tit"><em>당신의 무대</em>가<br><em>지금 시작</em>됩니다.</p>
+					<p class="sub_txt">영화, 광고, 방송 오디션과 함께</p>
+				</div>
+			</div>
+			<section class="bg_white pick">
+				<div class="inner">
+					<div class="section_title">
+						<h2>오늘의 PICK</h2>
+						<button type="button" class="link_move">더 많은 추천 공고 보기</button>
+					</div>
+					<div class="tabs">
+						<button class="btn_tab active" data-tab="all">모든 오늘의 픽</button>
+						<button class="btn_tab" data-tab="movie">영화</button>
+						<button class="btn_tab" data-tab="ad">광고</button>
+					</div>
+					<ul class="casting_call_list">
+						<li class="item" data-category="ad">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb3.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Sidebar -->
+				<aside class="sidebar">
+					<div class="sidebar_banner"><img src="../static/images/banner/banner_narrow_small_1.png" alt="배너"></div>
+					<div class="sidebar_banner"><img src="../static/images/banner/banner_narrow_small_2.png" alt="배너"></div>
+				</aside>
+			</section>
+			<section>
+				<div class="inner">
+					<div class="section_title">
+						<h2>마감임박 공고 <span class="cnt">28개</span></h2>
+						<button type="button" class="link_move">더 많은 아티스트 보기</button>
+					</div>
+					<div class="tabs">
+						<button class="btn_tab active" data-tab="all_artist">모든 아티스트</button>
+						<button class="btn_tab" data-tab="male">남성</button>
+						<button class="btn_tab" data-tab="female">여성</button>
+						<button class="btn_tab" data-tab="etc">기타</button>
+					</div>
+					<ul class="casting_call_list">
+						<li class="item" data-category="ad">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="bg_white section_last">
+				<div class="inner">
+					<div class="section_title">
+						<h2>최근에 등록된 공고</h2>
+						<button type="button" class="link_move">더 많은 최근에 등록된 공고 보기</button>
+					</div>
+					<div class="tabs">
+						<button class="btn_tab active" data-tab="all">모든 오늘의 픽</button>
+						<button class="btn_tab" data-tab="movie">영화</button>
+						<button class="btn_tab" data-tab="ad">광고</button>
+					</div>
+					<ul class="casting_call_list">
+						<li class="item" data-category="ad">
+							<div class="thumb"><img src="../static/images/thumb1.png" alt=""></div>
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb3.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day soon">D-2</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+											<span class="label_new">NEW</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item" data-category="movie">
+							<img src="../static/images/thumb2.png" alt="">
+							<div class="item_body">
+								<div class="top_status">
+									<div class="flex_gap10">
+										<strong class="d_day">D-10</strong>
+										<div class="label_group">
+											<span class="label_recommend">올캣추천</span>
+											<span class="label_urgent">마감임박</span>
+											<span class="label_verified">올캣인증</span>
+										</div>
+									</div>
+									<button type="button" class="btn_bookmark" onclick="toggleActiveClass(this)">bookmark</button>
+								</div>
+								<p class="subject">[광고] 판타지 컨셉의 광고 영상</p>
+								<ul class="sub_dot_list min">
+									<li>CJ Entertainment</li>
+									<li>단편영화</li>
+									<li>학생작품</li>
+								</ul>
+								<div class="detail_row_box">
+									<div class="detail_row">
+										<strong class="tit">모집분야</strong>
+										<p class="desc">단역3(여성1, 남성2), 보조2, 크루1 외 1건</p>
+									</div>
+									<div class="detail_row">
+										<strong class="tit">출연료</strong>
+										<p class="desc">최대 30만원</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="top">
+					<div class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
+					<div class="btns">
+						<button type="button" class="ft_pill">아티스트를 찾는다면?</button>
+						<button type="button" class="ft_pill">프로젝트를 찾는다면?</button>
+						<button type="button" class="ft_sns insta">instagram</button>
+						<button type="button" class="ft_sns youtube">instagram</youtube>
+					</div>
+				</div>
+				<div class="legal">
+					<p class="row">Copyright © 2025 ALLCASTING. All rights reserved.</p>
+					<p class="row">(주)올캣 · 대표자: 홍길동 · 사업자등록번호: 111-22-3333 · 통신판매업 신고번호: 2025-서울강남-01010101</p>
+					<p class="row">사업장 소재지: 서울특별시 강남구 여기여기 주소가 들어갑니다.</p>
+					<p class="row"><button type="button" class="link">이용약관</button> &middot; <button type="button" class="link">개인정보처리방침</button></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

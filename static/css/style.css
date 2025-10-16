@@ -7,13 +7,13 @@
     --color-gray-light:#EAEAEA;
     --color-gray:#666;
 
-
-    --color-state-open:#098684;
+    --color-state-open:#098684; 
     --color-state-draft:#592BC7;
-    --color-state-closed:#999;
+    --color-state-closed:#F6AE0D;
     --color-state-open-before:#344A47;
-    --color-state-open-closed:#F6AE0D;
+    --color-state-open-closed:#999; 
     --color-state-review:#F6AE0D;
+
 }
 
 /* reset css */
@@ -293,19 +293,17 @@ main{padding:35px 0 100px;}
 .top_status .d_day.soon{color:#ED3964;}
 
 
-.main .banner{position:relative;width:100%;height:620px;display:flex;justify-content:center;align-items:center;text-align:left;}
+.main .banner{position:relative;width:100%;height:620px;padding-top:35px;text-align:left;/*display:flex;justify-content:center;align-items:center;*/}
 .main .banner.perform{height:280px;}
 .main .hero_content{width:990px;margin:0 auto;}
-.main .hero_content .tit{font-size:56px;line-height:72px;color:#fff;font-weight:300}
+.main .hero_content .tit{margin-bottom:25px;font-size:56px;line-height:72px;color:#fff;font-weight:300}
 .main .hero_content .tit span{display:block;color:#00aaff;}
 .main .hero_content .sub_txt{margin:24px 0 0;font-size:20px;color:#fff;}
 .main .btn_group{display:flex;gap:24px;margin-top:40px}
 .main .btn{width:180px;height:48px;border-radius:99px;font-size:16px;border:none;cursor:pointer;}
 
-
 .pick{position:relative}
 .pick .banner_swiper{margin:40px 0}
-
 
 .section_title{display:flex;justify-content:space-between;align-items:center;}
 .section_title h2{margin-bottom:20px;font-size:24px;line-height:32px; font-weight:700;}
@@ -448,7 +446,7 @@ main{padding:35px 0 100px;}
 .profile_actions{display:flex;flex-direction:column;width:110px;gap:12px;}
 
 
-.profile_write .form_box > .tit{margin-bottom:32px;border-color:#000}
+.form_box > .tit{margin-bottom:32px;border-color:#000}
 
 .form_container{display:flex;gap:24px}
 .form_container.eval{margin-top:20px}
@@ -494,6 +492,8 @@ main{padding:35px 0 100px;}
 .form_box.detail .col_num_list > li + li{margin:0}
 .audition_form{margin-top:30px}
 .audition_form h3{margin-bottom:20px;font-size:18px;font-weight:700}
+.audition_form .detail_row .tit{padding-top:6px}
+.audition_form .detail_row .desc{line-height:34px}
 
 .eval_box {background:#222; color:#fff; padding:20px; border-radius:4px;}
 .eval_box .eval_header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:30px;}
@@ -555,15 +555,16 @@ main{padding:35px 0 100px;}
 .reg_form{display:flex;flex-direction:column;gap:32px;}
 
 .inp_field{display:flex;}
-.inp_field > label{display:flex;gap:5px;flex-direction:column;width:135px;min-height:46px;/*height:46px;justify-content:center;*/color:#222;font-size:18px;flex-shrink:0;}
+.inp_field > label{display:flex;gap:2px;flex-direction:column;width:135px;height:40px;/*min-height:46px;height:46px;justify-content:center;*/justify-content:center;color:#222;font-size:18px;flex-shrink:0;}
 .inp_field > label .lab_sub{display:block;font-size:16px;color:#4599F8}
-.inp_field .inp_box{position:relative;display:flex;min-height:46px;flex:1;gap:8px;flex-direction:column;}
+.inp_field .inp_box{position:relative;display:flex;min-height:46px;flex:1;gap:8px;flex-direction:column;justify-content:center}
 .inp_field .inp_txt::placeholder{color:#666}
 .inp_field .inp_txt{height:46px;font-size:18px;color:#222;border-bottom:1px solid #E7E7E7}
 .inp_field .inp_txt:focus:not(textarea),
 .inp_field .inp_txt:not(:placeholder-shown):not(textarea){border-color:#000}
 .inp_field .inp_txt.location{padding:10px 30px 10px 0;background:url('../images/ico/ico_map.svg') no-repeat right 10px top 50% / 24px auto}
 .inp_field .inp_box .custom_select select{height:40px}
+.inp_field .inp_box .inp_checkbox{}
 .inp_field .inp_textarea{height:200px;padding:10px;font-size:18px;color:#222;border:1px solid #E7E7E7}
 .inp_field .inp_textarea:placeholder{color:#666}
 .inp_field .row{display:flex;align-items:center;justify-content:space-between}
@@ -733,9 +734,9 @@ main{padding:35px 0 100px;}
 
 
 .schedule_wrap{width:690px;padding:20px;border-radius:4px;background-color:#222}
-.schedule_wrap .section_title{margin-bottom:20px;border-bottom:1px solid #fff}
-.schedule_wrap .section_title h2{color:#fff}
-.schedule_wrap .form_box{padding:30px 20px 20px;border-radius:12px}
+.schedule_wrap .tit{margin-bottom:20px;border-bottom:1px solid #fff;color:#fff}
+.schedule_wrap .form_box{background:none;padding:0;border:0 none}
+/*.schedule_wrap .white_box{padding:30px 20px 20px;border-radius:12px;background:#fff;}*/
 .schedule_wrap .no_data{padding:80px 0;color:#fff;}
 
 .schedule_box{width:100%;margin-top:20px;border:1px solid #E7E7E7;border-radius:4px;padding:20px 32px;background:#fff;} 
