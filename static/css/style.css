@@ -96,11 +96,14 @@ main{padding:35px 0 100px;}
 /* ===== Layout ===== */
 .wrap{background:#f7f7f8;}
 .header{/*position:fixed;left:0;top:0;z-index:10;width:100%;*/background:#fff;border-bottom:1px solid #ddd}
+.header.guest_header{position:absolute;left:0;top:0;z-index:10;width:100%;background:transparent;border-bottom:none}
 .header .inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px;padding:0 20px}
 .header .logo_wrap{display:flex;align-items:center;gap:24px}
-.header .logo_wrap .logo{display:block;height:100%;cursor:pointer}
+.header .logo_wrap .logo{display:block;height:100%;cursor:pointer;text-align:center}
 .header .gnb{display:flex;align-items:center;gap:12px}
 .header .gnb .link{position:relative;display:inline-block;padding:0 15px;color:#666;text-align:center;text-decoration:none;font-size:16px;box-sizing:border-box;}
+.header.guest_header .gnb .link,
+.header.guest_header .gnb .link.active{color:#fff}
 .header .gnb .link.active{color:#222;font-weight:700}
 .header .gnb .link.active:after{content:"";position:absolute;left:0;right:0;bottom:-15px;margin:auto;width:48px;height:4px;background:var(--color-point-red);border-radius:2px}
 .header .btn_start{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 50px;font-size:16px;border-radius:24px;border:1px solid var(--color-point-red);color:var(--color-point-red);background:#fff}
@@ -293,14 +296,16 @@ main{padding:35px 0 100px;}
 .top_status .d_day.soon{color:#ED3964;}
 
 
-.main .banner{position:relative;width:100%;height:620px;padding-top:35px;text-align:left;/*display:flex;justify-content:center;align-items:center;*/}
-.main .banner.perform{height:280px;}
+.main .banner{position:relative;width:100%;height:640px;padding-top:35px;text-align:left;/*display:flex;justify-content:center;align-items:center;*/}
+.main .banner.min{height:280px;}
 .main .hero_content{width:990px;margin:0 auto;}
 .main .hero_content .tit{margin-bottom:25px;font-size:56px;line-height:72px;color:#fff;font-weight:300}
 .main .hero_content .tit span{display:block;color:#00aaff;}
-.main .hero_content .sub_txt{margin:24px 0 0;font-size:20px;color:#fff;}
+.main .hero_content .sub_txt{/*margin:24px 0 0;*/font-size:20px;color:#fff;}
 .main .btn_group{display:flex;gap:24px;margin-top:40px}
-.main .btn{width:180px;height:48px;border-radius:99px;font-size:16px;border:none;cursor:pointer;}
+.main .btn_group .btn_common{width:180px;}
+
+.main.guest .hero_content{display:flex;height:100%;justify-content:center;flex-direction:column}
 
 .pick{position:relative}
 .pick .banner_swiper{margin:40px 0}
