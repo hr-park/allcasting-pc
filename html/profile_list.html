@@ -21,22 +21,24 @@
 			<div class="inner">
 				<div class="logo_wrap">
 					<h1 class="logo"><img src="../static/images/logo.png" alt="ALLCASTING"></h1>
+					<!-- Preform GNB -->
 					<nav class="gnb">
-						<button type="button" class="link active">홈</button>
-						<button type="button" class="link">올캣 소개</button>
-						<a href="javascript://">내 일정</a>
-						<a href="javascript://">관심 공고</a>
+						<button type="button" class="link active" onclick="location.href='index_perform.html'">홈</button>
+						<button type="button" class="link" onclick="location.href=''">올캣 소개</button>
+						<button type="button" class="link" onclick="location.href='schedule_perform.html'">내 일정</button>
+						<button type="button" class="link" onclick="location.href='castingcall_scrap_list.html'">관심 공고</button>
 					</nav>	
+					<!-- Preform GNB -->
 				</div>
 				<div class="header_actions">
-					<a href="search.html" class="btn btn_search">검색</a>
-					<a href="javascript:void(0)" class="btn btn_notification"><span class="badge_alert">새로운 알림</span></a>
-					<a href="javascript:void(0)" class="btn btn_profile">
+					<button type="button" class="btn btn_search" onclick="location.href='search.html'">검색</button>
+					<button type="button" class="btn btn_notification" onclick="location.href='notification.html'">
+					</button>
+					<button type="button" class="btn btn_profile" onclick="location.href=''">
 						<span class="profile_img">
 							<img src="../static/images/profile_sample1.jpg" alt="프로필">
 						</span>
-						<span class="badge_alert">새로운 알림</span>
-					</a>
+					</button>
 				</div>
 			</div>
 		</header>

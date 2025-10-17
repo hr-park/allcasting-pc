@@ -660,8 +660,8 @@ main{padding:35px 0 100px;}
 
 /* 프로젝트 그리드 스타일 */
 .view_top_grid{display:flex;gap:24px;margin-bottom:40px;}
-.view_top_grid .left{flex:1;}
-.view_top_grid .right{width:280px;flex-shrink:0;}
+.view_top_grid .col_left{flex:1;}
+.view_top_grid .col_right{width:280px;flex-shrink:0;}
 .view_top_grid .project{background:#fff;border:1px solid #E7E7E7;border-radius:8px;padding:20px;}
 .view_top_grid .project .subject{margin:3px 0 8px;font-size:24px;color:#222;line-height:1.34;font-weight:700;}	
 
