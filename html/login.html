@@ -38,8 +38,8 @@
 					<h2>ALLCASTING에 오신것을 환영합니다.</h2>
 					<div class="logo_ph"><img src="../static/images/logo.png" alt="ALLCASTING"></div>
 				</section>
-				<div class="auth_box">
-					<div class="section">
+				<div class="auth_wrap">
+					<div class="auth_box">
 						<div class="step_title_wrap step1">
 							<p class="step_title"><strong>Step 01.</strong><span>회원 유형 선택</span></p>
 							<p class="step_desc">회원님의 활동 정보에 따라서 맞춤 정보를 제공합니다.</p>
@@ -56,7 +56,7 @@
 						</div>
 					</div>
 					<p class="error_msg" style="display:none">회원 유형을 선택하셔야합니다.</p>
-					<div class="section">
+					<div class="auth_box">
 						<div class="step_title_wrap step2">
 							<p class="step_title"><strong>Step 02.</strong><span>회원가입/로그인 방법 선택</span></p>
 							<p class="step_desc">원하시는 회원가입/로그인 방법을 선택하세요.</p>
@@ -94,14 +94,14 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		const kakaoBtn = document.querySelector('.btn_kakao');
 		const googleBtn = document.querySelector('.btn_google');
-		const section = document.querySelector('.section');
+		const authBox = document.querySelector('.auth_box');
 		const errorMsg = document.querySelector('.error_msg');
 		const radios = document.querySelectorAll('input[name="user_type"]');
 
 		function validateUserType() {
 			const checked = document.querySelector('input[name="user_type"]:checked');
 			if (!checked) {
-				section.classList.add('is_error');
+				authBox.classList.add('is_error');
 				if (errorMsg) errorMsg.style.display = '';
 			}
 		}
@@ -110,7 +110,7 @@
 		radios.forEach(function(radio) {
 			radio.addEventListener('change', function() {
 				if (this.checked) {
-					section.classList.remove('is_error');
+					authBox.classList.remove('is_error');
 					errorMsg.style.display = 'none';
 					console.log('선택된 회원 유형:', this.value);
 				}

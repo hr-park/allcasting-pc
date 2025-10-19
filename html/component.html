@@ -357,6 +357,9 @@
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_report_confirm')">신고하기</button>
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_profile_confirm')">지원할 프로필 선택</button>
 				<button type="button" class="btn_common primary_line" onclick="openPopup('pop_role_suggest')">역할 제안하기</button>
+				<button type="button" class="btn_common secondary" onclick="openPopup('pop_audition_suggest')">오디션 일정 제안</button>
+				<button type="button" class="btn_common secondary" onclick="openPopup('pop_schedule_fixed')">일정 취소 불가</button>
+				<button type="button" class="btn_common secondary" onclick="openPopup('pop_time_shortage')">오디션에 필요한 시간 부족</button>
 			</section>
 
 			<section>
@@ -498,6 +501,67 @@
             </div>
             <div class="popup_footer">
                 <button type="button" class="btn_common primary" onclick="">역할 제안 알림보내기</button>
+            </div>
+        </div>
+    </div>
+
+	<!-- 오디션 일정 제안 -->
+	<div id="pop_audition_suggest" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">오디션 일정 제안</h3>
+                <button type="button" class="btn_close" onclick="closePopup('pop_audition_suggest')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg bg">
+                    <p>모든 오디션 대상자에게 해당 일정으로 오디션을 제안할까요?</p>
+                </div>
+            </div>
+            <div class="popup_footer">
+				<button type="button" class="btn_common secondary" onclick="closePopup('pop_audition_suggest')">취소</button>
+                <button type="button" class="btn_common primary" onclick="">확인</button>
+            </div>
+        </div>
+    </div>
+
+	<!-- 오디션 일정 제안 -->
+	<div id="pop_schedule_fixed" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">일정 취소 불가</h3>
+                <button type="button" class="btn_close" onclick="closePopup('pop_schedule_fixed')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg bg">
+                    <p>해당 오디션 일정으로 이미 확정한 지원자가 있어<br>일정을 취소할 수 없습니다.</p>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <button type="button" class="btn_common primary" onclick="closePopup('pop_schedule_fixed')">확인</button>
+            </div>
+        </div>
+    </div>
+
+	<!-- 오디션에 필요한 시간 부족 -->
+	<div id="pop_time_shortage" class="popup_overlay">
+        <div class="popup popup_confirm">
+            <div class="popup_header">
+                <h3 class="popup_title">오디션에 필요한 시간 부족</h3>
+                <button type="button" class="btn_close" onclick="closePopup('pop_time_shortage')">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="popup_content">
+                <div class="popup_msg bg">
+                    <p>심사 가능한 인원이 오디션 대상자보다 적습니다.<br>슬롯당 인원을 늘리거나 시간대를 추가해주세요.</p>
+                </div>
+            </div>
+            <div class="popup_footer">
+                <button type="button" class="btn_common primary" onclick="closePopup('pop_time_shortage')">확인</button>
             </div>
         </div>
     </div>
