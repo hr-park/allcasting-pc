@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+//popup
 function swalConfirmPopup(title) {
 	Swal.fire({
 		title: title,
@@ -163,6 +163,7 @@ function swalConfirmPopup(title) {
 	});
 }
 
+//data-max select
 function initSelectTag(selector = '[data-max]') {
   document.querySelectorAll(selector).forEach(select => {
     const maxCount = parseInt(select.dataset.max) || Infinity;
@@ -236,5 +237,5 @@ function initSelectTag(selector = '[data-max]') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initSelectTag(); // 기본 선택자 사용
+    initSelectTag();
 });
