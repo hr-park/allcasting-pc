@@ -462,6 +462,11 @@
 		`;
 		list.appendChild(li);
 
+		// 삭제 버튼 기능
+		li.querySelector(".btn_del").addEventListener("click", () => {
+			li.remove();
+		});
+0
 		// 입력 리셋
 		document.getElementById('videoTitle').value = '';
 		document.getElementById('videoUrl').value = '';
@@ -476,6 +481,8 @@
 
 		// ✅ 파일 선택 시 팝업 열기
 		function openCropPopup(e) {
+			if (e.target.classList.contains('btn_del')) return; // 삭제 버튼 클릭 시 업로드 동작 차단
+
 			currentInput = e.target;
 			const file = e.target.files[0];
 			if (!file) return;
@@ -514,6 +521,23 @@
 			label.style.backgroundPosition = 'center';
 			label.classList.add('has-image');
 			label.textContent = '';
+
+			// ✅ 삭제 버튼 추가
+			let delBtn = label.querySelector('.btn_del');
+			if (!delBtn) {
+				delBtn = document.createElement('button');
+				delBtn.type = 'button';
+				delBtn.className = 'btn_del';
+				delBtn.textContent = '삭제';
+				delBtn.addEventListener('click', function (e) {
+					e.stopPropagation();
+					label.style.backgroundImage = '';
+					label.classList.remove('has-image');
+					label.innerHTML = `<input type="file" accept="image/*" hidden>`;
+					label.querySelector('input').addEventListener('change', openCropPopup);
+				});
+				label.appendChild(delBtn);
+			}
 
 			// ✅ 서브사진이면 자동 추가 (기본 3개 다 찼을 때만)
 			if (label.classList.contains('sub')) {
