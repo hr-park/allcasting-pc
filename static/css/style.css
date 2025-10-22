@@ -560,6 +560,7 @@ main{padding:35px 0 100px;}
 .form_summary.casting_cards_list .casting_card{width:100%}
 
 .photo_list{display:flex;gap:16px;flex-wrap:wrap}
+.photo_list.gap0{gap:0}
 .inp_box .photo_box{position:relative}
 .inp_box .photo.sub{width:125px;aspect-ratio:1 / 1;}
 .inp_box .photo{position:relative;display:flex;align-items:center;justify-content:center;background:#E7E7E7;}
