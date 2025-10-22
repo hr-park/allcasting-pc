@@ -124,9 +124,11 @@
 								<div class="inp_field">
 									<label>작품 이미지 <span class="msg_desc">*선택 사항</span></label>
 									<div class="inp_box">
-										<label class="photo project">
-											<input type="file" accept="image/*" hidden="">
-										</label>
+										<div class="photo_box">
+											<label class="photo project">
+												<input type="file" accept="image/*" hidden="">
+											</label>
+										</div>
 										<p class="msg_desc">*작품 설명 영역에 표시할 대표 이미지를 추가해보세요.</p>
 									</div>
 								</div>
@@ -547,7 +549,7 @@
 			img.onload = () => {
 			if (cropper) cropper.destroy(); // 기존 cropper 제거
 			cropper = new Cropper(img, {
-				aspectRatio: 1, // 정사각형 비율
+				//aspectRatio: 16/9,
 				viewMode: 1,
 				autoCropArea: 1,
 				responsive: true,
@@ -571,6 +573,24 @@
 			label.style.backgroundPosition = 'center';
 			label.classList.add('has-image');
 			label.textContent = '';
+
+			// ✅ 삭제 버튼 추가
+			let delBtn = label.querySelector('.btn_del');
+			if (!delBtn) {
+				delBtn = document.createElement('button');
+				delBtn.type = 'button';
+				delBtn.className = 'btn_del';
+				delBtn.textContent = '삭제';
+				delBtn.addEventListener('click', function (e) {
+					e.stopPropagation();
+					label.style.backgroundImage = '';
+					label.classList.remove('has-image');
+					label.innerHTML = `<input type="file" accept="image/*" hidden>`;
+					label.querySelector('input').addEventListener('change', openCropPopup);
+				});
+				//label.appendChild(delBtn);
+				label.insertAdjacentElement('afterend', delBtn);
+			}
 
 			closePopup('pop_crop');
 			cropper.destroy();

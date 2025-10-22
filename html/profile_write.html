@@ -239,25 +239,33 @@
 								<div class="inp_field">
 									<label for="">대표사진</label>
 									<div class="inp_box">
-										<label class="photo main">
-											<input type="file" accept="image/*" hidden>
-										</label>
+										<div class="photo_box">
+											<label class="photo main">
+												<input type="file" accept="image/*" hidden>
+											</label>
+										</div>
 										<span class="msg_desc">*대표 사진은 얼굴과 가슴 또는 배까지 나온 자신의 얼굴이 잘 보이는 사진이 좋습니다.</span>
 									</div>
 								</div>
 								<div class="inp_field">
 									<label for="">서브사진</label>
 									<div class="inp_box">
-										<div class="photo-list">
-											<label class="photo sub">
-												<input type="file" accept="image/*" hidden>
-											</label>
-											<label class="photo sub">
-												<input type="file" accept="image/*" hidden>
-											</label>
-											<label class="photo sub">
-												<input type="file" accept="image/*" hidden>
-											</label>
+										<div class="photo_list">
+											<div class="photo_box">
+												<label class="photo sub">
+													<input type="file" accept="image/*" hidden>
+												</label>
+											</div>
+											<div class="photo_box">
+												<label class="photo sub">
+													<input type="file" accept="image/*" hidden>
+												</label>
+											</div>
+											<div class="photo_box">
+												<label class="photo sub">
+													<input type="file" accept="image/*" hidden>
+												</label>
+											</div>
 										</div>
 										<span class="msg_desc">*서브 사진은 최대 50장까지 등록할 수 있으며 자신이 돋보일 수 있는 포즈 또는 맡았던 역할에 대해 어필할 수 있는 사진이 좋습니다.</span>
 									</div>
@@ -376,13 +384,13 @@
 	});
 
 	//인덱스 검사 후 삭제
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn_del')) {
-            const index = e.target.getAttribute('idx');
-            tag[index] = '';
-            e.target.parentElement.remove();
-        }
-    });
+    // document.addEventListener('click', (e) => {
+    //     if (e.target.classList.contains('btn_del')) {
+    //         const index = e.target.getAttribute('idx');
+    //         tag[index] = '';
+    //         e.target.parentElement.remove();
+    //     }
+    // });
 
 	//작품 추가	
 	document.getElementById("addCareerBtn").addEventListener("click", function() {
@@ -497,7 +505,7 @@
 			img.onload = () => {
 			if (cropper) cropper.destroy(); // 기존 cropper 제거
 			cropper = new Cropper(img, {
-				aspectRatio: 1, // 정사각형 비율
+				//aspectRatio: 1, // 정사각형 비율
 				viewMode: 1,
 				autoCropArea: 1,
 				responsive: true,
@@ -536,12 +544,13 @@
 					label.innerHTML = `<input type="file" accept="image/*" hidden>`;
 					label.querySelector('input').addEventListener('change', openCropPopup);
 				});
-				label.appendChild(delBtn);
+				//label.appendChild(delBtn);
+				label.insertAdjacentElement('afterend', delBtn);
 			}
 
 			// ✅ 서브사진이면 자동 추가 (기본 3개 다 찼을 때만)
 			if (label.classList.contains('sub')) {
-				const list = label.closest('.photo-list');
+				const list = label.closest('.photo_list');
 				const subs = Array.from(list.querySelectorAll('.photo.sub'));
 				const filled = subs.filter(sub => sub.classList.contains('has-image')).length;
 
@@ -563,8 +572,10 @@
 		}
 
 		// ✅ 이벤트 연결
-		document.querySelectorAll('.photo input[type="file"]').forEach(input => {
-			input.addEventListener('change', openCropPopup);
+		document.querySelectorAll('.photo:not(.has-image) input[type="file"]').forEach(input => {
+			input.addEventListener('change', function(e) {
+				openCropPopup(e);
+			});
 		});
 
 		const btnCropDone = document.getElementById('btnCropDone');
